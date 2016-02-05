@@ -8,9 +8,37 @@
 
 import UIKit
 
+//protocol ButtonActionSheetCellDegate {
+//    func didPressButton(button:UIButton)
+//}
+//
+//class ButtonActionSheetCellController: UIButton {
+//    
+//    var delegate:ButtonActionSheetCellDegate!
+//    
+//    override init(frame:CGRect) {
+//        super.init(frame:frame)
+//        
+////        var button = UIButton()
+////        button.setTitle("...", forState: .Normal)
+////        button.addTarget(self, action: "buttonPress:", forControlEvents: .TouchUpInside)
+////        self.addSubview(button)
+//    }
+//
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
+//    func buttonPress(button:UIButton) {
+//        delegate.didPressButton(button)
+//    }
+//    
+//}
+
+
 class ButtonActionSheetCellController: UIButton {
-    
-    func ButtonActionSheetCellTappet(sender: AnyObject, title: String?) {
+
+  func ButtonActionSheetCellTappet(sender: AnyObject, title: String?) {
         
         let myActionSheet = UIAlertController (title: title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -59,3 +87,5 @@ class ButtonActionSheetCellController: UIButton {
     }
     
 }
+
+

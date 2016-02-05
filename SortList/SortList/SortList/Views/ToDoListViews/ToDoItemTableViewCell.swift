@@ -15,11 +15,12 @@ class ToDoItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemLabelView: UILabel!
     
-   // @IBOutlet weak var ButtonActionSheetCell: UIButton!
+    @IBOutlet weak var ButtonActionSheetCell: UIButton!
     @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
      //!!!!!!
         //itemLabelView.text
         ButtonActionSheetCellController().ButtonActionSheetCellTappet(sender, title: itemLabelView.text)
+        
     }
     
     var toDoItem: ToDoItem = ToDoItem.init(item: "", checked: false) {
@@ -46,6 +47,6 @@ class ToDoItemTableViewCell: UITableViewCell {
     
     func setupViews() {
         contentView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.1) // light green
-    }
+            }
 
-}
+    }
