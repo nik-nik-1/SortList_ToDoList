@@ -30,7 +30,7 @@
                         <rect key="frame" x="282" y="14" width="30" height="26"/>
                         <state key="normal" title="..."/>
                         <connections>
-                            <action selector="ButtonActionSheetCellTappet:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ceN-Ke-JD4"/>
+                            <action selector="ButtonActionSheetCellTappet:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z7k-Np-dym"/>
                         </connections>
                     </button>
                 </subviews>

@@ -15,29 +15,11 @@ class ToDoItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var itemLabelView: UILabel!
     
-    //@IBOutlet weak var ButtonActionSheetCell: UIButton!
+   // @IBOutlet weak var ButtonActionSheetCell: UIButton!
     @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
-    let myActionSheet = UIAlertController (title: "title", message: "message", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        let buttonArchive = UIAlertAction (title: "Archive", style: UIAlertActionStyle.Default) {
-            (ACTION) in
-            print("Archive button tapped")
-        }
-        let buttonArchive = UIAlertAction (title: "Archive", style: UIAlertActionStyle.Default) {
-            (ACTION) in
-            print("Archive button tapped")
-        }
-        let buttonArchive = UIAlertAction (title: "Archive", style: UIAlertActionStyle.Default) {
-            (ACTION) in
-            print("Archive button tapped")
-        }
-        let buttonArchive = UIAlertAction (title: "Archive", style: UIAlertActionStyle.Default) {
-            (ACTION) in
-            print("Archive button tapped")
-        }
-        myActionSheet.addAction(buttonArchive)
-       // self.presentViewController(myActionSheet, animated: true, completion: nil)
-        UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(myActionSheet, animated: true, completion: nil)
+     //!!!!!!
+        //itemLabelView.text
+        ButtonActionSheetCellController().ButtonActionSheetCellTappet(sender, title: itemLabelView.text)
     }
     
     var toDoItem: ToDoItem = ToDoItem.init(item: "", checked: false) {
