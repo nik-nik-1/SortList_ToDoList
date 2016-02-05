@@ -25,6 +25,7 @@ class ToDoListViewController: UIViewController {
 
     override func viewWillAppear(animated: Bool) {
         toDoListTableView.toDoItems = toDoItems
+        toDoListTableView.reloadData()
     }
     
 

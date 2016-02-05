@@ -10,11 +10,13 @@ import UIKit
 
 class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
 
-    var toDoItems: [ToDoItem] = [] {
-        didSet {
-            self.reloadData()
-        }
-    }
+//    var toDoItems: [ToDoItem] = [] {
+//        didSet {
+//            self.reloadData()
+//        }
+//    }
+    
+    var toDoItems: [ToDoItem] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
