@@ -8,19 +8,20 @@
 
 import UIKit
 
+protocol ToDoItemTableViewCellDelegate {
+    func didTouchMoreButton(cell: UITableViewCell?)
+}
 
 class ToDoItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var selectItemSwitchView: UISwitch!
-    
     @IBOutlet weak var itemLabelView: UILabel!
     
-    @IBOutlet weak var ButtonActionSheetCell: UIButton!
+    var delegate: ToDoItemTableViewCellDelegate?
+    
+    //@IBOutlet weak var ButtonActionSheetCell: UIButton!
     @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
-     //!!!!!!
-        //itemLabelView.text
-        ButtonActionSheetCellController().ButtonActionSheetCellTappet(sender, title: itemLabelView.text)
-        
+        delegate?.didTouchMoreButton(self)
     }
     
     var toDoItem: ToDoItem = ToDoItem.init(item: "", checked: false) {

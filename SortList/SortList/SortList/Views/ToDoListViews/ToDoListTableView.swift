@@ -8,13 +8,20 @@
 
 import UIKit
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+protocol ToDoListTableViewDelegate {
+    func didTouchMoreButtonForController(item toDoItem: ToDoItem?)
+}
+
+
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate {
 
 //    var toDoItems: [ToDoItem] = [] {
 //        didSet {
 //            self.reloadData()
 //        }
 //    }
+    
+    var toDoListDelegate: ToDoListTableViewDelegate?
     
     var toDoItems: [ToDoItem] = []
     
@@ -42,6 +49,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             let topLevelObjects = NSBundle.mainBundle().loadNibNamed("ToDoItemTableViewCell", owner: self, options: nil);
             cell = topLevelObjects.first as? ToDoItemTableViewCell
         }
+        
+        cell?.delegate = self
         
         return cell!
     }
@@ -71,6 +80,15 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("selected row: \(indexPath.row), value: \(toDoItems[indexPath.row])")
+    }
+    
+    // MARK: UITableViewCell delegate
+    
+    func didTouchMoreButton(cell: UITableViewCell?) {
+        if (cell != nil) {
+            let toDoItem = (cell as! ToDoItemTableViewCell).toDoItem
+            toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem)
+        }
     }
 
 }

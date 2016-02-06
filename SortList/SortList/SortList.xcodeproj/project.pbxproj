@@ -16,7 +16,7 @@
 		D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */; };
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
-		E76039841C64D373000A5213 /* ButtonActionSheetCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76039831C64D373000A5213 /* ButtonActionSheetCellController.swift */; };
+		E7D0D32B1C66977200B73DF2 /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,7 @@
 		D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
-		E76039831C64D373000A5213 /* ButtonActionSheetCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonActionSheetCellController.swift; sourceTree = "<group>"; };
+		E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +77,6 @@
 			isa = PBXGroup;
 			children = (
 				D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */,
-				E76039831C64D373000A5213 /* ButtonActionSheetCellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E8D0A11C5EC99C007E4F48 /* ToDoListViews */,
+				E7D0D3291C66977200B73DF2 /* Controls */,
 				D8E8D0961C5EC817007E4F48 /* LaunchScreen.storyboard */,
 				D8E8D0981C5EC817007E4F48 /* Main.storyboard */,
 			);
@@ -117,6 +117,14 @@
 				D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */,
 			);
 			path = ToDoListViews;
+			sourceTree = "<group>";
+		};
+		E7D0D3291C66977200B73DF2 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */,
+			);
+			path = Controls;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +204,7 @@
 				D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */,
 				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
 				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
-				E76039841C64D373000A5213 /* ButtonActionSheetCellController.swift in Sources */,
+				E7D0D32B1C66977200B73DF2 /* ActionSheetCellControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
