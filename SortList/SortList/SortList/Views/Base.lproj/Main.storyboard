@@ -3,12 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="Bmt-Wu-ZNw">
             <objects>
                 <navigationController id="5hl-pn-7Ap" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4zV-cC-AkB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -30,11 +33,11 @@
                         <viewControllerLayoutGuide type="bottom" id="g6B-Q3-HaW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2a1-20-XJg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-Kc-nRc" customClass="ToDoListTableView" customModule="SortList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -46,14 +49,79 @@
                             <constraint firstAttribute="trailing" secondItem="xsE-Kc-nRc" secondAttribute="trailing" id="GTt-gx-W7A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Fx-jB-r1o"/>
+                    <navigationItem key="navigationItem" id="8Fx-jB-r1o">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Iql-DF-HtE">
+                                <connections>
+                                    <segue destination="xbb-go-o3P" kind="modal" id="L6c-DO-UxB"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="MdM-h6-BNh"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="toDoListTableView" destination="xsE-Kc-nRc" id="yfA-CF-3wg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEw-uH-zKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-209" y="385"/>
+            <point key="canvasLocation" x="-455" y="397"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Up4-Gf-5ZC">
+            <objects>
+                <viewController id="xbb-go-o3P" customClass="DetailViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mnU-wn-8Oc"/>
+                        <viewControllerLayoutGuide type="bottom" id="XpC-Kh-9Cb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UCE-Mv-k2M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-0H-Avu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Add item" id="4sh-0H-9c6">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kM0-fP-a1o">
+                                            <connections>
+                                                <segue destination="5pQ-xR-iAI" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="mI5-F3-d1o"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IEv-eb-5qG">
+                                            <connections>
+                                                <segue destination="5pQ-xR-iAI" kind="unwind" identifier="doneSegue" unwindAction="done:" id="rnS-CV-Pcw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-ii-joV">
+                                <rect key="frame" x="5" y="67" width="365" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U8v-ii-joV" firstAttribute="centerX" secondItem="ksp-0H-Avu" secondAttribute="centerX" id="7eR-wI-Yms"/>
+                            <constraint firstItem="U8v-ii-joV" firstAttribute="top" secondItem="ksp-0H-Avu" secondAttribute="bottom" constant="23" id="A6Y-tO-q1O"/>
+                            <constraint firstItem="ksp-0H-Avu" firstAttribute="leading" secondItem="UCE-Mv-k2M" secondAttribute="leading" id="Q95-NM-LhG"/>
+                            <constraint firstItem="ksp-0H-Avu" firstAttribute="top" secondItem="UCE-Mv-k2M" secondAttribute="top" id="Rit-cs-L8W"/>
+                            <constraint firstItem="U8v-ii-joV" firstAttribute="leading" secondItem="UCE-Mv-k2M" secondAttribute="leadingMargin" constant="-11" id="exj-NJ-V7G"/>
+                            <constraint firstAttribute="trailing" secondItem="ksp-0H-Avu" secondAttribute="trailing" id="mqq-NA-XgM"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="NewItemAddLabel" destination="U8v-ii-joV" id="wSg-lV-fqs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aef-Cd-8kH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5pQ-xR-iAI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2.5" y="396.5"/>
         </scene>
     </scenes>
 </document>

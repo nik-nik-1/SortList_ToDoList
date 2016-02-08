@@ -8,13 +8,26 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate {
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,UITableViewController
 
-    
+    var toDoItems: [ToDoItem] = []
+    var newItem: String = ""
+
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     
-    var toDoItems: [ToDoItem] = []
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+        
+    }
     
+    @IBAction func done(segue:UIStoryboardSegue) {
+        let itemDetailVC = segue.sourceViewController as! DetailViewController
+        newItem = itemDetailVC.labelText
+        
+        toDoItems.append(ToDoItem.init(item: newItem, checked: false))
+    }
+    
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -27,18 +40,25 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate {
         toDoItems.append(toDoItem3)
         
         toDoListTableView.toDoListDelegate = self;
+       
+       // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+//        toDoListTableView.delegate = self
+//        toDoListTableView.dataSource = self
         
     }
-
-    //MARK: delegate Button Click
-    func didTouchMoreButtonForController(cell: UITableViewCell?) {
-        print("didTouchMoreButtonForController")
-        
-//        myActionSheet = ButtonActionSheetCellItems ("Hello xz`x") as UIAlertController!
-//        self.presentViewController(myActionSheet, animated: true, completion: nil)
-        
-
-    }
+    
+   
+    
+    ////MARK: delegate Button Click
+//    func didTouchMoreButtonForController(cell: UITableViewCell?) {
+//        print("didTouchMoreButtonForController")
+//        
+////        myActionSheet = ButtonActionSheetCellItems ("Hello xz`x") as UIAlertController!
+////        self.presentViewController(myActionSheet, animated: true, completion: nil)
+//        
+//
+//    }
 
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +68,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate {
 //        toDoListTableView.delegate = self
     }
     
-    
+    //MARK: delegate Button Click
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?) {
         if (toDoItem != nil) {
             let myActionSheet = ButtonActionSheetCellItems(toDoItem?.item) as UIAlertController!

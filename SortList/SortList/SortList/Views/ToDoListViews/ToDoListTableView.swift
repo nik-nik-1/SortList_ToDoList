@@ -13,13 +13,17 @@ protocol ToDoListTableViewDelegate {
 }
 
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate {
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate  {
 
+//UITableViewController
+    
 //    var toDoItems: [ToDoItem] = [] {
 //        didSet {
 //            self.reloadData()
 //        }
 //    }
+    
+    
     
     var toDoListDelegate: ToDoListTableViewDelegate?
     
@@ -32,6 +36,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         
         self.dataSource = self
         self.delegate = self
+        
+        
     }
     
     
@@ -54,6 +60,24 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         
         return cell!
     }
+    
+//    //MARK: controll buttton
+//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        // Return false if you do not want the specified item to be editable.
+//        return true
+//    }
+//    
+//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+//        if editingStyle == .Delete {
+//            // Delete the row from the data source
+//            
+//            toDoItems.removeAtIndex(indexPath.row)
+//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//        } else if editingStyle == .Insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//        }
+//    }
+
     
     
     // MARK: UITableView delegate
@@ -92,3 +116,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
 
 }
+
+//extension ToDoListTableView: UITableViewController {
+//}
+

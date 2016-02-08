@@ -8,32 +8,9 @@
 
 import UIKit
 
-//protocol ButtonActionSheetCellDegate {
-//    func didPressButton(button:UIButton)
-//}
-//
-//class ButtonActionSheetCellController: UIButton {
-//    
-//    var delegate:ButtonActionSheetCellDegate!
-//    
-//    override init(frame:CGRect) {
-//        super.init(frame:frame)
-//        
-////        var button = UIButton()
-////        button.setTitle("...", forState: .Normal)
-////        button.addTarget(self, action: "buttonPress:", forControlEvents: .TouchUpInside)
-////        self.addSubview(button)
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    func buttonPress(button:UIButton) {
-//        delegate.didPressButton(button)
-//    }
-//    
-//}
+class ActionSheetCellControl: UIButton {
+
+}
 
 
 //class ButtonActionSheetCellController: UIButton {
