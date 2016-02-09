@@ -13,6 +13,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
     var toDoItems: [ToDoItem] = []
     var newItem: String = ""
 
+    @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     
     @IBAction func cancel(segue:UIStoryboardSegue) {
@@ -43,29 +44,12 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
        
        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-//        toDoListTableView.delegate = self
-//        toDoListTableView.dataSource = self
-        
     }
-    
-   
-    
-    ////MARK: delegate Button Click
-//    func didTouchMoreButtonForController(cell: UITableViewCell?) {
-//        print("didTouchMoreButtonForController")
-//        
-////        myActionSheet = ButtonActionSheetCellItems ("Hello xz`x") as UIAlertController!
-////        self.presentViewController(myActionSheet, animated: true, completion: nil)
-//        
-//
-//    }
-
     
     override func viewWillAppear(animated: Bool) {
         toDoListTableView.toDoItems = toDoItems
         toDoListTableView.reloadData()
         
-//        toDoListTableView.delegate = self
     }
     
     //MARK: delegate Button Click
@@ -76,5 +60,12 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
         }
     }
 
+    
+    @IBAction func editButtonTouched(sender: AnyObject) {
+        toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
+        
+    }
+    
+    
 }
 

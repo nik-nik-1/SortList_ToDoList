@@ -53,14 +53,19 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Iql-DF-HtE">
                                 <connections>
-                                    <segue destination="xbb-go-o3P" kind="modal" id="L6c-DO-UxB"/>
+                                    <segue destination="Tj4-ft-U2C" kind="show" id="3jr-fG-h1u"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="MdM-h6-BNh"/>
+                            <barButtonItem systemItem="edit" id="MdM-h6-BNh">
+                                <connections>
+                                    <action selector="editButtonTouched:" destination="nEi-1x-ciK" id="zKl-LE-yNQ"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="editButtonPanell" destination="MdM-h6-BNh" id="jFF-B5-wGh"/>
                         <outlet property="toDoListTableView" destination="xsE-Kc-nRc" id="yfA-CF-3wg"/>
                     </connections>
                 </viewController>
@@ -68,60 +73,53 @@
             </objects>
             <point key="canvasLocation" x="-455" y="397"/>
         </scene>
-        <!--Detail View Controller-->
-        <scene sceneID="Up4-Gf-5ZC">
+        <!--Detail-->
+        <scene sceneID="xIJ-mC-6vV">
             <objects>
-                <viewController id="xbb-go-o3P" customClass="DetailViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tj4-ft-U2C" customClass="DetailViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mnU-wn-8Oc"/>
-                        <viewControllerLayoutGuide type="bottom" id="XpC-Kh-9Cb"/>
+                        <viewControllerLayoutGuide type="top" id="dhe-7q-ieq"/>
+                        <viewControllerLayoutGuide type="bottom" id="edv-jM-3js"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UCE-Mv-k2M">
+                    <view key="view" contentMode="scaleToFill" id="tJD-Au-ft0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksp-0H-Avu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="Add item" id="4sh-0H-9c6">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kM0-fP-a1o">
-                                            <connections>
-                                                <segue destination="5pQ-xR-iAI" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="mI5-F3-d1o"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="IEv-eb-5qG">
-                                            <connections>
-                                                <segue destination="5pQ-xR-iAI" kind="unwind" identifier="doneSegue" unwindAction="done:" id="rnS-CV-Pcw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text here" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="U8v-ii-joV">
-                                <rect key="frame" x="5" y="67" width="365" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wa-vx-BNa">
+                                <rect key="frame" x="8" y="94" width="360" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U8v-ii-joV" firstAttribute="centerX" secondItem="ksp-0H-Avu" secondAttribute="centerX" id="7eR-wI-Yms"/>
-                            <constraint firstItem="U8v-ii-joV" firstAttribute="top" secondItem="ksp-0H-Avu" secondAttribute="bottom" constant="23" id="A6Y-tO-q1O"/>
-                            <constraint firstItem="ksp-0H-Avu" firstAttribute="leading" secondItem="UCE-Mv-k2M" secondAttribute="leading" id="Q95-NM-LhG"/>
-                            <constraint firstItem="ksp-0H-Avu" firstAttribute="top" secondItem="UCE-Mv-k2M" secondAttribute="top" id="Rit-cs-L8W"/>
-                            <constraint firstItem="U8v-ii-joV" firstAttribute="leading" secondItem="UCE-Mv-k2M" secondAttribute="leadingMargin" constant="-11" id="exj-NJ-V7G"/>
-                            <constraint firstAttribute="trailing" secondItem="ksp-0H-Avu" secondAttribute="trailing" id="mqq-NA-XgM"/>
+                            <constraint firstItem="1wa-vx-BNa" firstAttribute="top" secondItem="dhe-7q-ieq" secondAttribute="bottom" constant="30" id="N6Z-UJ-ah6"/>
+                            <constraint firstItem="1wa-vx-BNa" firstAttribute="leading" secondItem="tJD-Au-ft0" secondAttribute="leadingMargin" constant="-12" id="YTg-CH-fTG"/>
+                            <constraint firstItem="1wa-vx-BNa" firstAttribute="centerX" secondItem="tJD-Au-ft0" secondAttribute="centerX" id="jjS-T0-Chn"/>
                         </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Detail" id="7kS-Ia-l6b">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="aM3-Ep-sae">
+                            <connections>
+                                <segue destination="bXu-SH-B0y" kind="unwind" identifier="doneSegue" unwindAction="done:" id="M6u-Cn-hwQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="OP3-PI-4PR">
+                            <connections>
+                                <segue destination="bXu-SH-B0y" kind="unwind" identifier="cancelSegue" unwindAction="cancel:" id="wIX-7n-kKN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="NewItemAddLabel" destination="U8v-ii-joV" id="wSg-lV-fqs"/>
+                        <outlet property="NewItemAddLabel" destination="1wa-vx-BNa" id="S7o-BI-enX"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Aef-Cd-8kH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="5pQ-xR-iAI" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dh5-cx-eWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bXu-SH-B0y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2.5" y="396.5"/>
+            <point key="canvasLocation" x="4.5" y="396.5"/>
         </scene>
     </scenes>
 </document>
