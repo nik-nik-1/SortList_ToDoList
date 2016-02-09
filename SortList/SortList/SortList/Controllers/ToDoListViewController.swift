@@ -16,6 +16,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     
+    /*
     @IBAction func cancel(segue:UIStoryboardSegue) {
         
     }
@@ -26,6 +27,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
         
         toDoItems.append(ToDoItem.init(item: newItem, checked: false))
     }
+    */
     
     
         

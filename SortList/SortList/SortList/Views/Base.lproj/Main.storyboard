@@ -53,7 +53,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Iql-DF-HtE">
                                 <connections>
-                                    <segue destination="Tj4-ft-U2C" kind="show" id="3jr-fG-h1u"/>
+                                    <segue destination="ANt-aI-fQv" kind="show" id="qXt-J2-mnL"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="MdM-h6-BNh">
@@ -74,6 +74,29 @@
             <point key="canvasLocation" x="-455" y="397"/>
         </scene>
         <!--Detail-->
+        <scene sceneID="E5V-vn-vad">
+            <objects>
+                <viewController id="ANt-aI-fQv" customClass="DetailViewControllerProtocol" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ysg-Cr-PgJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Dig-3m-Vbi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mvA-wJ-3O8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="74l-BW-ASs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="bZm-4m-Gw9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="3Eo-Gl-ZFc"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bc5-KO-OhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-27.5" y="396.5"/>
+        </scene>
+        <!--DetailOLD-->
         <scene sceneID="xIJ-mC-6vV">
             <objects>
                 <viewController id="Tj4-ft-U2C" customClass="DetailViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +105,7 @@
                         <viewControllerLayoutGuide type="bottom" id="edv-jM-3js"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tJD-Au-ft0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1wa-vx-BNa">
@@ -99,7 +122,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="7kS-Ia-l6b">
+                    <navigationItem key="navigationItem" title="DetailOLD" id="7kS-Ia-l6b">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="aM3-Ep-sae">
                             <connections>
                                 <segue destination="bXu-SH-B0y" kind="unwind" identifier="doneSegue" unwindAction="done:" id="M6u-Cn-hwQ"/>
@@ -119,7 +142,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh5-cx-eWR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bXu-SH-B0y" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4.5" y="396.5"/>
+            <point key="canvasLocation" x="651" y="350"/>
         </scene>
     </scenes>
 </document>
