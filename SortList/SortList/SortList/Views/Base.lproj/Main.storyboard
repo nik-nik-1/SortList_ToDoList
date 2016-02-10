@@ -53,7 +53,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Iql-DF-HtE">
                                 <connections>
-                                    <segue destination="ANt-aI-fQv" kind="show" id="qXt-J2-mnL"/>
+                                    <segue destination="ANt-aI-fQv" kind="show" identifier="showDetailViewController" id="qXt-J2-mnL"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="edit" id="MdM-h6-BNh">
@@ -84,13 +84,31 @@
                     <view key="view" contentMode="scaleToFill" id="mvA-wJ-3O8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input text here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-Xc-bvD">
+                                <rect key="frame" x="10" y="133" width="354" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="74l-BW-ASs">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="bZm-4m-Gw9"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="3Eo-Gl-ZFc"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="bZm-4m-Gw9">
+                            <connections>
+                                <action selector="detailViewDoneButton:" destination="ANt-aI-fQv" id="VNq-Hi-gBu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="3Eo-Gl-ZFc">
+                            <connections>
+                                <action selector="detailViewCancelButton:" destination="ANt-aI-fQv" id="Ahq-kq-Tbb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="detailViewTextInputEdit" destination="X3m-Xc-bvD" id="1p5-gK-Vi5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc5-KO-OhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,28 +8,46 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,UITableViewController
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate { //,UITableViewController
 
     var toDoItems: [ToDoItem] = []
-    var newItem: String = ""
-
+    //var newItem: String = ""
+    var recivedFromMainListValue: String = ""
+    
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     
-    /*
-    @IBAction func cancel(segue:UIStoryboardSegue) {
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showDetailViewController" {
+            let detailViewController = segue.destinationViewController as! DetailViewControllerProtocol
+            detailViewController.detailDelegate = self
+            
+            // set a variable in the second view controller with the String to pass
+            detailViewController.receivedString = recivedFromMainListValue
+            
+        }
         
     }
     
-    @IBAction func done(segue:UIStoryboardSegue) {
-        let itemDetailVC = segue.sourceViewController as! DetailViewController
-        newItem = itemDetailVC.labelText
+    func userDidEnterInformation(info: String) {
+//        let item3_testSearch: ToDoItem = ToDoItem(item: info, checked: true)
+//        let ddddd = toDoItems.indexOf{$0 === item3_testSearch}
         
-        toDoItems.append(ToDoItem.init(item: newItem, checked: false))
+//        var filteredItems = toDoItems.filter({(item : ToDoItem) -> Bool in
+//            return item.lowercaseString.containsString(recivedFromMainListValue.lowercaseString)
+//        })
+        
+        
+        toDoItems.append(ToDoItem.init(item: info, checked: false))
     }
-    */
     
     
+    func SetCurentItemTextLabel (item itemText: String) {
+        recivedFromMainListValue = itemText
+    }
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +62,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
         
         toDoListTableView.toDoListDelegate = self;
        
+        toDoListTableView.SelectedRowDelegate = self
        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
     }
@@ -65,9 +84,23 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate { //,U
     
     @IBAction func editButtonTouched(sender: AnyObject) {
         toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
+       //toDoListTableView.Mov
+
         
     }
     
+    /*
+    @IBAction func cancel(segue:UIStoryboardSegue) {
+    
+    }
+    
+    @IBAction func done(segue:UIStoryboardSegue) {
+    let itemDetailVC = segue.sourceViewController as! DetailViewController
+    newItem = itemDetailVC.labelText
+    
+    toDoItems.append(ToDoItem.init(item: newItem, checked: false))
+    }
+    */
     
 }
 

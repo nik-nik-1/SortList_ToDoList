@@ -12,7 +12,7 @@ class ToDoItem {
     var item: String! = ""
     var checked: Bool! = false
     
-    init (item: String, checked: Bool) {
+    init (item: String, checked: Bool?) {
         self.item = item
         self.checked = checked
     }

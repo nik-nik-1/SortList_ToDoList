@@ -12,6 +12,10 @@ protocol ToDoListTableViewDelegate {
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?)
 }
 
+protocol SelectedRowWhitIndexDelegate {
+    func SetCurentItemTextLabel (item itemText: String)
+}
+
 
 class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate  {
     
@@ -24,6 +28,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     
     var toDoListDelegate: ToDoListTableViewDelegate?
+    var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
+    
     
     var toDoItems: [ToDoItem] = []
     
@@ -77,6 +83,22 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
 
     
+    //MARK: moveRow
+    // Override to support rearranging the table view.
+    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        let itemToMove = toDoItems[fromIndexPath.row]
+        toDoItems.removeAtIndex(fromIndexPath.row)
+        toDoItems.insert(itemToMove, atIndex: toIndexPath.row)
+    }
+    
+    
+    
+    // Override to support conditional rearranging of the table view.
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    
     
     // MARK: UITableView delegate
     
@@ -101,7 +123,10 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("selected row: \(indexPath.row), value: \(toDoItems[indexPath.row])")
+        let valueitemText = String(toDoItems[indexPath.row].item)
+        print("selected row: \(indexPath.row), value: \(valueitemText)")
+        
+        SelectedRowDelegate?.SetCurentItemTextLabel(item: valueitemText)
     }
     
     // MARK: UITableViewCell delegate
