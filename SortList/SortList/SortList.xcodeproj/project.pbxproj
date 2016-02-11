@@ -18,8 +18,8 @@
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
 		E7D0D32B1C66977200B73DF2 /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */; };
 		E7D0D32D1C68BFAC00B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D32C1C68BFAC00B73DF2 /* TableViewControllerMetodTest.swift */; };
-		E7D0D3311C691F6800B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3301C691F6800B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D3331C6A003300B73DF2 /* DetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */; };
+		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
 		E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
 		E7D0D32C1C68BFAC00B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
-		E7D0D3301C691F6800B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerProtocol.swift; sourceTree = "<group>"; };
+		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +70,7 @@
 		D8E8D07C1C5EC74E007E4F48 /* SortList */ = {
 			isa = PBXGroup;
 			children = (
+				E7D0D3391C6BBF9100B73DF2 /* Trash */,
 				D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */,
 				D8E8D0911C5EC817007E4F48 /* Models */,
 				D8E8D08F1C5EC817007E4F48 /* Controllers */,
@@ -82,7 +83,6 @@
 		D8E8D08F1C5EC817007E4F48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E7D0D3301C691F6800B73DF2 /* DetailViewControllerOLD.swift */,
 				D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */,
 				E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */,
 			);
@@ -134,6 +134,14 @@
 				E7D0D32A1C66977200B73DF2 /* ActionSheetCellControl.swift */,
 			);
 			path = Controls;
+			sourceTree = "<group>";
+		};
+		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */,
+			);
+			path = Trash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 				E7D0D32D1C68BFAC00B73DF2 /* TableViewControllerMetodTest.swift in Sources */,
 				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
 				D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */,
@@ -216,7 +225,6 @@
 				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
 				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
 				E7D0D32B1C66977200B73DF2 /* ActionSheetCellControl.swift in Sources */,
-				E7D0D3311C691F6800B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

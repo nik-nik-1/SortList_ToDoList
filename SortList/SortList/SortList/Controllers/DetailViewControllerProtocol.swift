@@ -10,6 +10,7 @@ import UIKit
 
 protocol DataEnteredDelegate: class {
     func userDidEnterInformation(info: String)
+    func ereseuserEnterInformation()
 }
 
 class DetailViewControllerProtocol: UIViewController {
@@ -32,6 +33,7 @@ class DetailViewControllerProtocol: UIViewController {
     
     @IBAction func detailViewCancelButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+        detailDelegate?.ereseuserEnterInformation()
     }
     
     
