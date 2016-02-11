@@ -9,7 +9,8 @@
 import UIKit
 
 protocol ToDoListTableViewDelegate {
-    func didTouchMoreButtonForController(item toDoItem: ToDoItem?)
+    //func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel?)
+    func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel)
 }
 
 protocol SelectedRowWhitIndexDelegate {
@@ -133,8 +134,10 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     func didTouchMoreButton(cell: UITableViewCell?) {
         if (cell != nil) {
-            let toDoItem = (cell as! ToDoItemTableViewCell).toDoItem
-            toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem)
+            let toDoItem       = (cell as! ToDoItemTableViewCell).toDoItem
+            let itemLabelView  = (cell as! ToDoItemTableViewCell).itemLabelView as UILabel
+           // toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
+            toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
         }
     }
 

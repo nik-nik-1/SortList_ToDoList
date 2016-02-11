@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate { //,UITableViewController
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate { //,UITableViewController, ToDoItemforListControllerDelegate
     
     var toDoItems: [ToDoItem] = []
     //var newItem: String = ""
@@ -74,6 +74,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         toDoListTableView.toDoListDelegate = self;
         
         toDoListTableView.SelectedRowDelegate = self
+//        toDoListTableView.delegateListController
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
@@ -83,9 +84,15 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     }
     
     //MARK: delegate Button Click
-    func didTouchMoreButtonForController(item toDoItem: ToDoItem?) {
+//    func didTouchMoreButtonForController(item toDoItem: ToDoItem?) {
+//        if (toDoItem != nil) {
+//            let myActionSheet = ButtonActionSheetCellItems(toDoItem?.item) as UIAlertController!
+//            self.presentViewController(myActionSheet, animated: true, completion: nil)
+//        }
+//    }
+    func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
         if (toDoItem != nil) {
-            let myActionSheet = ButtonActionSheetCellItems(toDoItem?.item) as UIAlertController!
+            let myActionSheet = ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as UIAlertController!
             self.presentViewController(myActionSheet, animated: true, completion: nil)
         }
     }
@@ -95,6 +102,34 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
         //toDoListTableView.Mov
     }
+    
+    //MARK: protocol buttonCheckActionSheetCellItems
+//    func CheckButtonFromActionSheetCellItemsPressed () {
+//        chaingeTextNarrovIfCheckedOrNot(true, itemLabel: self.itemLabelView)
+//    }
+    
+//    func chaingeTextNarrovIfCheckedOrNot (needCheck: Bool, itemLabel:UILabel) -> Bool {
+//        //retern TRUE if all OK
+//        let ValueToReturn: Bool = false
+//        let itemName = itemLabel.text
+//        // 1
+//        let string = itemName! as NSString
+//        let attributedString = NSMutableAttributedString(string: string as String)
+//        
+//        // 2
+//        var firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
+//        
+//        if needCheck {
+//            firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
+//        }
+//        
+//        // 3
+//        attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
+//        // 4
+//        itemLabel.attributedText = attributedString
+//        
+//        return ValueToReturn
+//    }
     
     /*
     @IBAction func cancel(segue:UIStoryboardSegue) {
