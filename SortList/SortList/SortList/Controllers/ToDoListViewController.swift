@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate { //,UITableViewController, ToDoItemforListControllerDelegate
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate, ReloadDataInTableViewInn { //,UITableViewController, ToDoItemforListControllerDelegate
     
     var toDoItems: [ToDoItem] = []
     //var newItem: String = ""
@@ -74,8 +74,14 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         toDoListTableView.toDoListDelegate = self;
         
         toDoListTableView.SelectedRowDelegate = self
-//        toDoListTableView.delegateListController
+        toDoListTableView.delegateToReloadDataInTableViewDidInn = self
+        
+        
+        //        toDoListTableView.delegateListController
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -84,15 +90,9 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     }
     
     //MARK: delegate Button Click
-//    func didTouchMoreButtonForController(item toDoItem: ToDoItem?) {
-//        if (toDoItem != nil) {
-//            let myActionSheet = ButtonActionSheetCellItems(toDoItem?.item) as UIAlertController!
-//            self.presentViewController(myActionSheet, animated: true, completion: nil)
-//        }
-//    }
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
         if (toDoItem != nil) {
-            let myActionSheet = ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as UIAlertController!
+            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as UIAlertController!
             self.presentViewController(myActionSheet, animated: true, completion: nil)
         }
     }
@@ -103,33 +103,11 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         //toDoListTableView.Mov
     }
     
-    //MARK: protocol buttonCheckActionSheetCellItems
-//    func CheckButtonFromActionSheetCellItemsPressed () {
-//        chaingeTextNarrovIfCheckedOrNot(true, itemLabel: self.itemLabelView)
-//    }
+    //MARK: ReloadDataInTableView from ActionSheetCellControls
     
-//    func chaingeTextNarrovIfCheckedOrNot (needCheck: Bool, itemLabel:UILabel) -> Bool {
-//        //retern TRUE if all OK
-//        let ValueToReturn: Bool = false
-//        let itemName = itemLabel.text
-//        // 1
-//        let string = itemName! as NSString
-//        let attributedString = NSMutableAttributedString(string: string as String)
-//        
-//        // 2
-//        var firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
-//        
-//        if needCheck {
-//            firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
-//        }
-//        
-//        // 3
-//        attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
-//        // 4
-//        itemLabel.attributedText = attributedString
-//        
-//        return ValueToReturn
-//    }
+    func ReloadDataInTableViewDidInn () {
+        toDoListTableView.reloadData()
+    }
     
     /*
     @IBAction func cancel(segue:UIStoryboardSegue) {
