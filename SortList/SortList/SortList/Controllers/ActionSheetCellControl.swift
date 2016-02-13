@@ -23,11 +23,11 @@ class ActionSheetCellControl : UIAlertController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let a = ToDoListViewController()
-//        let b = self
-//        b.delegateToReloadDataInTableViewDid = a
+        //        let a = ToDoListViewController()
+        //        let b = self
+        //        b.delegateToReloadDataInTableViewDid = a
         
-//        self.delegateToReloadDataInTableViewDid =
+        //        self.delegateToReloadDataInTableViewDid =
         // Do any additional setup after loading the view.
     }
     
@@ -35,13 +35,13 @@ class ActionSheetCellControl : UIAlertController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
- 
+    
+    
     
     func ButtonActionSheetCellItems(toDoItem: ToDoItem?, itLabel: UILabel) -> UIAlertController {// (title: String?)
         
         //    weak var ButtonPressedDelegate: buttonActiveActionSheetCellItems? = nil
-       
+        
         let title       = toDoItem!.item as String//itLabel.text
         let itemChecked = toDoItem!.checked as Bool
         
@@ -112,13 +112,21 @@ class ActionSheetCellControl : UIAlertController{
         // 2
         //    var firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
         
+        //        if needCheck {
+        //            let firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
+        //            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
+        //        }else{
+        //            let firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
+        //            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
+        //        }
+        
+        var firstAttributes: NSDictionary
         if needCheck {
-            let firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
-            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
+            firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
         }else{
-            let firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
-            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
+            firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
         }
+        attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: string.rangeOfString(itemName!))
         
         // 3
         //    attributedString.addAttributes(firstAttributes?, range: string.rangeOfString(itemName!))

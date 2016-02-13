@@ -85,13 +85,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input text here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-Xc-bvD">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input text here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-Xc-bvD">
                                 <rect key="frame" x="10" y="133" width="354" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="leading" secondItem="mvA-wJ-3O8" secondAttribute="leadingMargin" constant="-6" id="Iyq-dR-8S6"/>
+                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="top" secondItem="Ysg-Cr-PgJ" secondAttribute="bottom" constant="69" id="b4v-9G-UTp"/>
+                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="centerX" secondItem="mvA-wJ-3O8" secondAttribute="centerX" id="hP4-H6-gqt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="74l-BW-ASs">
                         <barButtonItem key="leftBarButtonItem" systemItem="done" id="bZm-4m-Gw9">

@@ -22,6 +22,7 @@ class ToDoItemTableViewCell: UITableViewCell
     //, buttonActiveActionSheetCellItems
 {
     
+    @IBOutlet weak var dateViewTableCell: UILabel!
     @IBOutlet weak var selectItemSwitchView: UISwitch!
     @IBOutlet weak var itemLabelView: UILabel!
     
@@ -37,7 +38,9 @@ class ToDoItemTableViewCell: UITableViewCell
     var toDoItem: ToDoItem = ToDoItem.init(item: "", checked: false) {
         didSet {
             selectItemSwitchView?.setOn(toDoItem.checked, animated: false)
-            itemLabelView?.text = toDoItem.item
+            itemLabelView?.text     = toDoItem.item
+            dateViewTableCell?.text = Date.parseForMainTableView(toDoItem.dateTimeCreate)
+
         }
     }
     

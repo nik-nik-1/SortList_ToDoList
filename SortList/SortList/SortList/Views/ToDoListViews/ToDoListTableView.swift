@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ToDoListTableViewDelegate {
-    //func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel?)
+    
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel)
 }
 
@@ -18,7 +18,11 @@ protocol SelectedRowWhitIndexDelegate {
 }
 
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate  {
+protocol ReloadDataInTableViewInn {
+    func ReloadDataInTableViewDidInn()
+}
+
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate, ReloadDataInTableView  {
     
 //    var toDoItems: [ToDoItem] = [] {
 //        didSet {
@@ -30,7 +34,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     var toDoListDelegate: ToDoListTableViewDelegate?
     var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
-    
+    var delegateToReloadDataInTableViewDidInn: ReloadDataInTableViewInn?
+//    var delegateToReloadDataInTableViewDid: ReloadDataInTableView?
     
     var toDoItems: [ToDoItem] = []
     
@@ -42,7 +47,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         self.dataSource = self
         self.delegate = self
         
-        
+        //self.delegateToReloadDataInTableViewDid =
     }
     
     
@@ -62,6 +67,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         }
         
         cell?.delegate = self
+        
+        
         
         return cell!
     }
@@ -139,6 +146,10 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
            // toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
             toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
         }
+    }
+    //MARK: ReloadDataInTableView from ActionSheetCellControls
+    func ReloadDataInTableViewDid () {
+        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
     }
 
 }

@@ -35,6 +35,15 @@ import UIKit
             return dateFmt.dateFromString(dateStr)!
         }
         
+        class func parseForMainTableView(dateNSDate:NSDate) -> String {
+             //return parse(dateStr, format:"dd MM")
+            let dateFmt           = NSDateFormatter()
+            dateFmt.dateFormat    = "dd MMM"//
+           
+            let dateStr = dateFmt.stringFromDate(dateNSDate)
+            return dateStr
+        }
+        
         class func getCurrentDate() -> NSDate {
             let date        = NSDate()
             let calendar    = NSCalendar.currentCalendar()
@@ -51,11 +60,14 @@ import UIKit
             
             return from(year:year, month:month, day:day, hour:hour, minute:minutes, second:seconds)
         }
+        
+        
     }
     
 //}
 
 // MARK: Call Example
 //var date = Date.parse("2014-05-20 22:05:54")
-//var date = Date.from(year: 2014, month: 05, day: 20, hour:0, minute:0, second:0)
+//var date = Date.parseForMainTableView("2014-05-20 22:05:54")
+//var dΩate = Date.from(year: 2014, month: 05, day: 20, hour:0, minute:0, second:0)
 //var currentDate = Date.getCurrentDate()

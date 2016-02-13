@@ -21,13 +21,25 @@
                         <rect key="frame" x="8" y="11" width="51" height="31"/>
                     </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hO-I7-LBV">
-                        <rect key="frame" x="76" y="17" width="169" height="20"/>
+                        <rect key="frame" x="76" y="17" width="157" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTimeCreate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSI-Bb-2oA">
+                        <rect key="frame" x="232" y="17" width="62" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="62" id="336-ki-a0B"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ActionSheetCellButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycX-LP-84g">
-                        <rect key="frame" x="282" y="14" width="30" height="28"/>
+                        <rect key="frame" x="296" y="14" width="16" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="2hb-5P-SSh"/>
+                        </constraints>
                         <state key="normal" title="..."/>
                         <connections>
                             <action selector="ButtonActionSheetCellTappet:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Z7k-Np-dym"/>
@@ -35,19 +47,23 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7hO-I7-LBV" firstAttribute="leading" secondItem="b6m-fe-LXy" secondAttribute="trailing" constant="19" id="5Pn-eu-2lv"/>
-                    <constraint firstItem="7hO-I7-LBV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="-67" id="JF6-Ty-75a"/>
-                    <constraint firstItem="ycX-LP-84g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="6" id="ZIM-Xv-1Do"/>
-                    <constraint firstItem="ycX-LP-84g" firstAttribute="firstBaseline" secondItem="7hO-I7-LBV" secondAttribute="firstBaseline" id="cvW-tc-JZx"/>
-                    <constraint firstItem="7hO-I7-LBV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="9" id="t6K-gc-Pso"/>
-                    <constraint firstItem="ycX-LP-84g" firstAttribute="baseline" secondItem="7hO-I7-LBV" secondAttribute="firstBaseline" id="uN6-tl-fza"/>
-                    <constraint firstItem="b6m-fe-LXy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="vKL-hm-fLR"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="7hO-I7-LBV" secondAttribute="bottom" constant="7" id="vyi-xF-UNi"/>
-                    <constraint firstItem="b6m-fe-LXy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="yGz-td-acz"/>
-                    <constraint firstItem="ycX-LP-84g" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="zJq-Yw-m0R"/>
+                    <constraint firstItem="ycX-LP-84g" firstAttribute="leading" secondItem="bSI-Bb-2oA" secondAttribute="trailing" constant="2" id="0m1-zV-8ro"/>
+                    <constraint firstItem="ycX-LP-84g" firstAttribute="bottom" secondItem="b6m-fe-LXy" secondAttribute="bottom" id="1QA-He-qJZ"/>
+                    <constraint firstItem="b6m-fe-LXy" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="B3x-RU-UvZ"/>
+                    <constraint firstItem="ycX-LP-84g" firstAttribute="leading" secondItem="7hO-I7-LBV" secondAttribute="trailing" constant="63" id="K27-xP-CVw"/>
+                    <constraint firstItem="b6m-fe-LXy" firstAttribute="centerY" secondItem="7hO-I7-LBV" secondAttribute="centerY" id="KeF-i4-r6j"/>
+                    <constraint firstItem="7hO-I7-LBV" firstAttribute="centerY" secondItem="bSI-Bb-2oA" secondAttribute="centerY" id="NbD-Qp-hbY"/>
+                    <constraint firstItem="b6m-fe-LXy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="TDz-Tk-XXz"/>
+                    <constraint firstItem="bSI-Bb-2oA" firstAttribute="baseline" secondItem="ycX-LP-84g" secondAttribute="firstBaseline" id="eHO-Bz-bFS"/>
+                    <constraint firstItem="ycX-LP-84g" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="koc-AY-F3h"/>
+                    <constraint firstItem="bSI-Bb-2oA" firstAttribute="baseline" secondItem="7hO-I7-LBV" secondAttribute="firstBaseline" id="lMa-MG-FYE"/>
+                    <constraint firstItem="ycX-LP-84g" firstAttribute="baseline" secondItem="bSI-Bb-2oA" secondAttribute="firstBaseline" id="pQe-Rz-Rl8"/>
+                    <constraint firstItem="7hO-I7-LBV" firstAttribute="leading" secondItem="b6m-fe-LXy" secondAttribute="trailing" constant="19" id="sXz-fc-5pu"/>
+                    <constraint firstItem="b6m-fe-LXy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="tDh-sZ-Ndn"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="dateViewTableCell" destination="bSI-Bb-2oA" id="oDS-td-tg1"/>
                 <outlet property="itemLabelView" destination="7hO-I7-LBV" id="YD4-0n-Nm3"/>
                 <outlet property="selectItemSwitchView" destination="b6m-fe-LXy" id="zmo-RU-HbG"/>
             </connections>
