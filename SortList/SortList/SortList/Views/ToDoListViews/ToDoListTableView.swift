@@ -14,7 +14,8 @@ protocol ToDoListTableViewDelegate {
 }
 
 protocol SelectedRowWhitIndexDelegate {
-    func SetCurentItemTextLabel (item itemText: String)
+    //func SetCurentItemTextLabel (item itemText: String)
+    func SetCurentItemTextLabel (item: ToDoItem)
 }
 
 
@@ -134,7 +135,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let valueitemText = String(toDoItems[indexPath.row].item)
         print("selected row: \(indexPath.row), value: \(valueitemText)")
         
-        SelectedRowDelegate?.SetCurentItemTextLabel(item: valueitemText)
+        //SelectedRowDelegate?.SetCurentItemTextLabel(item: valueitemText)
+        SelectedRowDelegate?.SetCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem)
     }
     
     // MARK: UITableViewCell delegate

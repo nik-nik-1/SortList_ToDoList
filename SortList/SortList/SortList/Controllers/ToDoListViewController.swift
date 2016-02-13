@@ -12,7 +12,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     
     var toDoItems: [ToDoItem] = []
     //var newItem: String = ""
-    var recivedFromMainListValue: String = ""
+//    var recivedFromMainListValue: String = ""
+    var recivedFromMainListValueCell: ToDoItem? = nil
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
@@ -26,7 +27,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
             detailViewController.detailDelegate = self
             
             // set a variable in the second view controller with the String to pass
-            detailViewController.receivedString = recivedFromMainListValue
+            //detailViewController.receivedString = recivedFromMainListValue
+            detailViewController.receivedCell = recivedFromMainListValueCell//! as ToDoItem
         }
     }
     
@@ -37,7 +39,9 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         //        let ddddd = toDoItems.indexOf{$0 === item3_testSearch}
         
         let filteredItems = toDoItems.filter({(itemElement : ToDoItem) -> Bool in
-            return itemElement.item.lowercaseString.containsString(recivedFromMainListValue.lowercaseString)
+            //return itemElement.item.lowercaseString.containsString(recivedFromMainListValue.lowercaseString)
+            
+            return itemElement.item.lowercaseString.containsString(getTitleValueFromMainListValueCell ().lowercaseString)
         })//info.lowercaseString
         
         if filteredItems.count == 1 {
@@ -50,13 +54,26 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         
     }
     
+    func getTitleValueFromMainListValueCell () -> String {
+        //return recivedFromMainListValueCell =
+        //return ""
+        //return String(recivedFromMainListValueCell?.item)
+       
+        guard recivedFromMainListValueCell != nil else {
+            return ""
+        }
+        
+        return ((recivedFromMainListValueCell?.item)! as String)
+    }
+    
     func ereseuserEnterInformation (){
-        recivedFromMainListValue = ""
+        //recivedFromMainListValue = ""
+        recivedFromMainListValueCell = nil
     }
     
     //MARK: SelectedRowWhitIndexDelegate function
-    func SetCurentItemTextLabel (item itemText: String) {
-        recivedFromMainListValue = itemText
+    func SetCurentItemTextLabel (item: ToDoItem) {
+        recivedFromMainListValueCell = item
     }
     
     //MARK: Native functions
