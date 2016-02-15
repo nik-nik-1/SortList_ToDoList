@@ -80,8 +80,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let toDoItem1 = ToDoItem.init(item: "Value 1", checked: true)
-        let toDoItem2 = ToDoItem.init(item: "Value 2", checked: false)
+        let toDoItem1 = ToDoItem.init(item: "Value 1", checked: true, dateTimeCreateString: "2014-05-20 22:05:54", colorItem: ColorMode.getColorForItemAtIndex(5) )
+        let toDoItem2 = ToDoItem.init(item: "Value 2", checked: false, colorItem:ColorMode.getColorForItemAtIndex(3) )
         let toDoItem3 = ToDoItem.init(item: "Value 3", checked: true)
         
         toDoItems.append(toDoItem1)

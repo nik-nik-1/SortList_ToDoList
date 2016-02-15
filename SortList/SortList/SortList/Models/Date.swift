@@ -81,11 +81,11 @@ class Date {
         }else if day > 0 {
             timeIntervalString = String(day) + " days"
             //detail someone..
-            if day == 1 {
-                timeIntervalString = "yesterday"
-                //            else if day == 2 {
-                //              timeIntervalString = "day before yesterday"
-            }
+//            if day == 1 {
+//                timeIntervalString = "yesterday"
+//                //            else if day == 2 {
+//                //              timeIntervalString = "day before yesterday"
+//            }
         }else if hour > 0 {
             timeIntervalString = String(hour) + " hours"
         }else if minute > 0 {

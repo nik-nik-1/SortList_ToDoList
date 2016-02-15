@@ -25,13 +25,18 @@ class DetailViewControllerProtocol: UIViewController {
     @IBOutlet weak var dateTimeLiveDetail: UILabel!
     @IBOutlet weak var detailViewTextInputEdit: UITextField!
     
+    @IBAction func buttonColorOfItem(sender: AnyObject) {
+        
+    }
+    @IBOutlet weak var buttonColorOfItemOutlet: UIButton!
+    
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
         detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
         
         // go back to the previous view controller
         self.navigationController?.popViewControllerAnimated(true)
-        }
+    }
     
     @IBAction func detailViewCancelButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -44,9 +49,10 @@ class DetailViewControllerProtocol: UIViewController {
         
         // Do any additional setup after loading the view.
         //  detailViewTextInputEdit.text = receivedString
-        detailViewTextInputEdit.text    = getTitleValueFromreceivedCell()
-        dateTimeCreateDetail.text       = getTitleValueFromreceivedCellTimeDate()
-        dateTimeLiveDetail.text         = CalculateUsedTimeFronDate1ToDate2()
+        detailViewTextInputEdit.text            = getTitleValueFromreceivedCell()
+        dateTimeCreateDetail.text               = getTitleValueFromreceivedCellTimeDate()
+        dateTimeLiveDetail.text                 = CalculateUsedTimeFronDate1ToDate2()
+        buttonColorOfItemOutlet.backgroundColor = getColorOfItemsFromreceivedCell()
     }
     
     override func didReceiveMemoryWarning() {
@@ -86,18 +92,27 @@ class DetailViewControllerProtocol: UIViewController {
         guard receivedCell != nil else {
             return ""
         }
-
+        
         return Date.CalculateUsedTime((receivedCell?.dateTimeCreate)!)
     }
     
-//    func getTitleValueFromreceivedCell (info: String?=nil) -> String {
-//        
-//        guard info != nil else {
-//            return ""
-//        }
-//        
-//        
-//        return receivedCell != nil ? ((receivedCell?.[info])! as String) : ""//String(receivedCell?.item)
-//    }
+    func getColorOfItemsFromreceivedCell() -> UIColor {
+        guard receivedCell != nil else {
+            return ColorMode.getDefaultColorForItem()
+        }
+        
+        return receivedCell!.colorItem
+    }
+    
+    
+    //    func getTitleValueFromreceivedCell (info: String?=nil) -> String {
+    //
+    //        guard info != nil else {
+    //            return ""
+    //        }
+    //
+    //
+    //        return receivedCell != nil ? ((receivedCell?.[info])! as String) : ""//String(receivedCell?.item)
+    //    }
     
 }
