@@ -12,7 +12,7 @@ protocol ReloadDataInTableView: class {
     func ReloadDataInTableViewDid ()
 }
 
-class ActionSheetCellControl : UIAlertController{
+class ActionSheetCellControl : UIAlertController {
     
     //    func chaingeTextNarrovIfCheckedOrNotRedirect(needCheck: Bool, itemLabel: UILabel) {
     //        chaingeTextNarrovIfCheckedOrNot(needCheck, itemLabel: itemLabel)

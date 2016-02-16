@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate, ReloadDataInTableViewInn { //,UITableViewController, ToDoItemforListControllerDelegate
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate, ReloadDataInTableView { //, ReloadDataInTableViewInn ,UITableViewController, ToDoItemforListControllerDelegate
     
     var toDoItems: [ToDoItem] = []
     //var newItem: String = ""
@@ -91,8 +91,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         toDoListTableView.toDoListDelegate = self;
         
         toDoListTableView.SelectedRowDelegate = self
-        toDoListTableView.delegateToReloadDataInTableViewDidInn = self
-        
         
         //        toDoListTableView.delegateListController
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
@@ -109,7 +107,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     //MARK: delegate Button Click
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
         if (toDoItem != nil) {
-            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as UIAlertController!
+            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as! ActionSheetCellControl
+            myActionSheet.delegateToReloadDataInTableViewDid = self
             self.presentViewController(myActionSheet, animated: true, completion: nil)
         }
     }
@@ -122,8 +121,11 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     
     //MARK: ReloadDataInTableView from ActionSheetCellControls
     
-    func ReloadDataInTableViewDidInn () {
-        toDoListTableView.reloadData()
+//    func ReloadDataInTableViewDidInn () {
+//        toDoListTableView.reloadData()
+//    }
+    func ReloadDataInTableViewDid () {
+        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
     }
     
     /*

@@ -19,9 +19,9 @@ protocol SelectedRowWhitIndexDelegate {
 }
 
 
-protocol ReloadDataInTableViewInn {
-    func ReloadDataInTableViewDidInn()
-}
+//protocol ReloadDataInTableViewInn {
+//    func ReloadDataInTableViewDidInn()
+//}
 
 class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate, ReloadDataInTableView  {
     
@@ -150,9 +150,9 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         }
     }
     //MARK: ReloadDataInTableView from ActionSheetCellControls
-    func ReloadDataInTableViewDid () {
-        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
-    }
+//    func ReloadDataInTableViewDid () {
+//        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
+//    }
 
 }
 
