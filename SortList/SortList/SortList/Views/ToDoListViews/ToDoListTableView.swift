@@ -9,21 +9,23 @@
 import UIKit
 
 protocol ToDoListTableViewDelegate {
-    
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel)
+    func setCurentItemTextLabel (item: ToDoItem)
 }
 
-protocol SelectedRowWhitIndexDelegate {
-    //func SetCurentItemTextLabel (item itemText: String)
-    func SetCurentItemTextLabel (item: ToDoItem)
-}
+//protocol SelectedRowWhitIndexDelegate {
+//    //func SetCurentItemTextLabel (item itemText: String)
+//    func SetCurentItemTextLabel (item: ToDoItem)
+//}
 
 
 //protocol ReloadDataInTableViewInn {
 //    func ReloadDataInTableViewDidInn()
 //}
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate, ReloadDataInTableView  {
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate
+//, ReloadDataInTableView
+{
     
 //    var toDoItems: [ToDoItem] = [] {
 //        didSet {
@@ -34,8 +36,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     
     var toDoListDelegate: ToDoListTableViewDelegate?
-    var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
-    var delegateToReloadDataInTableViewDidInn: ReloadDataInTableViewInn?
+//    var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
+    //var delegateToReloadDataInTableViewDidInn: ReloadDataInTableViewInn?
 //    var delegateToReloadDataInTableViewDid: ReloadDataInTableView?
     
     var toDoItems: [ToDoItem] = []
@@ -136,7 +138,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         print("selected row: \(indexPath.row), value: \(valueitemText)")
         
         //SelectedRowDelegate?.SetCurentItemTextLabel(item: valueitemText)
-        SelectedRowDelegate?.SetCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem)
+       toDoListDelegate?.setCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem)
+       
     }
     
     // MARK: UITableViewCell delegate

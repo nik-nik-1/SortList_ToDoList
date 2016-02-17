@@ -40,7 +40,7 @@ class ToDoItemTableViewCell: UITableViewCell
             selectItemSwitchView?.setOn(toDoItem.checked, animated: false)
             itemLabelView?.text     = toDoItem.item
             dateViewTableCell?.text = Date.parseForMainTableView(toDoItem.dateTimeCreate)
-
+            changeTextNarrovIfCheckedOrNot()
         }
     }
     
@@ -63,6 +63,27 @@ class ToDoItemTableViewCell: UITableViewCell
         //        if itemLabelView != nil {
         //            ActionSheetCellControl().chaingeTextNarrovIfCheckedOrNotRedirect (true, itemLabel: itemLabelView)
         //        }
+    }
+    
+    @IBAction func toDoItemUpdateValueChanged() {
+        toDoItem.checked = selectItemSwitchView.on
+        changeTextNarrovIfCheckedOrNot()
+    }
+    
+    func changeTextNarrovIfCheckedOrNot() {
+        let attributedString = NSMutableAttributedString(string: toDoItem.item)
+        
+        var firstAttributes: NSDictionary
+        if toDoItem.checked as Bool {
+            firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
+        } else {
+            firstAttributes = [NSForegroundColorAttributeName: itemLabelView.tintColor, NSStrikethroughStyleAttributeName: 0]
+        }
+        
+        let string = NSString(string: toDoItem.item)
+        
+        attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: string.rangeOfString(toDoItem.item))
+        itemLabelView.attributedText = attributedString
     }
     
 }

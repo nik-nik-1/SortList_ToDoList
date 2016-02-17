@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate, SelectedRowWhitIndexDelegate, ReloadDataInTableView { //, ReloadDataInTableViewInn ,UITableViewController, ToDoItemforListControllerDelegate
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataEnteredDelegate,ToDoItemActionSheetControlDelegate {
     
     var toDoItems: [ToDoItem] = []
     //var newItem: String = ""
@@ -18,7 +18,32 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     
+    //MARK: Native functions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let toDoItem1 = ToDoItem.init(item: "Value 1", checked: true, dateTimeCreateString: "2014-05-20 22:05:54", colorItem: ColorMode.getColorForItemAtIndex(5) )
+        let toDoItem2 = ToDoItem.init(item: "Value 2", checked: false, colorItem:ColorMode.getColorForItemAtIndex(3) )
+        let toDoItem3 = ToDoItem.init(item: "Value 3", checked: true)
+        
+        toDoItems.append(toDoItem1)
+        toDoItems.append(toDoItem2)
+        toDoItems.append(toDoItem3)
+        
+        toDoListTableView.toDoListDelegate = self;
+        
+//        toDoListTableView.SelectedRowDelegate = self
+        
+        //        toDoListTableView.delegateListController
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+    }
     
+    override func viewWillAppear(animated: Bool) {
+        toDoListTableView.toDoItems = toDoItems
+        toDoListTableView.reloadData()
+    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -71,48 +96,33 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
         recivedFromMainListValueCell = nil
     }
     
+    
     //MARK: SelectedRowWhitIndexDelegate function
-    func SetCurentItemTextLabel (item: ToDoItem) {
+    func setCurentItemTextLabel (item: ToDoItem) {
         recivedFromMainListValueCell = item
     }
     
-    //MARK: Native functions
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let toDoItem1 = ToDoItem.init(item: "Value 1", checked: true, dateTimeCreateString: "2014-05-20 22:05:54", colorItem: ColorMode.getColorForItemAtIndex(5) )
-        let toDoItem2 = ToDoItem.init(item: "Value 2", checked: false, colorItem:ColorMode.getColorForItemAtIndex(3) )
-        let toDoItem3 = ToDoItem.init(item: "Value 3", checked: true)
-        
-        toDoItems.append(toDoItem1)
-        toDoItems.append(toDoItem2)
-        toDoItems.append(toDoItem3)
-        
-        toDoListTableView.toDoListDelegate = self;
-        
-        toDoListTableView.SelectedRowDelegate = self
-        
-        //        toDoListTableView.delegateListController
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        toDoListTableView.toDoItems = toDoItems
-        toDoListTableView.reloadData()
-    }
-    
-    //MARK: delegate Button Click
+//    //MARK: delegate Button Click
+//    func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
+//        if (toDoItem != nil) {
+//            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as! ActionSheetCellControl
+//            myActionSheet.delegateToReloadDataInTableViewDid = self
+//            self.presentViewController(myActionSheet, animated: true, completion: nil)
+//        }
+//    }
+ 
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
         if (toDoItem != nil) {
-            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as! ActionSheetCellControl
-            myActionSheet.delegateToReloadDataInTableViewDid = self
-            self.presentViewController(myActionSheet, animated: true, completion: nil)
+            let toDoItemActionSheet = ToDoItemActionSheetControl(title: toDoItem?.item, message: "", preferredStyle:.ActionSheet)
+            toDoItemActionSheet.toDoItem = toDoItem ?? ToDoItem.init(item: "", checked: false)
+            toDoItemActionSheet.delegate = self;
+            self.presentViewController(toDoItemActionSheet, animated: true, completion: nil)
         }
     }
     
+    func didChangeAction() {
+        toDoListTableView.reloadData()
+    }
     
     @IBAction func editButtonTouched(sender: AnyObject) {
         toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
@@ -124,9 +134,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
 //    func ReloadDataInTableViewDidInn () {
 //        toDoListTableView.reloadData()
 //    }
-    func ReloadDataInTableViewDid () {
-        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
-    }
+
+//    func ReloadDataInTableViewDid () {
+//        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
+//    }
     
     /*
     @IBAction func cancel(segue:UIStoryboardSegue) {
