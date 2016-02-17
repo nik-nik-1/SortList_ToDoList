@@ -155,39 +155,61 @@
             </objects>
             <point key="canvasLocation" x="290.25" y="395.25"/>
         </scene>
-        <!--Collection View Controller-->
-        <scene sceneID="OUr-mD-Sjo">
+        <!--Color Picker View Controller-->
+        <scene sceneID="bHE-r1-Thr">
             <objects>
-                <collectionViewController id="HZt-0G-jOV" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="IQa-zF-ytt">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <viewController storyboardIdentifier="sbColorPicker" id="QUM-k4-y3l" customClass="ColorPickerViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qFp-50-GkX"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Hn-0O-YXg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ebp-Dl-Qka">
+                        <rect key="frame" x="0.0" y="0.0" width="315" height="315"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cfJ-Si-iuB">
-                            <size key="itemSize" width="145" height="145"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="XWW-yR-0aZ">
-                                <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="145" height="145"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="HZt-0G-jOV" id="9fv-X9-5TG"/>
-                            <outlet property="delegate" destination="HZt-0G-jOV" id="fg2-tU-B2Q"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HR5-WD-gR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fqm-SY-pEz">
+                                <rect key="frame" x="0.0" y="0.0" width="315" height="315"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="8vl-oZ-TUs">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ColorCell" id="vuD-xW-typ">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="100" height="100"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fqm-SY-pEz" secondAttribute="trailing" id="JCG-4F-Sf5"/>
+                            <constraint firstItem="fqm-SY-pEz" firstAttribute="bottom" secondItem="0Hn-0O-YXg" secondAttribute="top" id="RNF-gK-Gki"/>
+                            <constraint firstItem="fqm-SY-pEz" firstAttribute="top" secondItem="qFp-50-GkX" secondAttribute="bottom" id="skU-D3-8FW"/>
+                            <constraint firstItem="fqm-SY-pEz" firstAttribute="leading" secondItem="Ebp-Dl-Qka" secondAttribute="leading" id="x3j-3V-mJn"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="315" height="315"/>
+                    <connections>
+                        <outlet property="colorCollectionView" destination="fqm-SY-pEz" id="gDo-b4-9NS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MmL-wm-lTT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="945" y="211.5"/>
+            <point key="canvasLocation" x="655.5" y="211.5"/>
         </scene>
     </scenes>
 </document>

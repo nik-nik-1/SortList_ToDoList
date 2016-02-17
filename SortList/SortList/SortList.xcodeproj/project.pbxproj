@@ -17,9 +17,12 @@
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
 		E79C6B751C71E417005D104F /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B741C71E417005D104F /* ColorMode.swift */; };
-		E79C6B771C722F52005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B761C722F52005D104F /* ColorCollectionViewController.swift */; };
 		E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */; };
 		E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */; };
+		E79C6B7F1C74D8CB005D104F /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B7E1C74D8CB005D104F /* Colors.plist */; };
+		E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B801C74E320005D104F /* CollectionViewController.swift */; };
+		E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */; };
+		E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */; };
 		E7D0D3331C6A003300B73DF2 /* DetailViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */; };
 		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
@@ -41,9 +44,12 @@
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
 		E79C6B741C71E417005D104F /* ColorMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
-		E79C6B761C722F52005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
 		E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemActionSheetControl.swift; sourceTree = "<group>"; };
 		E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
+		E79C6B7E1C74D8CB005D104F /* Colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
+		E79C6B801C74E320005D104F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPickerViewController.swift1; sourceTree = "<group>"; };
+		E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
 		E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerProtocol.swift; sourceTree = "<group>"; };
 		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
@@ -95,10 +101,10 @@
 		D8E8D08F1C5EC817007E4F48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E79C6B801C74E320005D104F /* CollectionViewController.swift */,
 				D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */,
 				E7D0D3321C6A003300B73DF2 /* DetailViewControllerProtocol.swift */,
 				E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */,
-				E79C6B761C722F52005D104F /* ColorCollectionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -116,6 +122,7 @@
 		D8E8D0921C5EC817007E4F48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E79C6B7E1C74D8CB005D104F /* Colors.plist */,
 				D8E8D0931C5EC817007E4F48 /* Assets.xcassets */,
 				D8E8D0941C5EC817007E4F48 /* Info.plist */,
 			);
@@ -145,6 +152,8 @@
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
 			isa = PBXGroup;
 			children = (
+				E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */,
+				E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */,
 				E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */,
 				E7D0D3441C6DF69300B73DF2 /* ToDoListTableViewController.swift */,
 				E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */,
@@ -214,7 +223,9 @@
 			files = (
 				D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */,
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
+				E79C6B7F1C74D8CB005D104F /* Colors.plist in Resources */,
 				D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */,
+				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,7 +237,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79C6B771C722F52005D104F /* ColorCollectionViewController.swift in Sources */,
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 				E79C6B751C71E417005D104F /* ColorMode.swift in Sources */,
 				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
@@ -234,6 +244,8 @@
 				D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */,
 				D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */,
 				E7D0D3331C6A003300B73DF2 /* DetailViewControllerProtocol.swift in Sources */,
+				E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */,
+				E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */,
 				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
 				E7D0D3471C6E348300B73DF2 /* Date.swift in Sources */,
 				E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */,

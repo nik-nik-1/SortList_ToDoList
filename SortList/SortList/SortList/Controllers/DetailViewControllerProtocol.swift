@@ -14,7 +14,7 @@ protocol DataEnteredDelegate: class {
     func ereseuserEnterInformation()
 }
 
-class DetailViewControllerProtocol: UIViewController {
+class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate {
     
     //var receivedString: String = ""
     var receivedCell: ToDoItem?
@@ -26,7 +26,7 @@ class DetailViewControllerProtocol: UIViewController {
     @IBOutlet weak var detailViewTextInputEdit: UITextField!
     
     @IBAction func buttonColorOfItem(sender: AnyObject) {
-        
+        self.showColorPicker()
     }
     @IBOutlet weak var buttonColorOfItemOutlet: UIButton!
     
@@ -42,6 +42,12 @@ class DetailViewControllerProtocol: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
         detailDelegate?.ereseuserEnterInformation()
     }
+    
+    
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // class varible maintain selected color value
+    var selectedColor: UIColor = UIColor.blueColor()
+    var selectedColorHex: String = "0000FF"
     
     
     override func viewDidLoad() {
@@ -104,6 +110,63 @@ class DetailViewControllerProtocol: UIViewController {
         return receivedCell!.colorItem
     }
     
+    // MARK: Popover delegate functions
+    // Override iPhone behavior that presents a popover as fullscreen.
+    // i.e. now it shows same popover box within on iPhone & iPad
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        // show popover box for iPhone and iPad both
+        return UIModalPresentationStyle.None
+    }
+    
+    // MARK: Color picker delegate functions
+    // called by color picker after color selected.
+    func colorPickerDidColorSelected(selectedUIColor selectedUIColor: UIColor, selectedHexColor: String) {
+        
+        // update color value within class variable
+        self.selectedColor = selectedUIColor
+        self.selectedColorHex = selectedHexColor
+        
+        // set preview background to selected color
+        //self.colorPreview.backgroundColor = selectedUIColor
+       buttonColorOfItemOutlet.backgroundColor = selectedUIColor
+    }
+    
+    // show color picker from UIButton
+    private func showColorPicker(){
+        
+        // initialise color picker view controller
+        let colorPickerVc = storyboard?.instantiateViewControllerWithIdentifier("sbColorPicker") as! ColorPickerViewController
+        
+        // set modal presentation style
+        colorPickerVc.modalPresentationStyle = .Popover
+        
+        // set max. size
+        colorPickerVc.preferredContentSize = CGSizeMake(265, 400)
+        
+        // set color picker deleagate to current view controller
+        // must write delegate method to handle selected color
+        colorPickerVc.colorPickerDelegate = self
+        
+        // show popover
+        if let popoverController = colorPickerVc.popoverPresentationController {
+            
+            // set source view
+            popoverController.sourceView = self.view
+            
+            // show popover form button
+            popoverController.sourceRect = self.buttonColorOfItemOutlet.frame
+            
+            // show popover arrow at feasible direction
+            popoverController.permittedArrowDirections = UIPopoverArrowDirection.Any
+            
+            // set popover delegate self
+            popoverController.delegate = self
+        }
+        
+        //show color popover
+        presentViewController(colorPickerVc, animated: true, completion: nil)
+    }
+
     
     //    func getTitleValueFromreceivedCell (info: String?=nil) -> String {
     //
