@@ -123,12 +123,23 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
     func colorPickerDidColorSelected(selectedUIColor selectedUIColor: UIColor, selectedHexColor: String) {
         
         // update color value within class variable
-        self.selectedColor = selectedUIColor
+        self.selectedColor    = selectedUIColor
         self.selectedColorHex = selectedHexColor
         
         // set preview background to selected color
         //self.colorPreview.backgroundColor = selectedUIColor
        buttonColorOfItemOutlet.backgroundColor = selectedUIColor
+        
+       //TEST COLOR 
+        
+        //let ColorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.2) //not works!
+        self.navigationController?.navigationBar.barTintColor = selectedUIColor
+        self.navigationController?.navigationBar.alpha = 0.2
+//        self.navigationController?.navigationBar.translucent = true
+        
+//        navigationController.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.orangeColor()]
+//        tabBarController.tabBar.barTintColor = UIColor.brownColor()
+//        tabBarController.tabBar.tintColor = UIColor.yellowColor()
     }
     
     // show color picker from UIButton

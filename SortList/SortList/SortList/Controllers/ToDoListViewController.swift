@@ -41,6 +41,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, DataE
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()//
+        self.navigationController?.navigationBar.alpha = 1
+        
         toDoListTableView.toDoItems = toDoItems
         toDoListTableView.reloadData()
     }
