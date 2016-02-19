@@ -13,7 +13,11 @@ class ToDoItem {
     var item: String!           = ""
     var checked: Bool!          = false
     var dateTimeCreate: NSDate  = Date.from(year: 0001, month: 01, day: 00)//Date.getCurrentDate()
-    var colorItem: UIColor      = ColorMode.getDefaultColorForItem()
+    
+    //let ColorModeItem:UIColor   = ColorMode.init()
+    var colorItem: UIColor      = ColorMode.init().getDefaultColorForItem() as UIColor
+    
+    
     
     init (item: String, checked: Bool?, dateTimeCreateString: String?=nil, colorItem: UIColor? = nil) {
         self.item               = item
@@ -27,7 +31,7 @@ class ToDoItem {
         if let colorItem = colorItem {
             colorItemTemp = colorItem
         } else {
-            colorItemTemp = ColorMode.getDefaultColorForItem()
+            colorItemTemp = ColorMode.init().getDefaultColorForItem()//ColorMode.getDefaultColorForItem()
         }
         self.colorItem          = colorItemTemp
         

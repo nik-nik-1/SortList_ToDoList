@@ -8,23 +8,40 @@
 
 import UIKit
 
-class ColorMode: NSObject {
+class ColorMode: UIColor {
     
     //let MassColorsIn = ColorMode.getUsesColorForItems()
     
-    class func getDefaultColorForItem() -> UIColor {
+    
+    var MassColors: [UIColor] = [] // 9 pieces
+    
+    
+    override init () {
+        super.init()
+        self.MassColors          = getUsesColorForItems()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    required convenience init(colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float) {
+        fatalError("init(colorLiteralRed:green:blue:alpha:) has not been implemented")
+    }
+    
+    func getDefaultColorForItem() -> UIColor {
         
         let defaultColorForReturn:UIColor
         
-        defaultColorForReturn = getUsesColorForItems()[0]
+        defaultColorForReturn = MassColors[0]//getUsesColorForItems()[0]
         
         return defaultColorForReturn
     }
     
     
-    class func getUsesColorForItems() -> [UIColor] {
+    func getUsesColorForItems() -> [UIColor] {
         //UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-        var MassColors: [UIColor] = [] // 9 pieces
+//        var MassColors: [UIColor] = [] // 9 pieces
         
         MassColors.insert(UIColor.whiteColor(), atIndex: 0)//[0] = default color
         MassColors.append(UIColor(red: 1.0, green: 0.3006, blue: 0.2565, alpha: 1.0)) //red
@@ -39,8 +56,12 @@ class ColorMode: NSObject {
         return MassColors
     }
     
-    class func getColorForItemAtIndex(inx: Int? = 0 ) -> UIColor {
-        let MassColorsIn = getUsesColorForItems()
+    func getColorForItemAtIndex(inx: Int? = 0 ) -> UIColor {
+        
+       // let ItemColorsOFItemColorMode = ItemColorMode ?? self
+        
+        
+        let MassColorsIn = MassColors//getUsesColorForItems()
         if inx > MassColorsIn.count {
             return   getDefaultColorForItem()
         }

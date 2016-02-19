@@ -104,7 +104,7 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
     
     func getColorOfItemsFromreceivedCell() -> UIColor {
         guard receivedCell != nil else {
-            return ColorMode.getDefaultColorForItem()
+            return ColorMode.init().getDefaultColorForItem()
         }
         
         return receivedCell!.colorItem
@@ -141,7 +141,7 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
         colorPickerVc.modalPresentationStyle = .Popover
         
         // set max. size
-        colorPickerVc.preferredContentSize = CGSizeMake(265, 400)
+        colorPickerVc.preferredContentSize = CGSizeMake(302, 302)
         
         // set color picker deleagate to current view controller
         // must write delegate method to handle selected color

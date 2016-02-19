@@ -16,10 +16,11 @@
 		D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */; };
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
+		E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D11C772350002A5E3B /* ColorsChoise.plist */; };
+		E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D51C7725D4002A5E3B /* ColorBackGround.plist */; };
 		E79C6B751C71E417005D104F /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B741C71E417005D104F /* ColorMode.swift */; };
 		E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */; };
 		E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */; };
-		E79C6B7F1C74D8CB005D104F /* Colors.plist in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B7E1C74D8CB005D104F /* Colors.plist */; };
 		E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B801C74E320005D104F /* CollectionViewController.swift */; };
 		E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */; };
 		E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */; };
@@ -43,10 +44,11 @@
 		D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
+		E75310D11C772350002A5E3B /* ColorsChoise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorsChoise.plist; sourceTree = "<group>"; };
+		E75310D51C7725D4002A5E3B /* ColorBackGround.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorBackGround.plist; sourceTree = "<group>"; };
 		E79C6B741C71E417005D104F /* ColorMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
 		E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemActionSheetControl.swift; sourceTree = "<group>"; };
 		E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
-		E79C6B7E1C74D8CB005D104F /* Colors.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Colors.plist; sourceTree = "<group>"; };
 		E79C6B801C74E320005D104F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPickerViewController.swift1; sourceTree = "<group>"; };
 		E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 		D8E8D0921C5EC817007E4F48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E79C6B7E1C74D8CB005D104F /* Colors.plist */,
+				E75310D01C772350002A5E3B /* Color */,
 				D8E8D0931C5EC817007E4F48 /* Assets.xcassets */,
 				D8E8D0941C5EC817007E4F48 /* Info.plist */,
 			);
@@ -149,9 +151,18 @@
 			path = ToDoListViews;
 			sourceTree = "<group>";
 		};
+		E75310D01C772350002A5E3B /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				E75310D11C772350002A5E3B /* ColorsChoise.plist */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
 			isa = PBXGroup;
 			children = (
+				E75310D51C7725D4002A5E3B /* ColorBackGround.plist */,
 				E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */,
 				E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */,
 				E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */,
@@ -221,9 +232,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */,
 				D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */,
+				E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */,
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
-				E79C6B7F1C74D8CB005D104F /* Colors.plist in Resources */,
 				D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */,
 				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,

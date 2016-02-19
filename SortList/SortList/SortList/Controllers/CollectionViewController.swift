@@ -124,7 +124,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
     private func loadColorList(){
         
         // create path for Colors.plist resource file.
-        let colorFilePath = NSBundle.mainBundle().pathForResource("Colors", ofType: "plist")
+        let colorFilePath = NSBundle.mainBundle().pathForResource("ColorsChoise", ofType: "plist")
         
         // save piist file array content to NSArray object
         let colorNSArray = NSArray(contentsOfFile: colorFilePath!)
