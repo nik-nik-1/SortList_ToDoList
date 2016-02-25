@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ToDoItem {
+class ToDoItem: NSObject, NSCoding {
     
     var item: String!           = ""
     var checked: Bool!          = false
     var dateTimeCreate: NSDate  = Date.from(year: 0001, month: 01, day: 00)//Date.getCurrentDate()
     
-    //let ColorModeItem:UIColor   = ColorMode.init()
-    var colorItem: UIColor      = ColorMode.init().getDefaultColorForItem() as UIColor
+    //    var ColorModeItem : ColorMode  = ColorMode.init()
+    var colorItem: UIColor      = ColorMode().getDefaultColorForItem() as UIColor
     
     
     
@@ -36,4 +36,27 @@ class ToDoItem {
         self.colorItem          = colorItemTemp
         
     }
+    
+    //MARK: for NSCoding
+    
+    override init() {
+    }
+    
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        self.item               = aDecoder.decodeObjectForKey("item") as? String
+        self.checked            = aDecoder.decodeObjectForKey("checked") as? Bool
+        self.dateTimeCreate     = (aDecoder.decodeObjectForKey("dateTimeCreate") as? NSDate)!
+        self.colorItem          = (aDecoder.decodeObjectForKey("colorItem") as? UIColor)!
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(self.item,              forKey: "item")
+        aCoder.encodeObject(self.checked,           forKey: "checked")
+        aCoder.encodeObject(self.dateTimeCreate,    forKey: "dateTimeCreate")
+        aCoder.encodeObject(self.colorItem,         forKey: "colorItem")
+    }
+    
+    
 }

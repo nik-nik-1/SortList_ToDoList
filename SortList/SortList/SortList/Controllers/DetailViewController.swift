@@ -1,5 +1,5 @@
 //
-//  DetailViewControllerProtocol.swift
+//  DetailViewController.swift
 //  SortList
 //
 //  Created by mc373 on 09.02.16.
@@ -14,7 +14,7 @@ protocol DataEnteredDelegate: class {
     func ereseuserEnterInformation()
 }
 
-class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate {
+class DetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate {
     
     //var receivedString: String = ""
     var receivedCell: ToDoItem?
@@ -24,11 +24,13 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
     @IBOutlet weak var dateTimeCreateDetail: UILabel!
     @IBOutlet weak var dateTimeLiveDetail: UILabel!
     @IBOutlet weak var detailViewTextInputEdit: UITextField!
+    @IBOutlet weak var buttonColorOfItemOutlet: UIButton!
     
     @IBAction func buttonColorOfItem(sender: AnyObject) {
         self.showColorPicker()
+        
     }
-    @IBOutlet weak var buttonColorOfItemOutlet: UIButton!
+    
     
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
@@ -58,7 +60,10 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
         detailViewTextInputEdit.text            = getTitleValueFromreceivedCell()
         dateTimeCreateDetail.text               = getTitleValueFromreceivedCellTimeDate()
         dateTimeLiveDetail.text                 = CalculateUsedTimeFronDate1ToDate2()
-        buttonColorOfItemOutlet.backgroundColor = getColorOfItemsFromreceivedCell()
+        
+        let buttonColor: UIColor = getColorOfItemsFromreceivedCell()
+        buttonColorOfItemOutlet.backgroundColor = buttonColor
+        buttonColorOfItemOutlet.layer.borderColor = buttonColor.CGColor
     }
     
     override func didReceiveMemoryWarning() {
@@ -128,18 +133,25 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
         
         // set preview background to selected color
         //self.colorPreview.backgroundColor = selectedUIColor
-       buttonColorOfItemOutlet.backgroundColor = selectedUIColor
         
-       //TEST COLOR 
         
-        //let ColorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.2) //not works!
-        self.navigationController?.navigationBar.barTintColor = selectedUIColor
-        self.navigationController?.navigationBar.alpha = 0.2
-//        self.navigationController?.navigationBar.translucent = true
+        //TEST COLOR
         
-//        navigationController.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.orangeColor()]
-//        tabBarController.tabBar.barTintColor = UIColor.brownColor()
-//        tabBarController.tabBar.tintColor = UIColor.yellowColor()
+        let сolorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.4) //not works!
+        
+        self.view.backgroundColor = сolorBarTrans
+        
+        self.navigationController?.navigationBar.barTintColor = сolorBarTrans
+        
+        buttonColorOfItemOutlet.backgroundColor     = сolorBarTrans
+        buttonColorOfItemOutlet.layer.borderColor   = selectedUIColor.CGColor
+        
+        //self.navigationController?.navigationBar.alpha = 0.2
+        //        self.navigationController?.navigationBar.translucent = true
+        
+        //        navigationController.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.orangeColor()]
+        //        tabBarController.tabBar.barTintColor = UIColor.brownColor()
+        //        tabBarController.tabBar.tintColor = UIColor.yellowColor()
     }
     
     // show color picker from UIButton
@@ -177,7 +189,11 @@ class DetailViewControllerProtocol: UIViewController, UIPopoverPresentationContr
         //show color popover
         presentViewController(colorPickerVc, animated: true, completion: nil)
     }
-
+    
+    
+    
+    
+    
     
     //    func getTitleValueFromreceivedCell (info: String?=nil) -> String {
     //

@@ -148,7 +148,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         if (cell != nil) {
             let toDoItem       = (cell as! ToDoItemTableViewCell).toDoItem
             let itemLabelView  = (cell as! ToDoItemTableViewCell).itemLabelView as UILabel
-           // toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
+           
             toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
         }
     }

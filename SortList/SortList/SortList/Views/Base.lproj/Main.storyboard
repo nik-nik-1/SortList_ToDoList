@@ -76,7 +76,7 @@
         <!--Detail-->
         <scene sceneID="E5V-vn-vad">
             <objects>
-                <viewController id="ANt-aI-fQv" customClass="DetailViewControllerProtocol" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ANt-aI-fQv" customClass="DetailViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ysg-Cr-PgJ"/>
                         <viewControllerLayoutGuide type="bottom" id="Dig-3m-Vbi"/>
@@ -112,6 +112,26 @@
                                     <constraint firstAttribute="height" constant="22" id="u12-0y-nOF"/>
                                 </constraints>
                                 <state key="normal" title="Color"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="leftBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rightBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomBorderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonColorOfItem:" destination="ANt-aI-fQv" eventType="touchUpInside" id="X8b-tt-sZc"/>
                                 </connections>
