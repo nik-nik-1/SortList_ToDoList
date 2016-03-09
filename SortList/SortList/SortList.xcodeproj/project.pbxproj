@@ -25,6 +25,7 @@
 		E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B801C74E320005D104F /* CollectionViewController.swift */; };
 		E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */; };
 		E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */; };
+		E7C28CBA1C9029AF00FE3EF5 /* FileTestDataCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */; };
 		E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */; };
 		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
@@ -54,6 +55,7 @@
 		E79C6B801C74E320005D104F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPickerViewController.swift1; sourceTree = "<group>"; };
 		E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
+		E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileTestDataCore.swift; path = ../FileTestDataCore.swift; sourceTree = "<group>"; };
 		E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
 			isa = PBXGroup;
 			children = (
+				E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */,
 				E75310D51C7725D4002A5E3B /* ColorBackGround.plist */,
 				E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */,
 				E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */,
@@ -268,6 +271,7 @@
 				E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */,
 				E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */,
 				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
+				E7C28CBA1C9029AF00FE3EF5 /* FileTestDataCore.swift in Sources */,
 				E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
