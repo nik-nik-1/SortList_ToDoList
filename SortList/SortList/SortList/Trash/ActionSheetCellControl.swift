@@ -42,8 +42,8 @@ class ActionSheetCellControl : UIAlertController {
         
         //    weak var ButtonPressedDelegate: buttonActiveActionSheetCellItems? = nil
         
-        let title       = toDoItem!.item as String//itLabel.text
-        let itemChecked = toDoItem!.checked as Bool
+        let title       = toDoItem!.item! as String//itLabel.text
+        let itemChecked = toDoItem!.checked as! Bool
         
         let myActionSheet = UIAlertController(title: title, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         

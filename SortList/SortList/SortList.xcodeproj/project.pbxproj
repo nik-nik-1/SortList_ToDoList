@@ -7,35 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D830CB321C94BC850003158A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB311C94BC850003158A /* CoreDataManager.swift */; };
+		D830CB341C94C5350003158A /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB331C94C5350003158A /* CoreDataUtil.swift */; };
+		D830CB391C94D74B0003158A /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB361C94D74B0003158A /* ColorMode.swift */; };
+		D830CB3A1C94D74B0003158A /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB371C94D74B0003158A /* Date.swift */; };
+		D830CB3E1C94D7800003158A /* SortList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */; };
+		D830CB411C94D9700003158A /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB3F1C94D9700003158A /* ToDoItem+CoreDataProperties.swift */; };
+		D830CB421C94D9700003158A /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB401C94D9700003158A /* ToDoItem.swift */; };
 		D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */; };
 		D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0931C5EC817007E4F48 /* Assets.xcassets */; };
 		D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0961C5EC817007E4F48 /* LaunchScreen.storyboard */; };
 		D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0981C5EC817007E4F48 /* Main.storyboard */; };
 		D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */; };
 		D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */; };
-		D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */; };
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
 		E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D11C772350002A5E3B /* ColorsChoise.plist */; };
 		E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D51C7725D4002A5E3B /* ColorBackGround.plist */; };
 		E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75310D91C7F097A002A5E3B /* UIView_Borders.swift */; };
-		E79C6B751C71E417005D104F /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B741C71E417005D104F /* ColorMode.swift */; };
 		E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */; };
 		E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */; };
 		E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B801C74E320005D104F /* CollectionViewController.swift */; };
 		E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */; };
 		E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */; };
-		E7C28CBA1C9029AF00FE3EF5 /* FileTestDataCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */; };
-		E7C28CBD1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CBB1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodeld */; };
 		E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */; };
 		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
 		E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */; };
 		E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3441C6DF69300B73DF2 /* ToDoListTableViewController.swift */; };
-		E7D0D3471C6E348300B73DF2 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3461C6E348300B73DF2 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D830CB311C94BC850003158A /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D830CB331C94C5350003158A /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
+		D830CB361C94D74B0003158A /* ColorMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
+		D830CB371C94D74B0003158A /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		D830CB3D1C94D7800003158A /* SortList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SortList.xcdatamodel; sourceTree = "<group>"; };
+		D830CB3F1C94D9700003158A /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D830CB401C94D9700003158A /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D8E8D07A1C5EC74E007E4F48 /* SortList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E8D0931C5EC817007E4F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,26 +53,21 @@
 		D8E8D0991C5EC817007E4F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableView.swift; sourceTree = "<group>"; };
-		D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
 		E75310D11C772350002A5E3B /* ColorsChoise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorsChoise.plist; sourceTree = "<group>"; };
 		E75310D51C7725D4002A5E3B /* ColorBackGround.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorBackGround.plist; sourceTree = "<group>"; };
 		E75310D91C7F097A002A5E3B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
-		E79C6B741C71E417005D104F /* ColorMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
 		E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemActionSheetControl.swift; sourceTree = "<group>"; };
 		E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
 		E79C6B801C74E320005D104F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPickerViewController.swift1; sourceTree = "<group>"; };
 		E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
-		E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileTestDataCore.swift; path = ../FileTestDataCore.swift; sourceTree = "<group>"; };
-		E7C28CBC1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
 		E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController_test.swift; sourceTree = "<group>"; };
 		E7D0D3441C6DF69300B73DF2 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
-		E7D0D3461C6E348300B73DF2 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D830CB2F1C94BC460003158A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D830CB301C94BC460003158A /* CoreData */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D830CB301C94BC460003158A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				D830CB311C94BC850003158A /* CoreDataManager.swift */,
+				D830CB331C94C5350003158A /* CoreDataUtil.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		D830CB351C94D74B0003158A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				D830CB3F1C94D9700003158A /* ToDoItem+CoreDataProperties.swift */,
+				D830CB401C94D9700003158A /* ToDoItem.swift */,
+				D830CB361C94D74B0003158A /* ColorMode.swift */,
+				D830CB371C94D74B0003158A /* Date.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		D8E8D0711C5EC74E007E4F48 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +128,7 @@
 		D8E8D07C1C5EC74E007E4F48 /* SortList */ = {
 			isa = PBXGroup;
 			children = (
+				D830CB2F1C94BC460003158A /* Helpers */,
 				E7D0D3391C6BBF9100B73DF2 /* Trash */,
 				D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */,
 				D8E8D0911C5EC817007E4F48 /* Models */,
@@ -120,9 +153,8 @@
 		D8E8D0911C5EC817007E4F48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D8E8D0A41C5ECE0F007E4F48 /* ToDoItem.swift */,
-				E79C6B741C71E417005D104F /* ColorMode.swift */,
-				E7D0D3461C6E348300B73DF2 /* Date.swift */,
+				D830CB351C94D74B0003158A /* Entities */,
+				D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,7 +165,6 @@
 				E75310D01C772350002A5E3B /* Color */,
 				D8E8D0931C5EC817007E4F48 /* Assets.xcassets */,
 				D8E8D0941C5EC817007E4F48 /* Info.plist */,
-				E7C28CBB1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,7 +201,6 @@
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
 			isa = PBXGroup;
 			children = (
-				E7C28CB91C9029AF00FE3EF5 /* FileTestDataCore.swift */,
 				E75310D51C7725D4002A5E3B /* ColorBackGround.plist */,
 				E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */,
 				E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */,
@@ -258,24 +288,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C28CBD1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodeld in Sources */,
+				D830CB341C94C5350003158A /* CoreDataUtil.swift in Sources */,
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
-				E79C6B751C71E417005D104F /* ColorMode.swift in Sources */,
 				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
 				E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */,
 				D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */,
 				E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */,
-				D8E8D0A51C5ECE0F007E4F48 /* ToDoItem.swift in Sources */,
 				E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */,
+				D830CB391C94D74B0003158A /* ColorMode.swift in Sources */,
 				E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */,
+				D830CB411C94D9700003158A /* ToDoItem+CoreDataProperties.swift in Sources */,
+				D830CB3E1C94D7800003158A /* SortList.xcdatamodeld in Sources */,
 				E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */,
 				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
-				E7D0D3471C6E348300B73DF2 /* Date.swift in Sources */,
 				E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */,
 				E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */,
 				E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */,
 				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
-				E7C28CBA1C9029AF00FE3EF5 /* FileTestDataCore.swift in Sources */,
+				D830CB421C94D9700003158A /* ToDoItem.swift in Sources */,
+				D830CB3A1C94D74B0003158A /* Date.swift in Sources */,
+				D830CB321C94BC850003158A /* CoreDataManager.swift in Sources */,
 				E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -431,13 +463,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E7C28CBB1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodeld */ = {
+		D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E7C28CBC1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodel */,
+				D830CB3D1C94D7800003158A /* SortList.xcdatamodel */,
 			);
-			currentVersion = E7C28CBC1C907B9F00FE3EF5 /* CoreDataModel.xcdatamodel */;
-			path = CoreDataModel.xcdatamodeld;
+			currentVersion = D830CB3D1C94D7800003158A /* SortList.xcdatamodel */;
+			path = SortList.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

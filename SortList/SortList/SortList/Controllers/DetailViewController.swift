@@ -34,6 +34,10 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
+        
+        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: Date.getCurrentDate(), context: CoreDataManager.sharedInstance.managedObjectContext)
+        CoreDataUtil.saveContext(CoreDataManager.sharedInstance.managedObjectContext)
+        
         detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
         
         // go back to the previous view controller
@@ -112,7 +116,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
             return ColorMode.init().getDefaultColorForItem()
         }
         
-        return receivedCell!.colorItem
+        return receivedCell!.colorItem as! UIColor
     }
     
     // MARK: Popover delegate functions

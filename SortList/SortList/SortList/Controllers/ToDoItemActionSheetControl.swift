@@ -16,14 +16,14 @@ class ToDoItemActionSheetControl : UIAlertController {
 
     weak var delegate: ToDoItemActionSheetControlDelegate?
     
-    var toDoItem: ToDoItem = ToDoItem.init(item: "", checked: false) {
+    var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataManager.sharedInstance.managedObjectContext) as! ToDoItem {
         didSet {
             initButtons()
         }
     }
     
     internal func initButtons() {
-        let itemChecked = toDoItem.checked as Bool
+        let itemChecked = toDoItem.checked as! Bool
         
         let buttonArchive = UIAlertAction(title: "Archive", style: UIAlertActionStyle.Default) {
             (ACTION) in

@@ -23,15 +23,15 @@ protocol ToDoListTableViewDelegate {
 //    func ReloadDataInTableViewDidInn()
 //}
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate, ToDoItemTableViewCellDelegate
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
 //, ReloadDataInTableView
 {
     
-//    var toDoItems: [ToDoItem] = [] {
-//        didSet {
-//            self.reloadData()
-//        }
-//    }
+    var toDoItems: [ToDoItem] = [] {
+        didSet {
+            self.reloadData()
+        }
+    }
     
     
     
@@ -39,8 +39,6 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
 //    var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
     //var delegateToReloadDataInTableViewDidInn: ReloadDataInTableViewInn?
 //    var delegateToReloadDataInTableViewDid: ReloadDataInTableView?
-    
-    var toDoItems: [ToDoItem] = []
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -68,10 +66,6 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             let topLevelObjects = NSBundle.mainBundle().loadNibNamed("ToDoItemTableViewCell", owner: self, options: nil);
             cell = topLevelObjects.first as? ToDoItemTableViewCell
         }
-        
-        cell?.delegate = self
-        
-        
         
         return cell!
     }
@@ -130,7 +124,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let toDoItemCell = cell as! ToDoItemTableViewCell
         let toDoItem = toDoItems[indexPath.row]
         
-        toDoItemCell.toDoItem = toDoItem
+        toDoItemCell.itemLabelView.text = toDoItem.item
+
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -144,14 +139,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     // MARK: UITableViewCell delegate
     
-    func didTouchMoreButton(cell: UITableViewCell?) {
-        if (cell != nil) {
-            let toDoItem       = (cell as! ToDoItemTableViewCell).toDoItem
-            let itemLabelView  = (cell as! ToDoItemTableViewCell).itemLabelView as UILabel
-           
-            toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
-        }
-    }
+
     //MARK: ReloadDataInTableView from ActionSheetCellControls
 //    func ReloadDataInTableViewDid () {
 //        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
