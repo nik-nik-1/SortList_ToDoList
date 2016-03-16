@@ -54,7 +54,7 @@ class CoreDataManager {
     
     private func sourceStoreURL() -> NSURL {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.applicationDocumentsDirectory.URLByAppendingPathComponent("SortList.sqlite")
+        return appDelegate.applicationDocumentsDirectory().URLByAppendingPathComponent("SortList.sqlite")
     }
     
     static let sharedInstance = CoreDataManager()

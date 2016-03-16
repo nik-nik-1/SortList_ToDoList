@@ -22,7 +22,7 @@ class ToDoItem: NSManagedObject {
         let toDoItem: ToDoItem = insertNewObjectIntoContext(context) as! ToDoItem
         
         toDoItem.item = item
-        toDoItem.checked = checked
+        toDoItem.checked = checked ?? false
         
         toDoItem.dateTimeCreate = createdDate
         
@@ -31,6 +31,7 @@ class ToDoItem: NSManagedObject {
 
     static func allToDoItems() -> [ToDoItem]? {
         let dateSort = NSSortDescriptor(key: "dateTimeCreate", ascending: true)
+//        let predicate = NSPredicate(format: "item BEGINSWITH %@", "sd")
         let array = CoreDataUtil.fetchEntity("ToDoItem", predicate: nil, sortDescriptors: [dateSort]) as? [ToDoItem]
         
         return array

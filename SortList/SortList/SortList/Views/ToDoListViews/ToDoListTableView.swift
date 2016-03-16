@@ -124,7 +124,9 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let toDoItemCell = cell as! ToDoItemTableViewCell
         let toDoItem = toDoItems[indexPath.row]
         
-        toDoItemCell.itemLabelView.text = toDoItem.item
+//        toDoItemCell.itemLabelView.text = toDoItem.item
+        toDoItemCell.toDoItem = toDoItem
+
 
     }
     

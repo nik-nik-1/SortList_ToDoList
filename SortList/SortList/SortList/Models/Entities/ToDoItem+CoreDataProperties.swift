@@ -16,7 +16,7 @@ extension ToDoItem {
 
     @NSManaged var checked: Bool
     @NSManaged var colorItem: NSObject?
-    @NSManaged var dateTimeCreate: NSTimeInterval
+    @NSManaged var dateTimeCreate: NSDate?
     @NSManaged var item: String?
 
 }

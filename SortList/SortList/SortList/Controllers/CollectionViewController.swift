@@ -38,9 +38,15 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         }
     }
     
+//    convenience init(){
+//        self.init()
+//        
+//    }
+//    override init?(coder aDecoder: NSCoder) {
+//        super.init(coder: nil)
+//    }
     
-    
-    
+        
     
     // MARK: - View functions
     
@@ -174,5 +180,11 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+}
+
+extension ColorPickerViewController {
+    internal func externalConvertHexToUIColor(hexColor hexColor : String) -> UIColor {
+        return self.convertHexToUIColor(hexColor: hexColor)
+    }
 }
 

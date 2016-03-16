@@ -23,7 +23,7 @@ class ToDoItemActionSheetControl : UIAlertController {
     }
     
     internal func initButtons() {
-        let itemChecked = toDoItem.checked as! Bool
+        let itemChecked = toDoItem.checked 
         
         let buttonArchive = UIAlertAction(title: "Archive", style: UIAlertActionStyle.Default) {
             (ACTION) in

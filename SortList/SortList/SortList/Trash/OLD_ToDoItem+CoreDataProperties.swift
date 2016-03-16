@@ -9,14 +9,14 @@
 //  to delete and recreate this implementation file for your updated model.
 //
 
-import Foundation
-import CoreData
-
-extension ToDoItem {
-
-    @NSManaged var checked: Bool
-    @NSManaged var colorItem: NSObject?
-    @NSManaged var dateTimeCreate: NSTimeInterval
-    @NSManaged var item: String?
-
-}
+//import Foundation
+//import CoreData
+//
+//extension ToDoItem {
+//
+//    @NSManaged var checked: Bool
+//    @NSManaged var colorItem: NSObject?
+//    @NSManaged var dateTimeCreate: NSTimeInterval
+//    @NSManaged var item: String?
+//
+//}

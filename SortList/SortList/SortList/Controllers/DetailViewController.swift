@@ -35,7 +35,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
         
-        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: Date.getCurrentDate(), context: CoreDataManager.sharedInstance.managedObjectContext)
+        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: NSDate.getCurrentDate(), context: CoreDataManager.sharedInstance.managedObjectContext)
         CoreDataUtil.saveContext(CoreDataManager.sharedInstance.managedObjectContext)
         
         detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
@@ -99,7 +99,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
             return ""
         }
         
-        let dateTimeStr = Date.parseForDetailTableView((receivedCell?.dateTimeCreate)!)
+        let dateTimeStr = NSDate.parseForDetailTableView((receivedCell?.dateTimeCreate)!)
         return dateTimeStr as String
     }
     
@@ -108,12 +108,12 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
             return ""
         }
         
-        return Date.CalculateUsedTime((receivedCell?.dateTimeCreate)!)
+        return NSDate.CalculateUsedTime((receivedCell?.dateTimeCreate)!)
     }
     
     func getColorOfItemsFromreceivedCell() -> UIColor {
         guard receivedCell != nil else {
-            return ColorMode.init().getDefaultColorForItem()
+            return ToDoItem.getDefaultColorFortem()//UIColor.whiteColor()//ColorMode.init().getDefaultColorForItem()
         }
         
         return receivedCell!.colorItem as! UIColor
