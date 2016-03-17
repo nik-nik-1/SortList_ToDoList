@@ -16,9 +16,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
             toDoListTableView.reloadData()
         }
     }
-    //var toDoItems: [NSManagedObject] = []
-    //var newItem: String = ""
-    //    var recivedFromMainListValue: String = ""
     var recivedFromMainListValueCell: ToDoItem? = nil
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
@@ -27,16 +24,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
     //MARK: Native functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //
-        //        let toDoItem1 = ToDoItem.init(item: "Value 1", checked: true, dateTimeCreateString: "2014-05-20 22:05:54")//, colorItem: ColorMode.getColorForItemAtIndex(5)
-        //        let toDoItem2 = ToDoItem.init(item: "Value 2", checked: false)
-        //        //, colorItem:ColorMode.getColorForItemAtIndex(3)
-        //        let toDoItem3 = ToDoItem.init(item: "Value 3", checked: true)
-        //
-        //        toDoItems.append(toDoItem1)
-        //        toDoItems.append(toDoItem2)
-        //        toDoItems.append(toDoItem3)
         
         /*let defaults = NSUserDefaults.standardUserDefaults()
         if let toDoItemData = defaults.stringForKey("toDoItemData")
@@ -90,17 +77,11 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
             // set a variable in the second view controller with the String to pass
             //detailViewController.receivedString = recivedFromMainListValue
             detailViewController.receivedCell = recivedFromMainListValueCell//! as ToDoItem
-            
-            
         }
     }
     
     
     func getTitleValueFromMainListValueCell () -> String {
-        //return recivedFromMainListValueCell =
-        //return ""
-        //return String(recivedFromMainListValueCell?.item)
-        
         guard recivedFromMainListValueCell != nil else {
             return ""
         }
@@ -119,19 +100,11 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
         recivedFromMainListValueCell = item
     }
     
-    //    //MARK: delegate Button Click
-    //    func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
-    //        if (toDoItem != nil) {
-    //            let myActionSheet = ActionSheetCellControl().ButtonActionSheetCellItems(toDoItem, itLabel: itemLabel) as! ActionSheetCellControl
-    //            myActionSheet.delegateToReloadDataInTableViewDid = self
-    //            self.presentViewController(myActionSheet, animated: true, completion: nil)
-    //        }
-    //    }
-    
-    func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel) {
-        if (toDoItem != nil) {
-            let toDoItemActionSheet = ToDoItemActionSheetControl(title: toDoItem?.item, message: "", preferredStyle:.ActionSheet)
-            toDoItemActionSheet.delegate = self;
+    func didTouchMoreButtonForController(item toDoItemElem: ToDoItem?, itemLabel: UILabel) {
+        if (toDoItemElem != nil) {
+            let toDoItemActionSheet = ToDoItemActionSheetControl(title: toDoItemElem?.item, message: "", preferredStyle:.ActionSheet)
+            toDoItemActionSheet.toDoItemElem = toDoItemElem
+            toDoItemActionSheet.delegate = self
             self.presentViewController(toDoItemActionSheet, animated: true, completion: nil)
         }
     }

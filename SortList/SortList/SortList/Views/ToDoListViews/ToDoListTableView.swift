@@ -23,7 +23,7 @@ protocol ToDoListTableViewDelegate {
 //    func ReloadDataInTableViewDidInn()
 //}
 
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate,ToDoItemTableViewCellDelegate
 //, ReloadDataInTableView
 {
     
@@ -67,6 +67,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             cell = topLevelObjects.first as? ToDoItemTableViewCell
         }
         
+        cell?.delegate = self
         return cell!
     }
     
@@ -141,6 +142,14 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     // MARK: UITableViewCell delegate
     
+    func didTouchMoreButton(cell: UITableViewCell?) {
+        if (cell != nil) {
+            let toDoItem       = (cell as! ToDoItemTableViewCell).toDoItemElem
+            let itemLabelView  = (cell as! ToDoItemTableViewCell).itemLabelView as UILabel
+            
+            toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
+        }
+    }
 
     //MARK: ReloadDataInTableView from ActionSheetCellControls
 //    func ReloadDataInTableViewDid () {

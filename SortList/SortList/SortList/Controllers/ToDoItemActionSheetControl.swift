@@ -16,14 +16,16 @@ class ToDoItemActionSheetControl : UIAlertController {
 
     weak var delegate: ToDoItemActionSheetControlDelegate?
     
-    var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataUtil.getManagedObjectContext()) as! ToDoItem {
+    //var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataUtil.getManagedObjectContext()) as! ToDoItem 
+    var toDoItemElem: ToDoItem!
+        {
         didSet {
             initButtons()
         }
     }
     
     internal func initButtons() {
-        let itemChecked = toDoItem.checked 
+        let itemChecked = toDoItemElem.checked 
         
         let buttonArchive = UIAlertAction(title: "Archive", style: UIAlertActionStyle.Default) {
             (ACTION) in
@@ -40,7 +42,11 @@ class ToDoItemActionSheetControl : UIAlertController {
             print("\(titleChekenUnCheked) button tapped")
             //        ButtonPressedDelegate?.CheckButtonFromActionSheetCellItemsPressed()
 
-            self.toDoItem.checked = !itemChecked
+            //self.toDoItem.checked = !itemChecked
+            
+            self.toDoItemElem.setValue(!itemChecked, forKey: "checked")
+            CoreDataUtil.saveContext()
+            
             self.delegate?.didChangeAction()
         }
         

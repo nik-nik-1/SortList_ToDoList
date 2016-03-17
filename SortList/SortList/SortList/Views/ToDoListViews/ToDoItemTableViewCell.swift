@@ -29,11 +29,6 @@ class ToDoItemTableViewCell: UITableViewCell
     var delegate: ToDoItemTableViewCellDelegate?
     //    var delegateListController: ToDoItemforListControllerDelegate?
     
-    //@IBOutlet weak var ButtonActionSheetCell: UIButton!
-    @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
-        delegate?.didTouchMoreButton(self)
-    }
-    
     var toDoItemElem: ToDoItem! {
         didSet {
             selectItemSwitchView?.setOn(toDoItemElem.checked, animated: false)
@@ -42,7 +37,11 @@ class ToDoItemTableViewCell: UITableViewCell
             changeTextNarrovIfCheckedOrNot()
         }
     }
-
+    
+    //@IBOutlet weak var ButtonActionSheetCell: UIButton!
+    @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
+        delegate?.didTouchMoreButton(self)
+    }
     
     
     //MARK: init cell

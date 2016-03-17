@@ -13,7 +13,7 @@ import CoreData
 class ToDoItem: NSManagedObject {
     
     private let entityName: NSString = "ToDoItem"
-
+    
     static func insertNewObjectIntoContext(context: NSManagedObjectContext) -> NSManagedObject? {
         return NSEntityDescription.insertNewObjectForEntityForName("ToDoItem", inManagedObjectContext: context)
     }
