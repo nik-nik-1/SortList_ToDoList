@@ -13,7 +13,7 @@ class CoreDataUtil {
     private static func fetchRequestForEntity(entity: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, otherOptions: Dictionary<String, Float>?) -> NSFetchRequest {
         
         // Get the main object context
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
         
         // Get the entity description
         let entityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext: moc)
@@ -43,7 +43,7 @@ class CoreDataUtil {
     static func fetchEntity(entityName: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, otherOptions: Dictionary<String, Float>?) -> [AnyObject]? {
         
         // Get the main object context
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
 
         let request = self.fetchRequestForEntity(entityName, predicate: predicate, sortDescriptors: sortDescriptors, otherOptions: otherOptions)
         
@@ -72,7 +72,7 @@ class CoreDataUtil {
 
     static func countForEntity(entityName: String, predicate: NSPredicate) -> Int {
         // Get the main object context
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
         
         let request = self.fetchRequestForEntity(entityName, predicate: predicate, sortDescriptors: nil, otherOptions: nil)
         
@@ -88,7 +88,7 @@ class CoreDataUtil {
     }
     
     static func insertEntityNamed(entityName: String) -> AnyObject? {
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
         return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: moc)
     }
     
@@ -98,11 +98,16 @@ class CoreDataUtil {
 
     
     static func save(error: NSErrorPointer) {
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
         self.saveContext(moc)
     }
     
+    static func saveContext() {
+        saveContext(getManagedObjectContext())
+    }
+    
     static func saveContext(managedObjectContext: NSManagedObjectContext?) {
+        
         guard let moc = managedObjectContext as NSManagedObjectContext! else {
             return
         }
@@ -128,7 +133,7 @@ class CoreDataUtil {
     }
 
     static func deleteObject(object: NSManagedObject, error: NSError) {
-        let moc = CoreDataManager.sharedInstance.managedObjectContext
+        let moc = getManagedObjectContext()
         moc.deleteObject(object)
         
         do {
@@ -140,6 +145,10 @@ class CoreDataUtil {
             NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
             abort()
         }
+    }
+    
+    static func getManagedObjectContext() -> NSManagedObjectContext{
+        return CoreDataManager.sharedInstance.managedObjectContext
     }
     
 }

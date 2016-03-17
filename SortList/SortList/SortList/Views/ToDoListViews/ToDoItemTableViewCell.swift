@@ -34,11 +34,11 @@ class ToDoItemTableViewCell: UITableViewCell
         delegate?.didTouchMoreButton(self)
     }
     
-    var toDoItem: ToDoItem! {
+    var toDoItemElem: ToDoItem! {
         didSet {
-            selectItemSwitchView?.setOn(toDoItem.checked, animated: false)
-            itemLabelView?.text     = toDoItem.item
-            dateViewTableCell?.text = NSDate.parseForMainTableView(toDoItem.dateTimeCreate!)
+            selectItemSwitchView?.setOn(toDoItemElem.checked, animated: false)
+            itemLabelView?.text     = toDoItemElem.item
+            dateViewTableCell?.text = NSDate.parseForMainTableView(toDoItemElem.dateTimeCreate!)
             changeTextNarrovIfCheckedOrNot()
         }
     }
@@ -66,24 +66,34 @@ class ToDoItemTableViewCell: UITableViewCell
     }
     
     @IBAction func toDoItemUpdateValueChanged() {
-        //        toDoItem.checked = selectItemSwitchView.on
+//        toDoItem.checked = selectItemSwitchView.on
+        
+        toDoItemElem.setValue(selectItemSwitchView.on, forKey: "checked")
+        CoreDataUtil.saveContext()
+
+        
+        //need save in Coredata!!?
+        //......
+        
+        
+        
         changeTextNarrovIfCheckedOrNot()
         
     }
     
     func changeTextNarrovIfCheckedOrNot() {
-        let attributedString = NSMutableAttributedString(string: toDoItem.item!)
+        let attributedString = NSMutableAttributedString(string: toDoItemElem.item!)
         
         var firstAttributes: NSDictionary
-        if toDoItem.checked as Bool {
+        if toDoItemElem.checked as Bool {
             firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
         } else {
             firstAttributes = [NSForegroundColorAttributeName: itemLabelView.tintColor, NSStrikethroughStyleAttributeName: 0]
         }
         
-        let itemString = NSString(string: toDoItem.item!)
+        let itemString = NSString(string: toDoItemElem.item!)
         
-        attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: itemString.rangeOfString(toDoItem.item!))
+        attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: itemString.rangeOfString(toDoItemElem.item!))
         itemLabelView.attributedText = attributedString
     }
 

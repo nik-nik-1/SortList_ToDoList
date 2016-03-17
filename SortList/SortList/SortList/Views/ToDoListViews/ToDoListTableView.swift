@@ -125,7 +125,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let toDoItem = toDoItems[indexPath.row]
         
 //        toDoItemCell.itemLabelView.text = toDoItem.item
-        toDoItemCell.toDoItem = toDoItem
+        toDoItemCell.toDoItemElem = toDoItem
 
 
     }

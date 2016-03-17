@@ -117,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D8E8D07C1C5EC74E007E4F48 /* SortList */,
+				E7D0D3391C6BBF9100B73DF2 /* Trash */,
 				D8E8D07B1C5EC74E007E4F48 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				D830CB2F1C94BC460003158A /* Helpers */,
-				E7D0D3391C6BBF9100B73DF2 /* Trash */,
 				D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */,
 				D8E8D0911C5EC817007E4F48 /* Models */,
 				D8E8D08F1C5EC817007E4F48 /* Controllers */,
@@ -224,7 +224,8 @@
 				E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */,
 				E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */,
 			);
-			path = Trash;
+			name = Trash;
+			path = SortList/Trash;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -16,7 +16,7 @@ class ToDoItemActionSheetControl : UIAlertController {
 
     weak var delegate: ToDoItemActionSheetControlDelegate?
     
-    var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataManager.sharedInstance.managedObjectContext) as! ToDoItem {
+    var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataUtil.getManagedObjectContext()) as! ToDoItem {
         didSet {
             initButtons()
         }

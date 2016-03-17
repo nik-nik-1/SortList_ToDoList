@@ -37,4 +37,25 @@ class ToDoItem: NSManagedObject {
         return array
     }
     
+//    static func overwriteElementToDoItem (Item: String) -> ToDoItem {
+//        
+//        let predicateElement = NSPredicate(format: "item BEGINSWITH %@", Item)
+//
+//        let array = CoreDataUtil.fetchEntity("ToDoItem", predicate: predicateElement, sortDescriptors: nil) as? [ToDoItem]
+//        
+//        var elementForReturn: ToDoItem?
+//        
+//        if array?.count > 0 {
+//           elementForReturn = array![0] as ToDoItem
+//           
+//            if elementForReturn != nil {
+//               NSManagedObjectContext 
+//            }
+//            
+//            
+//        }
+//        
+//        return elementForReturn!
+//        }
+    
 }
