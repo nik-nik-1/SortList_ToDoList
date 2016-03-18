@@ -20,6 +20,9 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
+    @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     //MARK: Native functions
     override func viewDidLoad() {

@@ -32,6 +32,7 @@
 		E7C28CF81C9811DE00FE3EF5 /* ToDoItems+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */; };
 		E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CFD1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift */; };
 		E7C28D041C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */; };
+		E7C28D0A1C9C109F00FE3EF5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D091C9C109F00FE3EF5 /* WeatherViewController.swift */; };
 		E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */; };
 		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
@@ -67,6 +68,7 @@
 		E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItems+Color.swift"; sourceTree = "<group>"; };
 		E7C28CFD1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OLD_ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E7C28D091C9C109F00FE3EF5 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		D8E8D08F1C5EC817007E4F48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7C28D081C9C109F00FE3EF5 /* Weather */,
 				E79C6B801C74E320005D104F /* CollectionViewController.swift */,
 				D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */,
 				E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */,
@@ -208,6 +211,14 @@
 				E7C28CF31C9808A100FE3EF5 /* DateTimeEx.swift */,
 			);
 			path = DateTime;
+			sourceTree = "<group>";
+		};
+		E7C28D081C9C109F00FE3EF5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				E7C28D091C9C109F00FE3EF5 /* WeatherViewController.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
@@ -318,6 +329,7 @@
 				E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */,
 				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
 				E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */,
+				E7C28D0A1C9C109F00FE3EF5 /* WeatherViewController.swift in Sources */,
 				E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */,
 				E7C28CF61C9809E000FE3EF5 /* ColorMode.swift in Sources */,
 				E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */,
