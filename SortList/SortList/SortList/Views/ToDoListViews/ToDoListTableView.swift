@@ -81,8 +81,12 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         if editingStyle == .Delete {
             // Delete the row from the data source
             
-            toDoItems.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            CoreDataUtil.deleteObject(toDoItems[indexPath.row])
+            toDoItems.removeAtIndex(indexPath.row)// relod data was writed in "didset" of this item var
+            
+            //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -92,9 +96,18 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     //MARK: moveRow
     // Override to support rearranging the table view.
     func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        let itemToMove = toDoItems[fromIndexPath.row]
-        toDoItems.removeAtIndex(fromIndexPath.row)
-        toDoItems.insert(itemToMove, atIndex: toIndexPath.row)
+ //       let itemToMove = toDoItems[fromIndexPath.row]
+//        toDoItems.removeAtIndex(fromIndexPath.row)
+//        toDoItems.insert(itemToMove, atIndex: toIndexPath.row)
+        
+//        let orderedSet: NSMutableOrderedSet = (routineToReorder?.mutableOrderedSetValueForKey("yourKeyValue"))!
+//        
+//        orderedSet.exchangeObjectAtIndex(fromIndexPath.row, withObjectAtIndex: toIndexPath.row)
+//        CoreDataUtil.saveContext()
+        
+       //!!!!  NEED to rewrite! see there: http://lattejed.com/a-simple-todo-app-in-swift
+        
+        
     }
     
     

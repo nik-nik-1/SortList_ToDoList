@@ -132,7 +132,8 @@ class CoreDataUtil {
         }
     }
 
-    static func deleteObject(object: NSManagedObject, error: NSError) {
+//    static func deleteObject(object: NSManagedObject, error: NSError?) {
+    static func deleteObject(object: NSManagedObject) {
         let moc = getManagedObjectContext()
         moc.deleteObject(object)
         
