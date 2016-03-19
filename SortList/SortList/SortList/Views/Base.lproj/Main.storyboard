@@ -130,7 +130,68 @@
                     <view key="view" contentMode="scaleToFill" id="Y7e-Mc-cnh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter city name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBX-Ip-Cxs">
+                                <rect key="frame" x="139" y="79" width="405" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC5-kM-wgy">
+                                <rect key="frame" x="29" y="80" width="86" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="NbZ-kF-13w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ujo-Pl-72J">
+                                <rect key="frame" x="29" y="119" width="551" height="461"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="Mrt-LM-IZh">
+                                        <rect key="frame" x="0.0" y="28" width="551" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrt-LM-IZh" id="Kxw-PK-ayl">
+                                            <rect key="frame" x="0.0" y="0.0" width="551" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZd-0C-0Ul">
+                                <rect key="frame" x="550" y="78" width="30" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="NO7-Ru-qQv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Get"/>
+                                <connections>
+                                    <action selector="buttonGetWeatherDataPressed:" destination="Xb5-7x-CrZ" eventType="touchUpInside" id="BR8-tV-hS5"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Ujo-Pl-72J" secondAttribute="bottom" constant="20" symbolic="YES" id="0FV-ze-y2i"/>
+                            <constraint firstItem="yBX-Ip-Cxs" firstAttribute="bottom" secondItem="AC5-kM-wgy" secondAttribute="bottom" constant="-2" id="6jK-28-yHA"/>
+                            <constraint firstItem="Ujo-Pl-72J" firstAttribute="trailing" secondItem="zZd-0C-0Ul" secondAttribute="trailing" id="EKa-uJ-CWX"/>
+                            <constraint firstItem="yBX-Ip-Cxs" firstAttribute="leading" secondItem="AC5-kM-wgy" secondAttribute="trailing" constant="24" id="K3a-KS-Ljv"/>
+                            <constraint firstItem="zZd-0C-0Ul" firstAttribute="leading" secondItem="yBX-Ip-Cxs" secondAttribute="trailing" constant="6" id="OBm-o1-8u3"/>
+                            <constraint firstItem="Ujo-Pl-72J" firstAttribute="leading" secondItem="AC5-kM-wgy" secondAttribute="leading" id="OV1-FD-HOF"/>
+                            <constraint firstItem="zZd-0C-0Ul" firstAttribute="top" secondItem="yBX-Ip-Cxs" secondAttribute="top" constant="-1" id="Swk-gq-puJ"/>
+                            <constraint firstItem="yBX-Ip-Cxs" firstAttribute="centerY" secondItem="AC5-kM-wgy" secondAttribute="centerY" constant="-1.5" id="Wu4-Nt-PBS"/>
+                            <constraint firstItem="AC5-kM-wgy" firstAttribute="leading" secondItem="Y7e-Mc-cnh" secondAttribute="leadingMargin" constant="9" id="eHZ-0n-RKI"/>
+                            <constraint firstItem="AC5-kM-wgy" firstAttribute="top" secondItem="ncV-o4-xjg" secondAttribute="bottom" constant="16" id="gSd-Px-RQi"/>
+                            <constraint firstItem="zZd-0C-0Ul" firstAttribute="trailing" secondItem="Y7e-Mc-cnh" secondAttribute="trailingMargin" id="kEn-sb-T0H"/>
+                            <constraint firstItem="Ujo-Pl-72J" firstAttribute="top" secondItem="AC5-kM-wgy" secondAttribute="bottom" constant="8" symbolic="YES" id="nMN-EC-o5m"/>
+                            <constraint firstItem="O6S-lq-PZr" firstAttribute="top" secondItem="zZd-0C-0Ul" secondAttribute="bottom" constant="494" id="r9U-J7-rF3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="r9U-J7-rF3"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Weather" id="woE-gc-ad5">
                         <barButtonItem key="leftBarButtonItem" title="〈Back" id="QzT-K7-KsV">
@@ -139,6 +200,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="userCityName" destination="yBX-Ip-Cxs" id="LeP-3Y-30m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xz-Vy-pPw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
