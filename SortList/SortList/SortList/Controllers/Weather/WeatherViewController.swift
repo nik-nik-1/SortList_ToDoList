@@ -69,7 +69,7 @@ class WeatherViewController: UIViewController {
         var NametoReturn: String = ""
         
         do {
-            if let CityNameFromPlist: NSString = try plistGet(tempItemsInKlass.nameTemporaryForSave, forPlistNamed: tempItemsInKlass.nameOfPList) as? NSString{
+            if let CityNameFromPlist: NSString = try plistGet(tempItemsInKlass.nameTemporaryForSave, forPlistNamed: tempItemsInKlass.nameOfPList, needToSaveBetweenSessions: true) as? NSString{
                 
                 NametoReturn = CityNameFromPlist as String
             }
@@ -86,7 +86,7 @@ class WeatherViewController: UIViewController {
         
         do {
             if userCityName != nil {
-                try plistSet(userCityName.text!, forKey: tempItemsInKlass.nameTemporaryForSave, inPlistNamed: tempItemsInKlass.nameOfPList)
+                try plistSet(userCityName.text!, forKey: tempItemsInKlass.nameTemporaryForSave, inPlistNamed: tempItemsInKlass.nameOfPList, needToSaveBetweenSessions: true)
             }
             
         }catch{ }

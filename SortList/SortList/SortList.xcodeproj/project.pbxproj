@@ -17,6 +17,7 @@
 		D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */; };
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
+		E74A96CE1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */; };
 		E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D11C772350002A5E3B /* ColorsChoise.plist */; };
 		E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D51C7725D4002A5E3B /* ColorBackGround.plist */; };
 		E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75310D91C7F097A002A5E3B /* UIView_Borders.swift */; };
@@ -57,6 +58,7 @@
 		D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableView.swift; sourceTree = "<group>"; };
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
+		E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryFacadePlist.swift; sourceTree = "<group>"; };
 		E75310D11C772350002A5E3B /* ColorsChoise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorsChoise.plist; sourceTree = "<group>"; };
 		E75310D51C7725D4002A5E3B /* ColorBackGround.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorBackGround.plist; sourceTree = "<group>"; };
 		E75310D91C7F097A002A5E3B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		E7C28D161C9DA2E300FE3EF5 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
+				E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */,
 				E7C28D171C9DA2E300FE3EF5 /* NRSwiftPlist.swift */,
 				E7C28D191C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf */,
 			);
@@ -360,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74A96CE1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift in Sources */,
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 				E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */,
 				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
