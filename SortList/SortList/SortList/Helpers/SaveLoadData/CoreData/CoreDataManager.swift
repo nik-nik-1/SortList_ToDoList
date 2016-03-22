@@ -12,10 +12,36 @@ import UIKit
 
 class CoreDataManager {
     
+    
+    private var defaultURLForResource:String!
+    
+    //MARK: Init()
+    private init(){
+        defaultInitClass()
+    }
+    
+    private init(defUrlRes:String?){
+        //by first let's init variable with default parametres
+        defaultInitClass()
+        
+        if let tempDefUrl = defUrlRes as String! {
+           defaultURLForResource = tempDefUrl
+        }
+    }
+    
+    private func defaultInitClass () {
+        defaultURLForResource = CoreDataManager.getDefaultNameOfUsingDataType()
+    }
+    
+    static func getDefaultNameOfUsingDataType() -> String {
+        return "SortList"
+    }
+    
+    //MARK: Core Data work
     private(set) var sourceStoreType: String = NSSQLiteStoreType
     
     lazy private(set) var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource("SortList", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource(self.defaultURLForResource, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
@@ -54,10 +80,29 @@ class CoreDataManager {
     
     private func sourceStoreURL() -> NSURL {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        return appDelegate.applicationDocumentsDirectory().URLByAppendingPathComponent("SortList.sqlite")
+        return appDelegate.applicationDocumentsDirectory().URLByAppendingPathComponent("\(self.defaultURLForResource).sqlite")
     }
     
-    static let sharedInstance = CoreDataManager()
-
+//   static let sharedInstance = CoreDataManager()
+    
+    private static var dictionaryOfInstance = [String: CoreDataManager?]()// = ["SortList","WeatherDataModel"]
+    
+    static func getSharedInstance (typeOut: String? = nil) -> CoreDataManager {
+        let instanseToReturn: CoreDataManager
+        
+        let key = typeOut ?? getDefaultNameOfUsingDataType()
+        
+        if let val = dictionaryOfInstance[key] {
+            //if key exist - get it from the stack
+            instanseToReturn = val!
+        }else{
+            instanseToReturn = CoreDataManager(defUrlRes: typeOut)
+            //add instanse to dictionary
+            dictionaryOfInstance[key] = instanseToReturn
+        }
+        
+        return instanseToReturn
+    }
+    
     
 }

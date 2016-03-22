@@ -24,8 +24,8 @@ class WeatherViewController: UIViewController {
 //    }
     
     @IBAction func buttonGetWeatherDataPressed(sender: AnyObject) {
-        
-        //HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
+        saveNameOfCity()
+        HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
     }
     
     private let tempItemsInKlass = WeatherStructInfo()

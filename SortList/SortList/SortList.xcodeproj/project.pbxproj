@@ -17,7 +17,9 @@
 		D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */; };
 		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
 		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
-		E74A96CE1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */; };
+		E74A96D01CA0171600CFF0B2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96CF1CA0171600CFF0B2 /* JSON.swift */; };
+		E74A96D21CA017D400CFF0B2 /* JSON_ReedMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E74A96D11CA017D400CFF0B2 /* JSON_ReedMe.rtf */; };
+		E74A96D51CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */; };
 		E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D11C772350002A5E3B /* ColorsChoise.plist */; };
 		E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D51C7725D4002A5E3B /* ColorBackGround.plist */; };
 		E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75310D91C7F097A002A5E3B /* UIView_Borders.swift */; };
@@ -58,7 +60,9 @@
 		D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableView.swift; sourceTree = "<group>"; };
 		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
-		E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryFacadePlist.swift; sourceTree = "<group>"; };
+		E74A96CF1CA0171600CFF0B2 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		E74A96D11CA017D400CFF0B2 /* JSON_ReedMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = JSON_ReedMe.rtf; sourceTree = "<group>"; };
+		E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E75310D11C772350002A5E3B /* ColorsChoise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorsChoise.plist; sourceTree = "<group>"; };
 		E75310D51C7725D4002A5E3B /* ColorBackGround.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorBackGround.plist; sourceTree = "<group>"; };
 		E75310D91C7F097A002A5E3B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		D830CB351C94D74B0003158A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				E74A96D61CA0606F00CFF0B2 /* Weather */,
 				E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */,
 				D830CB401C94D9700003158A /* ToDoItem.swift */,
 				E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */,
@@ -165,6 +170,7 @@
 				E7C28D1D1C9DA73900FE3EF5 /* PlistForSaveData */,
 				D830CB351C94D74B0003158A /* Entities */,
 				D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */,
+				E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +206,13 @@
 			path = ToDoListViews;
 			sourceTree = "<group>";
 		};
+		E74A96D61CA0606F00CFF0B2 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
 		E75310D01C772350002A5E3B /* Color */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +241,8 @@
 			isa = PBXGroup;
 			children = (
 				E7C28D0C1C9C4DEE00FE3EF5 /* HttpRequestWork.swift */,
+				E74A96CF1CA0171600CFF0B2 /* JSON.swift */,
+				E74A96D11CA017D400CFF0B2 /* JSON_ReedMe.rtf */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -253,7 +268,6 @@
 		E7C28D161C9DA2E300FE3EF5 /* Plist */ = {
 			isa = PBXGroup;
 			children = (
-				E74A96CD1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift */,
 				E7C28D171C9DA2E300FE3EF5 /* NRSwiftPlist.swift */,
 				E7C28D191C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf */,
 			);
@@ -344,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74A96D21CA017D400CFF0B2 /* JSON_ReedMe.rtf in Resources */,
 				E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */,
 				D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */,
 				E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */,
@@ -363,11 +378,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E74A96CE1C9FEAD700CFF0B2 /* LibraryFacadePlist.swift in Sources */,
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 				E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */,
 				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
 				E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */,
+				E74A96D51CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */,
 				D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */,
 				E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */,
 				E7C28D121C9DA22900FE3EF5 /* CoreDataManager.swift in Sources */,
@@ -385,6 +400,7 @@
 				E7C28D131C9DA22900FE3EF5 /* CoreDataUtil.swift in Sources */,
 				E7C28CF61C9809E000FE3EF5 /* ColorMode.swift in Sources */,
 				E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */,
+				E74A96D01CA0171600CFF0B2 /* JSON.swift in Sources */,
 				E7C28CF41C9808A100FE3EF5 /* DateTimeEx.swift in Sources */,
 				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
 				D830CB421C94D9700003158A /* ToDoItem.swift in Sources */,
@@ -551,6 +567,16 @@
 			);
 			currentVersion = D830CB3D1C94D7800003158A /* SortList.xcdatamodel */;
 			path = SortList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */,
+			);
+			currentVersion = E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */;
+			path = WeatherDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

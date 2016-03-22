@@ -78,6 +78,8 @@ private func getPathToSaveData (inPlistNamed:String, needToSaveBetweenSessions:B
             }
         }else{
            //All OK!
+            //This can be used to delete file from documents directory
+            //fileManager.removeItemAtPath(path, error: nil)
         }
 
         

@@ -148,8 +148,9 @@ class CoreDataUtil {
         }
     }
     
-    static func getManagedObjectContext() -> NSManagedObjectContext{
-        return CoreDataManager.sharedInstance.managedObjectContext
+    static func getManagedObjectContext(type:String? = nil) -> NSManagedObjectContext{
+        //return CoreDataManager.sharedInstance.managedObjectContext
+        return CoreDataManager.getSharedInstance().managedObjectContext
     }
     
 }
