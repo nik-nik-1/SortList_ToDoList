@@ -35,8 +35,9 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
         
-        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: NSDate.getCurrentDate(), context: CoreDataUtil.getManagedObjectContext())
-        CoreDataUtil.saveContext(CoreDataUtil.getManagedObjectContext())
+        let moc = CoreDataUtil.getManagedObjectContext(ToDoItem.getEntityNameOfObject())
+        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: NSDate.getCurrentDate(), context: moc)
+        CoreDataUtil.saveContext(moc)
         
         detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
         

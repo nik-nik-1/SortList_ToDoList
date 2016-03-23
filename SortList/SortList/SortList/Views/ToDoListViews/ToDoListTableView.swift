@@ -82,7 +82,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             // Delete the row from the data source
             
             
-            CoreDataUtil.deleteObject(toDoItems[indexPath.row])
+            CoreDataUtil.deleteObject(ToDoItem.getEntityNameOfObject(), object: toDoItems[indexPath.row])
             toDoItems.removeAtIndex(indexPath.row)// relod data was writed in "didset" of this item var
             
             //tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)

@@ -11,11 +11,15 @@ import CoreData
 
 
 class ToDoItem: NSManagedObject {
+    private static let entityName: NSString = "ToDoItem"
+    private let entityName: NSString = ToDoItem.entityName
     
-    private let entityName: NSString = "ToDoItem"
+    class func getEntityNameOfObject() -> String {
+        return entityName as String
+    }
     
     static func insertNewObjectIntoContext(context: NSManagedObjectContext) -> NSManagedObject? {
-        return NSEntityDescription.insertNewObjectForEntityForName("ToDoItem", inManagedObjectContext: context)
+        return NSEntityDescription.insertNewObjectForEntityForName(entityName as String, inManagedObjectContext: context)
     }
     
     static func insertToDoItemWithItem(item: String?, checked: Bool?, createdDate: NSDate?,  context: NSManagedObjectContext) -> NSManagedObject? {
@@ -32,30 +36,9 @@ class ToDoItem: NSManagedObject {
     static func allToDoItems() -> [ToDoItem]? {
         let dateSort = NSSortDescriptor(key: "dateTimeCreate", ascending: true)
 //        let predicate = NSPredicate(format: "item BEGINSWITH %@", "sd")
-        let array = CoreDataUtil.fetchEntity("ToDoItem", predicate: nil, sortDescriptors: [dateSort]) as? [ToDoItem]
+        let array = CoreDataUtil.fetchEntity(entityName as String, predicate: nil, sortDescriptors: [dateSort]) as? [ToDoItem]
         
         return array
     }
-    
-//    static func overwriteElementToDoItem (Item: String) -> ToDoItem {
-//        
-//        let predicateElement = NSPredicate(format: "item BEGINSWITH %@", Item)
-//
-//        let array = CoreDataUtil.fetchEntity("ToDoItem", predicate: predicateElement, sortDescriptors: nil) as? [ToDoItem]
-//        
-//        var elementForReturn: ToDoItem?
-//        
-//        if array?.count > 0 {
-//           elementForReturn = array![0] as ToDoItem
-//           
-//            if elementForReturn != nil {
-//               NSManagedObjectContext 
-//            }
-//            
-//            
-//        }
-//        
-//        return elementForReturn!
-//        }
     
 }

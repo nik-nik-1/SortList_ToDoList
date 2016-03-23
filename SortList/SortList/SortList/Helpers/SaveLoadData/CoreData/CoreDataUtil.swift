@@ -10,10 +10,22 @@ import CoreData
 
 class CoreDataUtil {
     
+    static let arrayOfUsetDatabaseName: [String] = ["SortList","WeatherDataModel"]
+    
+    static let dictionaryOfEntityName:[String: String] = [
+        //DataBaseNameFromDatabaseName
+        "SortList":"SortList",
+        "WeatherDataModel":"WeatherDataModel",
+        //DataBaseNameFromInstanceName
+        ToDoItem.getEntityNameOfObject():"SortList",
+        "CurrentWeatherForLocation":"WeatherDataModel",
+        "LocationsOfWeather":"WeatherDataModel"
+    ]
+    
     private static func fetchRequestForEntity(entity: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, otherOptions: Dictionary<String, Float>?) -> NSFetchRequest {
         
         // Get the main object context
-        let moc = getManagedObjectContext()
+        let moc = getManagedObjectContext(entity)
         
         // Get the entity description
         let entityDescription = NSEntityDescription.entityForName(entity, inManagedObjectContext: moc)
@@ -43,7 +55,7 @@ class CoreDataUtil {
     static func fetchEntity(entityName: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, otherOptions: Dictionary<String, Float>?) -> [AnyObject]? {
         
         // Get the main object context
-        let moc = getManagedObjectContext()
+        let moc = getManagedObjectContext(entityName)
 
         let request = self.fetchRequestForEntity(entityName, predicate: predicate, sortDescriptors: sortDescriptors, otherOptions: otherOptions)
         
@@ -72,7 +84,7 @@ class CoreDataUtil {
 
     static func countForEntity(entityName: String, predicate: NSPredicate) -> Int {
         // Get the main object context
-        let moc = getManagedObjectContext()
+        let moc = getManagedObjectContext(entityName)
         
         let request = self.fetchRequestForEntity(entityName, predicate: predicate, sortDescriptors: nil, otherOptions: nil)
         
@@ -88,7 +100,7 @@ class CoreDataUtil {
     }
     
     static func insertEntityNamed(entityName: String) -> AnyObject? {
-        let moc = getManagedObjectContext()
+        let moc = getManagedObjectContext(entityName)
         return NSEntityDescription.insertNewObjectForEntityForName(entityName, inManagedObjectContext: moc)
     }
     
@@ -97,14 +109,19 @@ class CoreDataUtil {
     }
 
     
-    static func save(error: NSErrorPointer) {
-        let moc = getManagedObjectContext()
-        self.saveContext(moc)
+//    static func save(error: NSErrorPointer) {
+//        let moc = getManagedObjectContext()
+//        self.saveContext(moc)
+//    }
+//    
+//    static func saveContext() {
+//        saveContext(getManagedObjectContext())
+//    }
+    
+    static func saveContext(entityName: String) {
+        saveContext(getManagedObjectContext(entityName))
     }
     
-    static func saveContext() {
-        saveContext(getManagedObjectContext())
-    }
     
     static func saveContext(managedObjectContext: NSManagedObjectContext?) {
         
@@ -132,9 +149,24 @@ class CoreDataUtil {
         }
     }
 
-//    static func deleteObject(object: NSManagedObject, error: NSError?) {
-    static func deleteObject(object: NSManagedObject) {
-        let moc = getManagedObjectContext()
+////    static func deleteObject(object: NSManagedObject, error: NSError?) {
+//    static func deleteObject(object: NSManagedObject) {
+//        let moc = getManagedObjectContext() //NSManagedObject.entity.name
+//        moc.deleteObject(object)
+//        
+//        do {
+//            try moc.save()
+//        } catch {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            let nserror = error as NSError
+//            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
+//            abort()
+//        }
+//    }
+    
+    static func deleteObject(EntityName: String, object: NSManagedObject) {
+        let moc = getManagedObjectContext(EntityName)
         moc.deleteObject(object)
         
         do {
@@ -147,10 +179,26 @@ class CoreDataUtil {
             abort()
         }
     }
+
     
-    static func getManagedObjectContext(type:String? = nil) -> NSManagedObjectContext{
+    static func getTypeOfDataUsingEntityName(EntityName: String) -> String{
+        
+        return dictionaryOfEntityName[EntityName]! as String
+    }
+    
+    static func getManagedObjectContext(EntityName:String) -> NSManagedObjectContext{ //EntityName:String? = nil
         //return CoreDataManager.sharedInstance.managedObjectContext
-        return CoreDataManager.getSharedInstance().managedObjectContext
+        var typeOfdata:String!
+        
+//        if EntityName != nil {
+//            typeOfdata = getTypeOfDataUsingEntityName(EntityName!)
+////        }else{
+////            typeOfdata = 
+//        }
+        typeOfdata = getTypeOfDataUsingEntityName(EntityName)
+        
+        let moc = CoreDataManager.getSharedInstance(typeOfdata).managedObjectContext
+        return moc
     }
     
 }

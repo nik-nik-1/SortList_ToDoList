@@ -68,7 +68,7 @@ class ToDoItemTableViewCell: UITableViewCell
 //        toDoItem.checked = selectItemSwitchView.on
         
         toDoItemElem.setValue(selectItemSwitchView.on, forKey: "checked")
-        CoreDataUtil.saveContext()
+        CoreDataUtil.saveContext(ToDoItem.getEntityNameOfObject())
 
         
         //need save in Coredata!!?

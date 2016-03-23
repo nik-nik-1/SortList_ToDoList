@@ -16,7 +16,6 @@ class ToDoItemActionSheetControl : UIAlertController {
 
     weak var delegate: ToDoItemActionSheetControlDelegate?
     
-    //var toDoItem: ToDoItem = ToDoItem.insertNewObjectIntoContext(CoreDataUtil.getManagedObjectContext()) as! ToDoItem 
     var toDoItemElem: ToDoItem!
         {
         didSet {
@@ -45,7 +44,7 @@ class ToDoItemActionSheetControl : UIAlertController {
             //self.toDoItem.checked = !itemChecked
             
             self.toDoItemElem.setValue(!itemChecked, forKey: "checked")
-            CoreDataUtil.saveContext()
+            CoreDataUtil.saveContext(ToDoItem.getEntityNameOfObject())
             
             self.delegate?.didChangeAction()
         }

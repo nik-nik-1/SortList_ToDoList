@@ -10,6 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
+
 class CoreDataManager {
     
     
@@ -21,11 +22,13 @@ class CoreDataManager {
     }
     
     private init(defUrlRes:String?){
-        //by first let's init variable with default parametres
-        defaultInitClass()
+//        //by first let's init variable with default parametres
+//        defaultInitClass()
         
         if let tempDefUrl = defUrlRes as String! {
            defaultURLForResource = tempDefUrl
+        }else{
+            defaultURLForResource = CoreDataManager.getDefaultNameOfUsingDataType()
         }
     }
     
@@ -50,6 +53,10 @@ class CoreDataManager {
         let coordinator = self.persistentStoreCoordinator
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
+        
+        //save default instanse name which was create by initializarion
+        managedObjectContext.usedURLForResource = self.defaultURLForResource
+        
         return managedObjectContext
     }()
     
@@ -104,5 +111,6 @@ class CoreDataManager {
         return instanseToReturn
     }
     
-    
 }
+
+
