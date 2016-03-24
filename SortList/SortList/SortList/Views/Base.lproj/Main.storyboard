@@ -135,6 +135,9 @@
                                 <rect key="frame" x="139" y="79" width="405" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DidEndEnteredCityNameAction:" destination="Xb5-7x-CrZ" eventType="editingDidEndOnExit" id="OPb-fu-oXe"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AC5-kM-wgy">
                                 <rect key="frame" x="29" y="80" width="86" height="31"/>
@@ -145,17 +148,35 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ujo-Pl-72J">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ujo-Pl-72J" customClass="WeatherUITableView" customModule="SortList" customModuleProvider="target">
                                 <rect key="frame" x="29" y="119" width="551" height="461"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="Mrt-LM-IZh">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="Mrt-LM-IZh" customClass="WeatherItemsTableViewCell" customModule="SortList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="551" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrt-LM-IZh" id="Kxw-PK-ayl">
                                             <rect key="frame" x="0.0" y="0.0" width="551" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-DR-Dbi">
+                                                    <rect key="frame" x="12" y="11" width="103" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="103" id="HHN-cg-ChR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7ak-DR-Dbi" firstAttribute="leading" secondItem="Kxw-PK-ayl" secondAttribute="leadingMargin" constant="4" id="5aW-FZ-xlr"/>
+                                                <constraint firstItem="7ak-DR-Dbi" firstAttribute="centerY" secondItem="Kxw-PK-ayl" secondAttribute="centerY" id="y9Z-VA-ZIa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="weatherNameLabelTableItem" destination="7ak-DR-Dbi" id="gwb-A6-XHF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -202,6 +223,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="userCityName" destination="yBX-Ip-Cxs" id="LeP-3Y-30m"/>
+                        <outlet property="weatherTableView" destination="Ujo-Pl-72J" id="GjH-BQ-tX5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Xz-Vy-pPw" userLabel="First Responder" sceneMemberID="firstResponder"/>

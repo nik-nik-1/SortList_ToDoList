@@ -12,89 +12,204 @@ import UIKit
 class  HttpRequestWork {
     
     
-    static func getHttpConnectAndparseJSONforWeather (cityName: String = "Kathmandu") {
+    static func loadDataOfWeatheFromUrlToCoreData (cityName: String?){
+        //        let jsonData = getHttpConnectAndparseJSONforWeather (cityName)
+        //        saveJsonInCoreData (jsonData)
         
-        if let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&mode=json&units=metric&appid=b1b15e88fa797225412429c1c50c122a") {
-            let session = NSURLSession.sharedSession() // preferred way to for any URL request
-            
-            let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
-                defer { // read: "finally." That is, "here's something I want you to do later, no matter what."
-                    
+        connectToWS(cityName) { data, response, error in
+            if error != nil {
+                if error.domain == NSURLErrorDomain && error.code == NSURLErrorTimedOut {
+                    print("timed out") // note, `response` is likely `nil` if it timed out
                 }
-                
-                if error != nil {
-                    print("Whoops, something went wrong with the connection! Details: \(error!.localizedDescription); \(error!.userInfo)")
-                }
-                else if data != nil {
-                    do {
-                        
-                        let jsonRaw = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
-                        
-                        if let parseJSON = jsonRaw {
-                            if parseJSON.count>0 {
-                                //let keys = parseJSON["main"]!.allKeys
-                                
-                              // parseJSON["name"]
-                                
-                            
-                             }
-                        }
-                        
-                        
-//                        if let json = jsonRaw as? [[String: AnyObject]] { // The idea: cast raw into an array of dictionaries
-//                            for entry in json {
-////                                print("Train to \(entry["PlatformKey"]) is arriving in approximately \(entry["TimeRemaining"]) at \(entry["Time"])")
-//                                print ("City name: \(entry["name"]), longitude: \(entry["coord"]!["lon"])")
-//                                
-//                                
-//                            }
-//                        }
-                        
-                        //parseJsonInSpecModule (data!)
-                        
-                        
-                    }
-                    catch {
-                        print("Whoops, cannot convert data to JSON!")
-                    }
-                }
-                
-            })
-            task.resume()
-        }
-        else {
-            print("Whoops, something is wrong with the URL")
+            }else{
+                //all OK, i.e. error = nil
+                saveJsonInCoreData (data)
+            }
         }
         
     }
     
+    private static func connectToWS(cityName: String? = "Kathmandu", callBack: ((data: NSData!, response: NSURLResponse!, error: NSError!) -> Void)?) {
+        
+        let cityNameParam:String = cityName ?? ""
+        let urlPath: String = "http://api.openweathermap.org/data/2.5/weather?q=\(cityNameParam)&mode=json&units=metric&appid=9bd00823dba3f57648fd6bae859d7d34"
+        let url: NSURL = NSURL(string: urlPath)!
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            callBack?(data: data, response: response, error: error)
+            return
+        }
+        
+        task.resume()
+    }
     
-  static  func parseJsonInSpecModule (data:NSData) {
+    private static func saveJsonInCoreData (jsonData:NSData?){
+        
+        //if let jsonData as NSData{
+        if let structItem = parseJsonInSpecModule (jsonData!) {
+            let EntityNameOfObject = WeatherItem.getEntityNameOfObject()
+            //Erese all data in CoreData
+            CoreDataUtil.deleteAllData(EntityNameOfObject)
+            
+            
+            let moc = CoreDataUtil.getManagedObjectContext(EntityNameOfObject)
+            WeatherItem.insertWeatheItemWithItem(structItem, context: moc)
+            CoreDataUtil.saveContext(moc)
+        }
+        //}
+    }
     
+    
+    private static  func parseJsonInSpecModule (data:NSData) -> WeatherItemStructure?{
+        var structItem: WeatherItemStructure?
         do {
-            let json = try JSON.parseData(data)
+            let parseJSON = try JSON.parseData(data)
             
-//            if json["name"].isUndefined {
-//               throw .MissingName
-//            }
-//
-//            if json["info"]["age"].isUndefined {
-////                throw .MissingAge
-//            }
+            //            if json["name"].isUndefined {
+            //               throw .MissingName
+            //            }
+            //
+            //            if json["info"]["age"].isUndefined {
+            ////                throw .MissingAge
+            //            }
             
-//            let model = MyModel(
-//                name: json["name"].stringValue!
-//                age: json["info"]["age"].intValue!
-//                married: json["status"]["married"].boolValue ?? false
-//                firstCar: json["cars"][0].stringValue ?? ""
-//            )
-            print ("City name: \(json["name"].stringValue!), longitude: \(String(json["coord"]["lon"].numberValue!))")
+            //            let model = MyModel(
+            //                name: json["name"].stringValue!
+            //                age: json["info"]["age"].intValue!
+            //                married: json["status"]["married"].boolValue ?? false
+            //                firstCar: json["cars"][0].stringValue ?? ""
+            //            )
+            //print ("City name: \(json["name"].stringValue!), longitude: \(String(json["coord"]["lon"].numberValue!))")
+            
+            
+            //Generate temp.Struct for CoreData
+            structItem = WeatherItemStructure()
+            //structItem.id = parseJSON["id"] as! Int64
+            structItem!.name = parseJSON["name"].stringValue! as String
+            
         }
         catch {
             // Handle error
         }
-
+        return structItem
     }
+    
+    
+    //    class RemoteAPI {
+    //        func getData(cityName: String? = "Kathmandu", completionHandler: ((NSArray!, NSError!) -> Void)!) -> Void {
+    //            let cityNameParam:String = cityName ?? ""
+    //            let URLString: String = "http://api.openweathermap.org/data/2.5/weather?q=\(cityNameParam)&mode=json&units=metric&appid=9bd00823dba3f57648fd6bae859d7d34"
+    //            let url: NSURL = NSURL(string: URLString)!
+    //            let ses = NSURLSession.sharedSession()
+    //            let task = ses.dataTaskWithURL(url, completionHandler: {data, response, error -> Void in
+    //                if (error != nil) {
+    //                    return completionHandler(nil, error)
+    //                }
+    //
+    //                var error: NSError?
+    //                do {
+    //                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+    //                    return completionHandler(json["results"] as! [NSDictionary], nil)
+    //                }
+    //                catch {
+    //                    print("Whoops, cannot convert data to JSON!")
+    //                    return completionHandler(nil, error)
+    //                }
+    //
+    //            })
+    //            task.resume()
+    //        }
+    //    }
+    
+    
+    
+    
+    //    private static func getHttpConnectAndparseJSONforWeather (cityName: String? = "Kathmandu") -> NSData? {
+    //
+    //        var valueForReturn: NSData?
+    //
+    //        let cityNameParam:String = cityName ?? ""
+    //        let URLString: String = "http://api.openweathermap.org/data/2.5/weather?q=\(cityNameParam)&mode=json&units=metric&appid=9bd00823dba3f57648fd6bae859d7d34"
+    //
+    //        if let url = NSURL(string: URLString) {
+    //            let session = NSURLSession.sharedSession() // preferred way to for any URL request
+    //
+    //            let task = session.dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+    //                defer { // read: "finally." That is, "here's something I want you to do later, no matter what."
+    //
+    //                }
+    //
+    //                if error != nil {
+    //                    print("Whoops, something went wrong with the connection! Details: \(error!.localizedDescription); \(error!.userInfo)")
+    //                }
+    //                else if data != nil {
+    //                    do {
+    //
+    //                        //                        let jsonRaw = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers) as? NSDictionary
+    //                        //
+    //                        //                        if let parseJSON = jsonRaw {
+    //                        //                            if parseJSON.count>0 {
+    //                        //                                //let keys = parseJSON["main"]!.allKeys
+    //                        //
+    //                        //                              // parseJSON["name"]
+    //                        ////
+    //                        //
+    //                        ////                                let EntityNameOfObject = WeatherItem.getEntityNameOfObject()
+    //                        ////
+    //                        ////                                //Erese all data in CoreData
+    //                        ////                                CoreDataUtil.deleteAllData(EntityNameOfObject)
+    //                        ////
+    //                        ////                                //Generate temp.Struct for CoreData
+    //                        ////                                let structItem = WeatherItemStructure()
+    //                        ////                                //structItem.id = parseJSON["id"] as! Int64
+    //                        ////                                structItem.name = parseJSON["name"] as! String
+    //                        ////
+    //                        ////
+    //                        ////                                let moc = CoreDataUtil.getManagedObjectContext(EntityNameOfObject)
+    //                        ////                                WeatherItem.insertWeatheItemWithItem(structItem, context: moc)
+    //                        ////                                CoreDataUtil.saveContext(moc)
+    //                        //
+    //                        //                             }
+    //                        //                        }
+    //
+    //
+    //                        //                        if let json = jsonRaw as? [[String: AnyObject]] { // The idea: cast raw into an array of dictionaries
+    //                        //                            for entry in json {
+    //                        ////                                print("Train to \(entry["PlatformKey"]) is arriving in approximately \(entry["TimeRemaining"]) at \(entry["Time"])")
+    //                        //                                print ("City name: \(entry["name"]), longitude: \(entry["coord"]!["lon"])")
+    //                        //
+    //                        //
+    //                        //                            }
+    //                        //                        }
+    //
+    //                        //parseJsonInSpecModule (data!)
+    //
+    //
+    //                    }
+    //                    catch {
+    //                        print("Whoops, cannot convert data to JSON!")
+    //                    }
+    //                }
+    //
+    //                }
+    //
+    //            )
+    //            
+    //            
+    //            task.resume()
+    //        }
+    //        else {
+    //            print("Whoops, something is wrong with the URL")
+    //        }
+    //        
+    //        return valueForReturn!
+    //        
+    //    }
+    
+    
+    
     
     
 }

@@ -114,9 +114,11 @@ class CoreDataUtil {
 //        self.saveContext(moc)
 //    }
 //    
-//    static func saveContext() {
-//        saveContext(getManagedObjectContext())
-//    }
+    static func saveContext() {
+        for nameOfBD in arrayOfUsetDatabaseName {
+            saveContext(nameOfBD)
+        }
+    }
     
     static func saveContext(entityName: String) {
         saveContext(getManagedObjectContext(entityName))
@@ -180,6 +182,27 @@ class CoreDataUtil {
         }
     }
 
+    
+    static func deleteAllData(EntityName: String)
+    {
+        
+        let moc = getManagedObjectContext(EntityName)
+        let fetchRequest = NSFetchRequest(entityName: EntityName)
+        fetchRequest.returnsObjectsAsFaults = false
+        
+        do
+        {
+            let results = try moc.executeFetchRequest(fetchRequest)
+            for managedObject in results
+            {
+                let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
+                moc.deleteObject(managedObjectData)
+            }
+        } catch let error as NSError {
+            NSLog("Detele all data in \(EntityName) error : \(error) \(error.userInfo)")
+        }
+    }
+    
     
     static func getTypeOfDataUsingEntityName(EntityName: String) -> String{
         

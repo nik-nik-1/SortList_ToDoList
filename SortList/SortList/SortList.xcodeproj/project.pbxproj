@@ -7,41 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D830CB3E1C94D7800003158A /* SortList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */; };
-		D830CB421C94D9700003158A /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D830CB401C94D9700003158A /* ToDoItem.swift */; };
 		D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */; };
 		D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0931C5EC817007E4F48 /* Assets.xcassets */; };
 		D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0961C5EC817007E4F48 /* LaunchScreen.storyboard */; };
 		D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0981C5EC817007E4F48 /* Main.storyboard */; };
-		D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */; };
-		D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */; };
-		D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */; };
-		D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */; };
 		E74A96D01CA0171600CFF0B2 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96CF1CA0171600CFF0B2 /* JSON.swift */; };
 		E74A96D21CA017D400CFF0B2 /* JSON_ReedMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E74A96D11CA017D400CFF0B2 /* JSON_ReedMe.rtf */; };
-		E74A96D51CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */; };
 		E74A96D81CA2875000CFF0B2 /* NSManagedObjectContextExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96D71CA2875000CFF0B2 /* NSManagedObjectContextExtentions.swift */; };
+		E74A96DD1CA2AF6500CFF0B2 /* WeatherUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96DC1CA2AF6500CFF0B2 /* WeatherUITableView.swift */; };
+		E74A96DF1CA2BC0500CFF0B2 /* WeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96DE1CA2BC0500CFF0B2 /* WeatherItem.swift */; };
+		E74A96E21CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96E01CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift */; };
+		E74A96F01CA2DD7700CFF0B2 /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96ED1CA2DD7700CFF0B2 /* ToDoItem+CoreDataProperties.swift */; };
+		E74A96F11CA2DD7700CFF0B2 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96EE1CA2DD7700CFF0B2 /* ToDoItem.swift */; };
+		E74A96F21CA2DD7700CFF0B2 /* ToDoItems+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96EF1CA2DD7700CFF0B2 /* ToDoItems+Color.swift */; };
+		E74A96F51CA2DE0700CFF0B2 /* SortList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E74A96F31CA2DE0700CFF0B2 /* SortList.xcdatamodeld */; };
+		E74A96F81CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E74A96F61CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld */; };
+		E74A96FE1CA2DE6700CFF0B2 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96FA1CA2DE6700CFF0B2 /* CollectionViewController.swift */; };
+		E74A96FF1CA2DE6700CFF0B2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96FB1CA2DE6700CFF0B2 /* DetailViewController.swift */; };
+		E74A97001CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96FC1CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift */; };
+		E74A97011CA2DE6700CFF0B2 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A96FD1CA2DE6700CFF0B2 /* ToDoListViewController.swift */; };
+		E74A97071CA2DEB200CFF0B2 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A97041CA2DEB200CFF0B2 /* ToDoItemTableViewCell.swift */; };
+		E74A97081CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E74A97051CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib */; };
+		E74A97091CA2DEB200CFF0B2 /* ToDoListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A97061CA2DEB200CFF0B2 /* ToDoListTableView.swift */; };
+		E74A970C1CA2DF3B00CFF0B2 /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74A970B1CA2DF3B00CFF0B2 /* UIView_Borders.swift */; };
+		E74A970F1CA2DFBC00CFF0B2 /* mainPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E74A970E1CA2DFBC00CFF0B2 /* mainPList.plist */; };
 		E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D11C772350002A5E3B /* ColorsChoise.plist */; };
 		E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */ = {isa = PBXBuildFile; fileRef = E75310D51C7725D4002A5E3B /* ColorBackGround.plist */; };
-		E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75310D91C7F097A002A5E3B /* UIView_Borders.swift */; };
-		E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */; };
 		E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */; };
-		E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B801C74E320005D104F /* CollectionViewController.swift */; };
 		E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */ = {isa = PBXBuildFile; fileRef = E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */; };
 		E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */; };
+		E7BE33DE1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BE33DD1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift */; };
 		E7C28CF41C9808A100FE3EF5 /* DateTimeEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CF31C9808A100FE3EF5 /* DateTimeEx.swift */; };
 		E7C28CF61C9809E000FE3EF5 /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CF51C9809E000FE3EF5 /* ColorMode.swift */; };
-		E7C28CF81C9811DE00FE3EF5 /* ToDoItems+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */; };
 		E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28CFD1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift */; };
-		E7C28D041C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */; };
 		E7C28D0A1C9C109F00FE3EF5 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D091C9C109F00FE3EF5 /* WeatherViewController.swift */; };
 		E7C28D0D1C9C4DEE00FE3EF5 /* HttpRequestWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D0C1C9C4DEE00FE3EF5 /* HttpRequestWork.swift */; };
 		E7C28D121C9DA22900FE3EF5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D101C9DA22900FE3EF5 /* CoreDataManager.swift */; };
 		E7C28D131C9DA22900FE3EF5 /* CoreDataUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D111C9DA22900FE3EF5 /* CoreDataUtil.swift */; };
 		E7C28D181C9DA2E300FE3EF5 /* NRSwiftPlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C28D171C9DA2E300FE3EF5 /* NRSwiftPlist.swift */; };
 		E7C28D1A1C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E7C28D191C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf */; };
-		E7C28D1F1C9DA73900FE3EF5 /* mainPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7C28D1E1C9DA73900FE3EF5 /* mainPList.plist */; };
-		E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */; };
 		E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */; };
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
 		E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */; };
@@ -49,43 +53,47 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D830CB3D1C94D7800003158A /* SortList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SortList.xcdatamodel; sourceTree = "<group>"; };
-		D830CB401C94D9700003158A /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		D8E8D07A1C5EC74E007E4F48 /* SortList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SortList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8E8D0931C5EC817007E4F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8E8D0941C5EC817007E4F48 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8E8D0971C5EC817007E4F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8E8D0991C5EC817007E4F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
-		D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableView.swift; sourceTree = "<group>"; };
-		D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
-		D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
 		E74A96CF1CA0171600CFF0B2 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		E74A96D11CA017D400CFF0B2 /* JSON_ReedMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = JSON_ReedMe.rtf; sourceTree = "<group>"; };
-		E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E74A96D71CA2875000CFF0B2 /* NSManagedObjectContextExtentions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtentions.swift; sourceTree = "<group>"; };
+		E74A96DC1CA2AF6500CFF0B2 /* WeatherUITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUITableView.swift; sourceTree = "<group>"; };
+		E74A96DE1CA2BC0500CFF0B2 /* WeatherItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherItem.swift; sourceTree = "<group>"; };
+		E74A96E01CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CurrentWeatherForLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E74A96ED1CA2DD7700CFF0B2 /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E74A96EE1CA2DD7700CFF0B2 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		E74A96EF1CA2DD7700CFF0B2 /* ToDoItems+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItems+Color.swift"; sourceTree = "<group>"; };
+		E74A96F41CA2DE0700CFF0B2 /* SortList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SortList.xcdatamodel; sourceTree = "<group>"; };
+		E74A96F71CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherDataModel.xcdatamodel; sourceTree = "<group>"; };
+		E74A96FA1CA2DE6700CFF0B2 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		E74A96FB1CA2DE6700CFF0B2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E74A96FC1CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemActionSheetControl.swift; sourceTree = "<group>"; };
+		E74A96FD1CA2DE6700CFF0B2 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
+		E74A97041CA2DEB200CFF0B2 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
+		E74A97051CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemTableViewCell.xib; sourceTree = "<group>"; };
+		E74A97061CA2DEB200CFF0B2 /* ToDoListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableView.swift; sourceTree = "<group>"; };
+		E74A970B1CA2DF3B00CFF0B2 /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
+		E74A970E1CA2DFBC00CFF0B2 /* mainPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainPList.plist; sourceTree = "<group>"; };
 		E75310D11C772350002A5E3B /* ColorsChoise.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorsChoise.plist; sourceTree = "<group>"; };
 		E75310D51C7725D4002A5E3B /* ColorBackGround.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorBackGround.plist; sourceTree = "<group>"; };
-		E75310D91C7F097A002A5E3B /* UIView_Borders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_Borders.swift; sourceTree = "<group>"; };
-		E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemActionSheetControl.swift; sourceTree = "<group>"; };
 		E79C6B7A1C748F2B005D104F /* ActionSheetCellControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetCellControl.swift; sourceTree = "<group>"; };
-		E79C6B801C74E320005D104F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E79C6B821C74E3A4005D104F /* ColorPickerViewController.swift1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ColorPickerViewController.swift1; sourceTree = "<group>"; };
 		E79C6B841C74E4B2005D104F /* ColorCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewController.swift; sourceTree = "<group>"; };
+		E7BE33DD1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherItemsTableViewCell.swift; sourceTree = "<group>"; };
 		E7C28CF31C9808A100FE3EF5 /* DateTimeEx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeEx.swift; sourceTree = "<group>"; };
 		E7C28CF51C9809E000FE3EF5 /* ColorMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
-		E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItems+Color.swift"; sourceTree = "<group>"; };
 		E7C28CFD1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OLD_ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ToDoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E7C28D091C9C109F00FE3EF5 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		E7C28D0C1C9C4DEE00FE3EF5 /* HttpRequestWork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestWork.swift; sourceTree = "<group>"; };
 		E7C28D101C9DA22900FE3EF5 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E7C28D111C9DA22900FE3EF5 /* CoreDataUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataUtil.swift; sourceTree = "<group>"; };
 		E7C28D171C9DA2E300FE3EF5 /* NRSwiftPlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NRSwiftPlist.swift; sourceTree = "<group>"; };
 		E7C28D191C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = NRSwiftPlist_ReedMe.rtf; sourceTree = "<group>"; };
-		E7C28D1E1C9DA73900FE3EF5 /* mainPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mainPList.plist; sourceTree = "<group>"; };
-		E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E7D0D33A1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerOLD.swift; sourceTree = "<group>"; };
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
 		E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController_test.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		D830CB2F1C94BC460003158A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				E74A970A1CA2DF3B00CFF0B2 /* UIView */,
 				E7C28D0E1C9DA1FD00FE3EF5 /* SaveLoadData */,
 				E7C28D0B1C9C4DA800FE3EF5 /* Web */,
 				E7C28CF21C9808A100FE3EF5 /* DateTime */,
@@ -116,10 +125,8 @@
 		D830CB351C94D74B0003158A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				E74A96EC1CA2DD7700CFF0B2 /* ToDoItem */,
 				E74A96D61CA0606F00CFF0B2 /* Weather */,
-				E7C28D031C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift */,
-				D830CB401C94D9700003158A /* ToDoItem.swift */,
-				E7C28CF71C9811DE00FE3EF5 /* ToDoItems+Color.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -147,8 +154,8 @@
 				D830CB2F1C94BC460003158A /* Helpers */,
 				D8E8D07D1C5EC74E007E4F48 /* AppDelegate.swift */,
 				D8E8D0911C5EC817007E4F48 /* Models */,
-				D8E8D08F1C5EC817007E4F48 /* Controllers */,
 				D8E8D0951C5EC817007E4F48 /* Views */,
+				D8E8D08F1C5EC817007E4F48 /* Controllers */,
 				D8E8D0921C5EC817007E4F48 /* Resources */,
 			);
 			path = SortList;
@@ -157,11 +164,8 @@
 		D8E8D08F1C5EC817007E4F48 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E74A96F91CA2DE6700CFF0B2 /* ToDoItem */,
 				E7C28D081C9C109F00FE3EF5 /* Weather */,
-				E79C6B801C74E320005D104F /* CollectionViewController.swift */,
-				D8E8D09F1C5EC953007E4F48 /* ToDoListViewController.swift */,
-				E7D0D3321C6A003300B73DF2 /* DetailViewController.swift */,
-				E79C6B781C748EFB005D104F /* ToDoItemActionSheetControl.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -169,10 +173,7 @@
 		D8E8D0911C5EC817007E4F48 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E7C28D1D1C9DA73900FE3EF5 /* PlistForSaveData */,
 				D830CB351C94D74B0003158A /* Entities */,
-				D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */,
-				E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +181,7 @@
 		D8E8D0921C5EC817007E4F48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E74A970D1CA2DFBC00CFF0B2 /* PlistForSaveData */,
 				E75310D01C772350002A5E3B /* Color */,
 				D8E8D0931C5EC817007E4F48 /* Assets.xcassets */,
 				D8E8D0941C5EC817007E4F48 /* Info.plist */,
@@ -190,29 +192,87 @@
 		D8E8D0951C5EC817007E4F48 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D8E8D0A11C5EC99C007E4F48 /* ToDoListViews */,
+				E74A97021CA2DEB200CFF0B2 /* ToDoItem */,
+				E74A96D91CA2AE0800CFF0B2 /* Weather */,
 				D8E8D0961C5EC817007E4F48 /* LaunchScreen.storyboard */,
 				D8E8D0981C5EC817007E4F48 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		D8E8D0A11C5EC99C007E4F48 /* ToDoListViews */ = {
+		E74A96D61CA0606F00CFF0B2 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				E75310D91C7F097A002A5E3B /* UIView_Borders.swift */,
-				D8E8D0A21C5EC9C1007E4F48 /* ToDoListTableView.swift */,
-				D8E8D0A61C5ED50B007E4F48 /* ToDoItemTableViewCell.swift */,
-				D8E8D0A71C5ED50B007E4F48 /* ToDoItemTableViewCell.xib */,
+				E74A96F61CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld */,
+				E74A96E01CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift */,
+				E74A96DE1CA2BC0500CFF0B2 /* WeatherItem.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		E74A96D91CA2AE0800CFF0B2 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				E74A96DC1CA2AF6500CFF0B2 /* WeatherUITableView.swift */,
+				E7BE33DD1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		E74A96EC1CA2DD7700CFF0B2 /* ToDoItem */ = {
+			isa = PBXGroup;
+			children = (
+				E74A96F31CA2DE0700CFF0B2 /* SortList.xcdatamodeld */,
+				E74A96ED1CA2DD7700CFF0B2 /* ToDoItem+CoreDataProperties.swift */,
+				E74A96EE1CA2DD7700CFF0B2 /* ToDoItem.swift */,
+				E74A96EF1CA2DD7700CFF0B2 /* ToDoItems+Color.swift */,
+			);
+			path = ToDoItem;
+			sourceTree = "<group>";
+		};
+		E74A96F91CA2DE6700CFF0B2 /* ToDoItem */ = {
+			isa = PBXGroup;
+			children = (
+				E74A96FA1CA2DE6700CFF0B2 /* CollectionViewController.swift */,
+				E74A96FB1CA2DE6700CFF0B2 /* DetailViewController.swift */,
+				E74A96FC1CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift */,
+				E74A96FD1CA2DE6700CFF0B2 /* ToDoListViewController.swift */,
+			);
+			path = ToDoItem;
+			sourceTree = "<group>";
+		};
+		E74A97021CA2DEB200CFF0B2 /* ToDoItem */ = {
+			isa = PBXGroup;
+			children = (
+				E74A97031CA2DEB200CFF0B2 /* ToDoListViews */,
+			);
+			path = ToDoItem;
+			sourceTree = "<group>";
+		};
+		E74A97031CA2DEB200CFF0B2 /* ToDoListViews */ = {
+			isa = PBXGroup;
+			children = (
+				E74A97051CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib */,
+				E74A97041CA2DEB200CFF0B2 /* ToDoItemTableViewCell.swift */,
+				E74A97061CA2DEB200CFF0B2 /* ToDoListTableView.swift */,
 			);
 			path = ToDoListViews;
 			sourceTree = "<group>";
 		};
-		E74A96D61CA0606F00CFF0B2 /* Weather */ = {
+		E74A970A1CA2DF3B00CFF0B2 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				E74A970B1CA2DF3B00CFF0B2 /* UIView_Borders.swift */,
 			);
-			path = Weather;
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		E74A970D1CA2DFBC00CFF0B2 /* PlistForSaveData */ = {
+			isa = PBXGroup;
+			children = (
+				E74A970E1CA2DFBC00CFF0B2 /* mainPList.plist */,
+			);
+			path = PlistForSaveData;
 			sourceTree = "<group>";
 		};
 		E75310D01C772350002A5E3B /* Color */ = {
@@ -275,14 +335,6 @@
 				E7C28D191C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf */,
 			);
 			path = Plist;
-			sourceTree = "<group>";
-		};
-		E7C28D1D1C9DA73900FE3EF5 /* PlistForSaveData */ = {
-			isa = PBXGroup;
-			children = (
-				E7C28D1E1C9DA73900FE3EF5 /* mainPList.plist */,
-			);
-			path = PlistForSaveData;
 			sourceTree = "<group>";
 		};
 		E7D0D3391C6BBF9100B73DF2 /* Trash */ = {
@@ -361,15 +413,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74A970F1CA2DFBC00CFF0B2 /* mainPList.plist in Resources */,
 				E74A96D21CA017D400CFF0B2 /* JSON_ReedMe.rtf in Resources */,
 				E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */,
 				D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */,
 				E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */,
-				E7C28D1F1C9DA73900FE3EF5 /* mainPList.plist in Resources */,
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
-				D8E8D0A91C5ED50B007E4F48 /* ToDoItemTableViewCell.xib in Resources */,
 				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,
+				E74A97081CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib in Resources */,
 				E7C28D1A1C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,33 +435,37 @@
 			files = (
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
 				E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */,
-				D8E8D0A01C5EC953007E4F48 /* ToDoListViewController.swift in Sources */,
+				E74A96F11CA2DD7700CFF0B2 /* ToDoItem.swift in Sources */,
 				E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */,
-				E74A96D51CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */,
+				E74A97071CA2DEB200CFF0B2 /* ToDoItemTableViewCell.swift in Sources */,
+				E74A96FE1CA2DE6700CFF0B2 /* CollectionViewController.swift in Sources */,
 				D8E8D07E1C5EC74E007E4F48 /* AppDelegate.swift in Sources */,
-				E75310DA1C7F097A002A5E3B /* UIView_Borders.swift in Sources */,
 				E7C28D121C9DA22900FE3EF5 /* CoreDataManager.swift in Sources */,
-				E7C28CF81C9811DE00FE3EF5 /* ToDoItems+Color.swift in Sources */,
-				E7C28D041C99B3C100FE3EF5 /* ToDoItem+CoreDataProperties.swift in Sources */,
-				E7D0D3331C6A003300B73DF2 /* DetailViewController.swift in Sources */,
-				E79C6B811C74E320005D104F /* CollectionViewController.swift in Sources */,
-				D830CB3E1C94D7800003158A /* SortList.xcdatamodeld in Sources */,
 				E7C28D0D1C9C4DEE00FE3EF5 /* HttpRequestWork.swift in Sources */,
+				E74A97011CA2DE6700CFF0B2 /* ToDoListViewController.swift in Sources */,
 				E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */,
-				D8E8D0A31C5EC9C1007E4F48 /* ToDoListTableView.swift in Sources */,
-				E79C6B791C748EFB005D104F /* ToDoItemActionSheetControl.swift in Sources */,
+				E74A96FF1CA2DE6700CFF0B2 /* DetailViewController.swift in Sources */,
+				E74A97001CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift in Sources */,
 				E7C28D0A1C9C109F00FE3EF5 /* WeatherViewController.swift in Sources */,
+				E74A96F01CA2DD7700CFF0B2 /* ToDoItem+CoreDataProperties.swift in Sources */,
 				E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */,
 				E7C28D131C9DA22900FE3EF5 /* CoreDataUtil.swift in Sources */,
 				E7C28CF61C9809E000FE3EF5 /* ColorMode.swift in Sources */,
 				E79C6B7B1C748F2B005D104F /* ActionSheetCellControl.swift in Sources */,
 				E74A96D01CA0171600CFF0B2 /* JSON.swift in Sources */,
 				E7C28CF41C9808A100FE3EF5 /* DateTimeEx.swift in Sources */,
-				D8E8D0A81C5ED50B007E4F48 /* ToDoItemTableViewCell.swift in Sources */,
-				D830CB421C94D9700003158A /* ToDoItem.swift in Sources */,
+				E74A96DD1CA2AF6500CFF0B2 /* WeatherUITableView.swift in Sources */,
 				E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */,
+				E74A97091CA2DEB200CFF0B2 /* ToDoListTableView.swift in Sources */,
+				E74A970C1CA2DF3B00CFF0B2 /* UIView_Borders.swift in Sources */,
+				E74A96DF1CA2BC0500CFF0B2 /* WeatherItem.swift in Sources */,
 				E74A96D81CA2875000CFF0B2 /* NSManagedObjectContextExtentions.swift in Sources */,
+				E74A96F21CA2DD7700CFF0B2 /* ToDoItems+Color.swift in Sources */,
+				E7BE33DE1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift in Sources */,
+				E74A96E21CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift in Sources */,
 				E7C28D181C9DA2E300FE3EF5 /* NRSwiftPlist.swift in Sources */,
+				E74A96F81CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */,
+				E74A96F51CA2DE0700CFF0B2 /* SortList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,22 +620,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D830CB3C1C94D7800003158A /* SortList.xcdatamodeld */ = {
+		E74A96F31CA2DE0700CFF0B2 /* SortList.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D830CB3D1C94D7800003158A /* SortList.xcdatamodel */,
+				E74A96F41CA2DE0700CFF0B2 /* SortList.xcdatamodel */,
 			);
-			currentVersion = D830CB3D1C94D7800003158A /* SortList.xcdatamodel */;
+			currentVersion = E74A96F41CA2DE0700CFF0B2 /* SortList.xcdatamodel */;
 			path = SortList.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
-		E74A96D31CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodeld */ = {
+		E74A96F61CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */,
+				E74A96F71CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodel */,
 			);
-			currentVersion = E74A96D41CA0541A00CFF0B2 /* WeatherDataModel.xcdatamodel */;
+			currentVersion = E74A96F71CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodel */;
 			path = WeatherDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

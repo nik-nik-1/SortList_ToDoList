@@ -10,39 +10,47 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
+    var weatherItems: [WeatherItem] = [] {
+        didSet {
+            weatherTableView.weatherItems = weatherItems
+            weatherTableView.reloadData()
+        }
+    }
+    @IBOutlet weak var weatherTableView: WeatherUITableView!
     @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
         saveNameOfCity()
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
+    @IBAction func DidEndEnteredCityNameAction(sender: AnyObject) {
+        saveNameOfCity()
+    }
     @IBOutlet weak var userCityName: UITextField!
-//        {
-//       didSet {
-//            //save temporary data in List
-//            saveNameOfCity()
-//        }
-//    }
-    
     @IBAction func buttonGetWeatherDataPressed(sender: AnyObject) {
         saveNameOfCity()
-        HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
+        //HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
+        HttpRequestWork.loadDataOfWeatheFromUrlToCoreData(userCityName.text!)
     }
-    
     private let tempItemsInKlass = WeatherStructInfo()
-    
     private struct WeatherStructInfo {
         let nameTemporaryForSave: String = "nameOfWeatherCity"
         let nameOfPList: String = "mainPList"
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         // Do any additional setup after loading the view.
         loadDataByDefault()
+        
+        //weatherTableView.weatherListDelegate = self;
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let items = WeatherItem.allWatherItems() {
+            weatherItems = items
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -59,7 +67,7 @@ class WeatherViewController: UIViewController {
     }
     */
     
-    //MARK: Save & Load Data
+    //MARK: Save & Load Data in Plist.-file
     func loadDataByDefault () {
         userCityName.text = getSaveNamedOfCity()
     }

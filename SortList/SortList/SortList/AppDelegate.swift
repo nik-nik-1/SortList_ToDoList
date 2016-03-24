@@ -47,10 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //        let moc = CoreDataUtil.getManagedObjectContext()
         //        CoreDataUtil.saveContext(moc)
+        CoreDataUtil.saveContext()
   
-       for nameOfBD in CoreDataUtil.arrayOfUsetDatabaseName {
-            CoreDataUtil.saveContext(nameOfBD)
-        }
+       
     }
 
     
