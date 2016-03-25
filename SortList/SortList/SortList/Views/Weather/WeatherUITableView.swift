@@ -18,6 +18,8 @@ class WeatherUITableView: UITableView, UITableViewDataSource, UITableViewDelegat
     }
     */
 
+    let arreyOfCellTemp:[String] = ["first","second","third","fourth"]
+    
     var weatherItems: [WeatherItem] = [] {
         didSet {
             self.reloadData()
@@ -27,7 +29,7 @@ class WeatherUITableView: UITableView, UITableViewDataSource, UITableViewDelegat
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        self.registerClass(WeatherItemsTableViewCell.self, forCellReuseIdentifier: "WeatherCell")
+//        self.registerClass(WeatherItemsTableViewCell.self, forCellReuseIdentifier: "WeatherCell")
         
         self.dataSource = self
         self.delegate = self
@@ -37,22 +39,27 @@ class WeatherUITableView: UITableView, UITableViewDataSource, UITableViewDelegat
         
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return weatherItems.count
+        return arreyOfCellTemp.count//weatherItems.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell  {
 //       let cell = self.dequeueReusableCellWithIdentifier("WeatherCell") as! WeatherItemsTableViewCell
 //       return cell
 
-        var cell = self.dequeueReusableCellWithIdentifier("WeatherCell") as? WeatherItemsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeatherCell") as? WeatherItemsTableViewCell
         
-        if (cell == nil) {
-            // Load the nib and assign an owner
-            let topLevelObjects = NSBundle.mainBundle().loadNibNamed("WeatherItemsTableViewCell", owner: self, options: nil);
-            cell = topLevelObjects.first as? WeatherItemsTableViewCell
-        }
+//        if (cell == nil) {
+//            // Load the nib and assign an owner
+//            let topLevelObjects = NSBundle.mainBundle().loadNibNamed("WeatherItemsTableViewCell", owner: self, options: nil);
+//            cell = topLevelObjects.first as? WeatherItemsTableViewCell
+//        }
         
-        //TEST !! : cell?.weatherNameLabelTableItem?.text = "dsdsdsddsds"
+        //TEST !! : 
+//        cell?.weatherNameLabelTableItem?.text = arreyOfCellTemp[indexPath.row]
+        //cell!.textLabel?.text = arreyOfCellTemp[indexPath.row]
+        
+        cell?.weatherNameLabelTableItem?.text = arreyOfCellTemp[indexPath.row]
+        cell?.weatherValueLabelTableItem?.text = "\(arreyOfCellTemp[indexPath.row]) ddddd"
         
         //////cell?.delegate = self
         return cell!
@@ -62,10 +69,10 @@ class WeatherUITableView: UITableView, UITableViewDataSource, UITableViewDelegat
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        let weatherItemCell = cell as! WeatherItemsTableViewCell
-        let weatherItem = weatherItems[indexPath.row]
-        
-        weatherItemCell.weatherItem = weatherItem
+//        let weatherItemCell = cell as! WeatherItemsTableViewCell
+//        let weatherItem = weatherItems[indexPath.row]
+//        
+//        weatherItemCell.weatherItem = weatherItem
         
     }
     

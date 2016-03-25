@@ -10,14 +10,16 @@ import UIKit
 
 class WeatherItemsTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var weatherNameLabelTableItem: UILabel!
+    @IBOutlet weak var weatherValueLabelTableItem: UILabel!
     
     var weatherItem: WeatherItem! {
         didSet {
             
             weatherNameLabelTableItem?.text = weatherItem.name
             
-            let eee = 4
+            _ = 4
         }
     }
     
