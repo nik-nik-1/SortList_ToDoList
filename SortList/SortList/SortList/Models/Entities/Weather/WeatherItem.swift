@@ -12,6 +12,8 @@ import CoreData
 
 class WeatherItem : NSManagedObject {
     
+    static let elementDictOfClass = WeatherItem.getElementDictOfClass()
+    
     private static let entityName: NSString = "CurrentWeatherForLocation"
     private let entityName: NSString = WeatherItem.entityName
     
@@ -51,31 +53,72 @@ class WeatherItem : NSManagedObject {
         
         return array
     }
+    
+    
+    static func getElementDictOfClass () -> [String: String]{
+        var Dict = [String: String]()
+        Dict.updateValue("City ID",                             forKey: "id")
+        Dict.updateValue("City name",                           forKey: "name")
+        Dict.updateValue("Country code",                        forKey: "country")
+        Dict.updateValue("Group of weather parameters",         forKey: "weatherMain")
+        Dict.updateValue("Weather condition within the group",  forKey: "weatherDescription")
+        Dict.updateValue("Weather icon id",                     forKey: "weathrIcon")
+        Dict.updateValue("Temperature. Metric: Celsius",        forKey: "mainTemp")
+        Dict.updateValue("Atmospheric pressure, hPa",           forKey: "mainPressure")
+        Dict.updateValue("Humidity, %",                         forKey: "mainHumidity")
+        Dict.updateValue("Minimum temperature at the moment",   forKey: "mainTemp_min")
+        Dict.updateValue("Maximum temperature at the moment",   forKey: "mainTemp_max")
+        Dict.updateValue("Wind speed. Metric: meter/sec",       forKey: "windSpeed")
+        Dict.updateValue("Wind direction, degrees",             forKey: "windDeg")
+        
+        return Dict
+    }
+    
+    subscript(name: String) -> String {
+        // 1
+        get {
+//            // 2
+//            precondition(index < self.array.count,
+//                "Index out-of-bounds")
+//            
+//            // 3
+//            let key = self.array[index]
+            
+            // 4
+            let value = self[name] as String
+            
+            // 5
+            return value
+        }
+    }
+    
 }
+
 
 // fields "id" need be set as first value!
 class WeatherItemStructure {
     
-    var id: Int64 = 0{
+    var id: Int64                   = 0{
         willSet{
             erraseAllItem ()
         }
     }
-    var name: String? = ""
-    var country: String? = ""
-    var weatherMain: String? = ""
+    var name: String?               = ""
+    var country: String?            = ""
+    var weatherMain: String?        = ""
     var weatherDescription: String? = ""
-    var weathrIcon: String? = ""
-    var mainTemp: Double = 0
-    var mainPressure: Int64 = 0
-    var mainHumidity: Int64 = 0
-    var mainTemp_min: Double = 0
-    var mainTemp_max: Int64 = 0
-    var windSpeed: Int64 = 0
-    var windDeg: Int64 = 0
+    var weathrIcon: String?         = ""
+    var mainTemp: Double            = 0
+    var mainPressure: Int64         = 0
+    var mainHumidity: Int64         = 0
+    var mainTemp_min: Double        = 0
+    var mainTemp_max: Int64         = 0
+    var windSpeed: Int64            = 0
+    var windDeg: Int64              = 0
     
     init () {
-        }
+    }
+    
     
     func erraseAllItem (){
         id = 0
@@ -92,4 +135,9 @@ class WeatherItemStructure {
         windSpeed = 0
         windDeg = 0
     }
+}
+
+struct elementDictStructure {
+    var name = ""
+    var description = ""
 }

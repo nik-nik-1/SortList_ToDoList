@@ -10,6 +10,7 @@ import UIKit
 
 class WeatherItemsTableViewCell: UITableViewCell {
 
+    var strctD:elementDictStructure = elementDictStructure()
     
     @IBOutlet weak var weatherNameLabelTableItem: UILabel!
     @IBOutlet weak var weatherValueLabelTableItem: UILabel!
@@ -17,9 +18,9 @@ class WeatherItemsTableViewCell: UITableViewCell {
     var weatherItem: WeatherItem! {
         didSet {
             
-            weatherNameLabelTableItem?.text = weatherItem.name
+            weatherNameLabelTableItem?.text  = weatherItem [strctD.name]
+            weatherValueLabelTableItem?.text = weatherItem [strctD.description]
             
-            _ = 4
         }
     }
     
@@ -38,3 +39,4 @@ class WeatherItemsTableViewCell: UITableViewCell {
 
     
 }
+
