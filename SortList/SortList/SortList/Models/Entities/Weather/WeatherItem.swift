@@ -29,19 +29,19 @@ class WeatherItem : NSManagedObject {
     static func insertWeatheItemWithItem(structOfItems: WeatherItemStructure,  context: NSManagedObjectContext) -> NSManagedObject? {
         let weatherItem: WeatherItem = insertNewObjectIntoContext(context) as! WeatherItem
         
-        weatherItem.name                = structOfItems.name
-        weatherItem.id                  = structOfItems.id
-        weatherItem.country             = structOfItems.country
-        weatherItem.weatherMain         = structOfItems.weatherMain
-        weatherItem.weatherDescription  = structOfItems.weatherDescription
-        weatherItem.weathrIcon          = structOfItems.weathrIcon
-        weatherItem.mainTemp            = structOfItems.mainTemp
-        weatherItem.mainPressure        = structOfItems.mainPressure
-        weatherItem.mainHumidity        = structOfItems.mainHumidity
-        weatherItem.mainTemp_min        = structOfItems.mainTemp_min
-        weatherItem.mainTemp_max        = structOfItems.mainTemp_max
-        weatherItem.windSpeed           = structOfItems.windSpeed
-        weatherItem.windDeg             = structOfItems.windDeg
+        weatherItem.id = structOfItems.id
+        weatherItem.name = structOfItems.name
+        weatherItem.country = structOfItems.country
+        weatherItem.weatherMain = structOfItems.weatherMain
+        weatherItem.weatherDescription = structOfItems.weatherDescription
+        weatherItem.weathrIcon = structOfItems.weathrIcon
+        weatherItem.mainTemp = structOfItems.mainTemp
+        weatherItem.mainPressure = structOfItems.mainPressure
+        weatherItem.mainHumidity = structOfItems.mainHumidity
+        weatherItem.mainTemp_min = structOfItems.mainTemp_min
+        weatherItem.mainTemp_max = structOfItems.mainTemp_max
+        weatherItem.windSpeed = structOfItems.windSpeed
+        weatherItem.windDeg = structOfItems.windDeg
         
         return weatherItem
     }
@@ -74,67 +74,91 @@ class WeatherItem : NSManagedObject {
         return Dict
     }
     
-    subscript(name: String) -> String {
+    //MARK: getting value in class Weather like as "class[nameOfParam(String)]", not class.nameOfParam
+    subscript(name: String) -> String? {
+        
         // 1
         get {
-//            // 2
-//            precondition(index < self.array.count,
-//                "Index out-of-bounds")
-//            
-//            // 3
-//            let key = self.array[index]
+            var valueToReturn:String?
             
-            // 4
-            let value = self[name] as String
-            
-            // 5
-            return value
+            //get value in dictionary
+            if let _ = WeatherItem.elementDictOfClass [name]{
+                switch name {
+                case "id":                  valueToReturn = self.id.getStringFormat (0)
+                case "name":                valueToReturn = self.name
+                case "country":             valueToReturn = self.country
+                case "weatherMain":         valueToReturn = self.weatherMain
+                case "weatherDescription":  valueToReturn = self.weatherDescription
+                case "weathrIcon":          valueToReturn = self.weathrIcon
+                case "mainTemp":            valueToReturn = self.mainTemp.getStringFormat (2)
+                case "mainPressure":        valueToReturn = self.mainPressure.getStringFormat (2)
+                case "mainHumidity":        valueToReturn = self.mainHumidity.getStringFormat (2)
+                case "mainTemp_min":        valueToReturn = self.mainTemp_min.getStringFormat (2)
+                case "mainTemp_max":        valueToReturn = self.mainTemp_max.getStringFormat (2)
+                case "windSpeed":           valueToReturn = self.windSpeed.getStringFormat (2)
+                case "windDeg":             valueToReturn = self.windDeg.getStringFormat (2)
+                default:
+                    //default variable
+                    valueToReturn = ""
+                }
+            }else{
+                //default variable
+                valueToReturn = ""
+            }
+            return valueToReturn
         }
     }
-    
+}
+
+private extension Int64 {
+    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
+}
+private extension Double {
+    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
 }
 
 
 // fields "id" need be set as first value!
-class WeatherItemStructure {
+struct WeatherItemStructure {
     
-    var id: Int64                   = 0{
-        willSet{
-            erraseAllItem ()
-        }
-    }
-    var name: String?               = ""
-    var country: String?            = ""
-    var weatherMain: String?        = ""
-    var weatherDescription: String? = ""
-    var weathrIcon: String?         = ""
+    var id: Int64                   = 0
+//        {
+//        willSet{
+//           // erraseAllItem ()
+//        }
+//    }
+    var name: String               = ""
+    var country: String            = ""
+    var weatherMain: String        = ""
+    var weatherDescription: String = ""
+    var weathrIcon: String         = ""
     var mainTemp: Double            = 0
     var mainPressure: Int64         = 0
     var mainHumidity: Int64         = 0
     var mainTemp_min: Double        = 0
-    var mainTemp_max: Int64         = 0
+    var mainTemp_max: Double        = 0
     var windSpeed: Int64            = 0
     var windDeg: Int64              = 0
     
-    init () {
-    }
-    
-    
-    func erraseAllItem (){
-        id = 0
-        name = ""
-        country = ""
-        weatherMain = ""
-        weatherDescription = ""
-        weathrIcon = ""
-        mainTemp = 0
-        mainPressure = 0
-        mainHumidity = 0
-        mainTemp_min = 0
-        mainTemp_max = 0
-        windSpeed = 0
-        windDeg = 0
-    }
+//    init () {
+//    }
+//    
+//    
+//    func erraseAllItem (){
+//        //self.id = 0 // f not comment - will be an eternal loop
+//        self.name = ""
+//        self.country = ""
+//        self.weatherMain = ""
+//        self.weatherDescription = ""
+//        self.weathrIcon = ""
+//        self.mainTemp = 0
+//        self.mainPressure = 0
+//        self.mainHumidity = 0
+//        self.mainTemp_min = 0
+//        self.mainTemp_max = 0
+//        self.windSpeed = 0
+//        self.windDeg = 0
+//    }
 }
 
 struct elementDictStructure {

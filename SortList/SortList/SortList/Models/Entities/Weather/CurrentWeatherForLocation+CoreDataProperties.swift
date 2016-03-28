@@ -24,7 +24,7 @@ extension WeatherItem {
     @NSManaged var mainPressure: Int64
     @NSManaged var mainHumidity: Int64
     @NSManaged var mainTemp_min: Double
-    @NSManaged var mainTemp_max: Int64
+    @NSManaged var mainTemp_max: Double
     @NSManaged var windSpeed: Int64
     @NSManaged var windDeg: Int64
 

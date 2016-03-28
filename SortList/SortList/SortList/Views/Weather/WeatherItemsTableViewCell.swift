@@ -18,8 +18,9 @@ class WeatherItemsTableViewCell: UITableViewCell {
     var weatherItem: WeatherItem! {
         didSet {
             
-            weatherNameLabelTableItem?.text  = weatherItem [strctD.name]
-            weatherValueLabelTableItem?.text = weatherItem [strctD.description]
+            weatherNameLabelTableItem?.text  = strctD.description
+            weatherValueLabelTableItem?.text = weatherItem [strctD.name]
+            
             
         }
     }

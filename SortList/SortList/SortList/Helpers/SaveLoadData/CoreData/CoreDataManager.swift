@@ -55,7 +55,7 @@ class CoreDataManager {
         managedObjectContext.persistentStoreCoordinator = coordinator
         
         //save default instanse name which was create by initializarion
-        managedObjectContext.usedURLForResource = self.defaultURLForResource
+//        managedObjectContext.usedURLForResource = self.defaultURLForResource
         
         return managedObjectContext
     }()

@@ -28,15 +28,26 @@ class WeatherViewController: UIViewController {
     @IBAction func buttonGetWeatherDataPressed(sender: AnyObject) {
         saveNameOfCity()
         //HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateWeatherTableView", name:"updateWeatherTableFromAnotherModule", object: nil)
+        
         HttpRequestWork.loadDataOfWeatheFromUrlToCoreData(userCityName.text!)
-    }
+        
+//        self.weatherTableView.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
+     }
     private let tempItemsInKlass = WeatherStructInfo()
     private struct WeatherStructInfo {
         let nameTemporaryForSave: String = "nameOfWeatherCity"
         let nameOfPList: String = "mainPList"
     }
     
-    
+    private func updateWeatherTableView(){
+        //Take Action on Notification
+        
+        weatherTableView.reloadData()
+        
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: "updateWeatherTableFromAnotherModule", object: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +58,10 @@ class WeatherViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        pushAllDataInTableFromCoreData()
+    }
+    
+    func pushAllDataInTableFromCoreData() {
         if let items = WeatherItem.allWatherItems() {
             weatherItems = items
         }

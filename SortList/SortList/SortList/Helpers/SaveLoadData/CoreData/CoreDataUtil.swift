@@ -197,6 +197,8 @@ class CoreDataUtil {
             {
                 let managedObjectData:NSManagedObject = managedObject as! NSManagedObject
                 moc.deleteObject(managedObjectData)
+               
+                try moc.save()
             }
         } catch let error as NSError {
             NSLog("Detele all data in \(EntityName) error : \(error) \(error.userInfo)")

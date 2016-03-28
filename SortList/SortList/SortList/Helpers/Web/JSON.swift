@@ -309,6 +309,16 @@ public enum JSON {
         }
     }
     
+    public var int64Value: Int64? {
+        if let value = numberValue {
+            return value.longLongValue
+        }
+        else {
+            return nil
+        }
+    }
+
+    
     public var boolValue: Bool? {
         if let value = numberValue {
             return value.boolValue

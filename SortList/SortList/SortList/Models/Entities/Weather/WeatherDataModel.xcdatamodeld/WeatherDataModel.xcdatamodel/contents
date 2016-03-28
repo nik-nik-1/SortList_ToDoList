@@ -6,7 +6,7 @@
         <attribute name="mainHumidity" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="mainPressure" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="mainTemp" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <attribute name="mainTemp_max" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="mainTemp_max" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="mainTemp_min" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="weatherDescription" optional="YES" attributeType="String" syncable="YES"/>

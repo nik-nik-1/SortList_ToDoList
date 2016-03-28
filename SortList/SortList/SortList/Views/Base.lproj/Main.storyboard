@@ -152,46 +152,32 @@
                                 <rect key="frame" x="29" y="119" width="551" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" id="Mrt-LM-IZh" customClass="WeatherItemsTableViewCell" customModule="SortList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCell" textLabel="bPa-xj-PCL" detailTextLabel="sN5-e1-dhc" style="IBUITableViewCellStyleValue1" id="Mrt-LM-IZh" customClass="WeatherItemsTableViewCell" customModule="SortList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="551" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mrt-LM-IZh" id="Kxw-PK-ayl">
                                             <rect key="frame" x="0.0" y="0.0" width="551" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="252" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-DR-Dbi">
-                                                    <rect key="frame" x="0.0" y="11" width="45" height="21"/>
-                                                    <color key="backgroundColor" red="1" green="0.23910890119483219" blue="0.22013500171244571" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bPa-xj-PCL">
+                                                    <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRG-hR-hYT">
-                                                    <rect key="frame" x="273" y="11" width="5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pC-2o-GvK">
-                                                    <rect key="frame" x="281" y="11" width="42" height="21"/>
-                                                    <color key="backgroundColor" red="0.65345785024158332" green="1" blue="0.93994773288714417" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sN5-e1-dhc">
+                                                    <rect key="frame" x="494" y="12" width="42" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="NRG-hR-hYT" firstAttribute="centerX" secondItem="Kxw-PK-ayl" secondAttribute="centerX" id="Z7Q-Zx-X8H"/>
-                                                <constraint firstItem="NRG-hR-hYT" firstAttribute="centerY" secondItem="Kxw-PK-ayl" secondAttribute="centerY" id="nRQ-uS-IT0"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="7ak-DR-Dbi" secondAttribute="leading" constant="8" id="q2v-vh-ma3"/>
-                                                <constraint firstItem="7ak-DR-Dbi" firstAttribute="centerY" secondItem="Kxw-PK-ayl" secondAttribute="centerY" id="rMt-yS-Wad"/>
-                                                <constraint firstItem="1pC-2o-GvK" firstAttribute="leading" secondItem="NRG-hR-hYT" secondAttribute="trailing" constant="3" id="se5-th-gH8"/>
-                                                <constraint firstItem="1pC-2o-GvK" firstAttribute="centerY" secondItem="Kxw-PK-ayl" secondAttribute="centerY" id="tGq-gL-rgj"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="weatherNameLabelTableItem" destination="7ak-DR-Dbi" id="sFp-TB-QaO"/>
-                                            <outlet property="weatherValueLabelTableItem" destination="1pC-2o-GvK" id="STO-eW-TYO"/>
+                                            <outlet property="weatherNameLabelTableItem" destination="bPa-xj-PCL" id="1Od-6w-jZm"/>
+                                            <outlet property="weatherValueLabelTableItem" destination="sN5-e1-dhc" id="UFa-Wj-ecf"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
