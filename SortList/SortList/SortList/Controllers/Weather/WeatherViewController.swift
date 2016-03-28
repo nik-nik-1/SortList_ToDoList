@@ -29,9 +29,17 @@ class WeatherViewController: UIViewController {
         saveNameOfCity()
         //HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
         
-//        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateWeatherTableView", name:"updateWeatherTableFromAnotherModule", object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: @selector("updateWeatherTableView"), name:"updateWeatherTableFromAnotherModule", object: nil)
         
-        HttpRequestWork.loadDataOfWeatheFromUrlToCoreData(userCityName.text!)
+        HttpRequestWork.loadDataOfWeatheFromUrlToCoreData(userCityName.text!) { (data) -> Void in
+            self.pushAllDataInTableFromCoreData()
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.weatherTableView.reloadData()
+            }
+            
+            
+        }
         
 //        self.weatherTableView.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
      }
