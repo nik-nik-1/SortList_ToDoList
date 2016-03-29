@@ -17,11 +17,8 @@ class WeatherItemsTableViewCell: UITableViewCell {
     
     var weatherItem: WeatherItem! {
         didSet {
-            
             weatherNameLabelTableItem?.text  = strctD.description
             weatherValueLabelTableItem?.text = weatherItem [strctD.name]
-            
-            
         }
     }
     
@@ -37,7 +34,5 @@ class WeatherItemsTableViewCell: UITableViewCell {
         
         
     }
-
-    
 }
 

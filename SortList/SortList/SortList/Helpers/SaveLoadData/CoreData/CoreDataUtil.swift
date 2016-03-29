@@ -18,7 +18,7 @@ class CoreDataUtil {
         "WeatherDataModel":"WeatherDataModel",
         //DataBaseNameFromInstanceName
         ToDoItem.getEntityNameOfObject():"SortList",
-        "CurrentWeatherForLocation":"WeatherDataModel",
+        WeatherItem.getEntityNameOfObject():"WeatherDataModel",
         "LocationsOfWeather":"WeatherDataModel"
     ]
     
@@ -167,8 +167,8 @@ class CoreDataUtil {
 //        }
 //    }
     
-    static func deleteObject(EntityName: String, object: NSManagedObject) {
-        let moc = getManagedObjectContext(EntityName)
+    static func deleteObject(entityName: String, object: NSManagedObject) {
+        let moc = getManagedObjectContext(entityName)
         moc.deleteObject(object)
         
         do {
@@ -183,11 +183,11 @@ class CoreDataUtil {
     }
 
     
-    static func deleteAllData(EntityName: String)
+    static func deleteAllData(entityName: String)
     {
         
-        let moc = getManagedObjectContext(EntityName)
-        let fetchRequest = NSFetchRequest(entityName: EntityName)
+        let moc = getManagedObjectContext(entityName)
+        let fetchRequest = NSFetchRequest(entityName: entityName)
         fetchRequest.returnsObjectsAsFaults = false
         
         do
@@ -201,26 +201,26 @@ class CoreDataUtil {
                 try moc.save()
             }
         } catch let error as NSError {
-            NSLog("Detele all data in \(EntityName) error : \(error) \(error.userInfo)")
+            NSLog("Detele all data in \(entityName) error : \(error) \(error.userInfo)")
         }
     }
     
     
-    static func getTypeOfDataUsingEntityName(EntityName: String) -> String{
+    static func getTypeOfDataUsingEntityName(entityName: String) -> String{
         
-        return dictionaryOfEntityName[EntityName]! as String
+        return dictionaryOfEntityName[entityName]! as String
     }
     
-    static func getManagedObjectContext(EntityName:String) -> NSManagedObjectContext{ //EntityName:String? = nil
+    static func getManagedObjectContext(entityName:String) -> NSManagedObjectContext{ //entityName:String? = nil
         //return CoreDataManager.sharedInstance.managedObjectContext
         var typeOfdata:String!
         
 //        if EntityName != nil {
-//            typeOfdata = getTypeOfDataUsingEntityName(EntityName!)
+//            typeOfdata = getTypeOfDataUsingEntityName(entityName!)
 ////        }else{
 ////            typeOfdata = 
 //        }
-        typeOfdata = getTypeOfDataUsingEntityName(EntityName)
+        typeOfdata = getTypeOfDataUsingEntityName(entityName)
         
         let moc = CoreDataManager.getSharedInstance(typeOfdata).managedObjectContext
         return moc

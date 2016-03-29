@@ -27,11 +27,11 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var userCityName: UITextField!
     @IBAction func buttonGetWeatherDataPressed(sender: AnyObject) {
         saveNameOfCity()
-        //HttpRequestWork.getHttpConnectAndparseJSONforWeather(userCityName.text!)
+        
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: @selector("updateWeatherTableView"), name:"updateWeatherTableFromAnotherModule", object: nil)
         
-        HttpRequestWork.loadDataOfWeatheFromUrlToCoreData(userCityName.text!) { (data) -> Void in
+        WeatherManager.loadDataOfWeatheFromUrlToCoreData(userCityName.text!) { (data) -> Void in
             self.pushAllDataInTableFromCoreData()
             
             dispatch_async(dispatch_get_main_queue()) {
