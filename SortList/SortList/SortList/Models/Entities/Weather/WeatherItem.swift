@@ -29,19 +29,19 @@ class WeatherItem : NSManagedObject {
     static func insertWeatheItemWithItem(structOfItems: WeatherItemStructure,  context: NSManagedObjectContext) -> NSManagedObject? {
         let weatherItem: WeatherItem = insertNewObjectIntoContext(context) as! WeatherItem
         
-        weatherItem.id = structOfItems.id
-        weatherItem.name = structOfItems.name
-        weatherItem.country = structOfItems.country
-        weatherItem.weatherMain = structOfItems.weatherMain
-        weatherItem.weatherDescription = structOfItems.weatherDescription
-        weatherItem.weathrIcon = structOfItems.weathrIcon
-        weatherItem.mainTemp = structOfItems.mainTemp
-        weatherItem.mainPressure = structOfItems.mainPressure
-        weatherItem.mainHumidity = structOfItems.mainHumidity
-        weatherItem.mainTemp_min = structOfItems.mainTemp_min
-        weatherItem.mainTemp_max = structOfItems.mainTemp_max
-        weatherItem.windSpeed = structOfItems.windSpeed
-        weatherItem.windDeg = structOfItems.windDeg
+        weatherItem.id                  = structOfItems.id
+        weatherItem.name                = structOfItems.name
+        weatherItem.country             = structOfItems.country
+        weatherItem.weatherMain         = structOfItems.weatherMain
+        weatherItem.weatherDescription  = structOfItems.weatherDescription
+        weatherItem.weathrIcon          = structOfItems.weathrIcon
+        weatherItem.mainTemp            = structOfItems.mainTemp
+        weatherItem.mainPressure        = structOfItems.mainPressure
+        weatherItem.mainHumidity        = structOfItems.mainHumidity
+        weatherItem.mainTemp_min        = structOfItems.mainTemp_min
+        weatherItem.mainTemp_max        = structOfItems.mainTemp_max
+        weatherItem.windSpeed           = structOfItems.windSpeed
+        weatherItem.windDeg             = structOfItems.windDeg
         
         return weatherItem
     }
@@ -110,58 +110,11 @@ class WeatherItem : NSManagedObject {
     }
 }
 
-private extension Int64 {
-    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
-}
-private extension Double {
-    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
-}
+//private extension Int64 {
+//    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
+//}
+//private extension Double {
+//    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
+//}
 
 
-// fields "id" need be set as first value!
-struct WeatherItemStructure {
-    
-    var id: Int64                   = 0
-//        {
-//        willSet{
-//           // erraseAllItem ()
-//        }
-//    }
-    var name: String               = ""
-    var country: String            = ""
-    var weatherMain: String        = ""
-    var weatherDescription: String = ""
-    var weathrIcon: String         = ""
-    var mainTemp: Double            = 0
-    var mainPressure: Int64         = 0
-    var mainHumidity: Int64         = 0
-    var mainTemp_min: Double        = 0
-    var mainTemp_max: Double        = 0
-    var windSpeed: Int64            = 0
-    var windDeg: Int64              = 0
-    
-//    init () {
-//    }
-//    
-//    
-//    func erraseAllItem (){
-//        //self.id = 0 // f not comment - will be an eternal loop
-//        self.name = ""
-//        self.country = ""
-//        self.weatherMain = ""
-//        self.weatherDescription = ""
-//        self.weathrIcon = ""
-//        self.mainTemp = 0
-//        self.mainPressure = 0
-//        self.mainHumidity = 0
-//        self.mainTemp_min = 0
-//        self.mainTemp_max = 0
-//        self.windSpeed = 0
-//        self.windDeg = 0
-//    }
-}
-
-struct elementDictStructure {
-    var name = ""
-    var description = ""
-}

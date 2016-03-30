@@ -13,22 +13,32 @@ class  HttpRequestWork {
     
     static func connectToWS(cityName: String? = "Kathmandu", callBack: ((data: NSData!, response: NSURLResponse!, error: NSError!) -> Void)?) {
         
+        
+        let urlPath     = getUrlPathUsingParametrs(cityName)
+        let cortegeSR   = getSessionAndtRequestFromPath (urlPath)
+        let session     = cortegeSR.session
+        let request     = cortegeSR.request
+        
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            callBack?(data: data, response: response, error: error)
+        }
+        //        NSNotificationCenter.defaultCenter().postNotificationName("updateWeatherTableFromAnotherModule", object: nil)
+        task.resume()
+    }
+    
+    private static func getUrlPathUsingParametrs (cityName: String?) -> String{
         let cityNameParam:String = cityName ?? ""
-//        let urlPath: String = "http://api.openweathermap.org/data/2.5/weather?q=\(cityNameParam)&mode=json&units=metric&appid=9bd00823dba3f57648fd6bae859d7d34"
         let urlPath: String = GeneralPurposeParametres.weatherUrlString.replace(GeneralPurposeParametres.symbolOfCityNameToReplaceInWeatherUrlString, withString:"\(cityNameParam)")
         
+        return urlPath
+    }
+    
+    private static func getSessionAndtRequestFromPath (urlPath: String) -> (session:NSURLSession, request:NSURLRequest) {
         let url: NSURL = NSURL(string: urlPath)!
         let request: NSURLRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            callBack?(data: data, response: response, error: error)
-            
-        }
-//        NSNotificationCenter.defaultCenter().postNotificationName("updateWeatherTableFromAnotherModule", object: nil)
-        
-        
-        task.resume()
+        return (session,request)
     }
     
 }

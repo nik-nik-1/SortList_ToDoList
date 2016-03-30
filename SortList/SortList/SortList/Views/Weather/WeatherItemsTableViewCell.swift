@@ -9,12 +9,12 @@
 import UIKit
 
 class WeatherItemsTableViewCell: UITableViewCell {
-
-    var strctD:elementDictStructure = elementDictStructure()
     
     @IBOutlet weak var weatherNameLabelTableItem: UILabel!
     @IBOutlet weak var weatherValueLabelTableItem: UILabel!
     
+    
+    var strctD:elementDictStructure = elementDictStructure()
     var weatherItem: WeatherItem! {
         didSet {
             weatherNameLabelTableItem?.text  = strctD.description
@@ -23,11 +23,11 @@ class WeatherItemsTableViewCell: UITableViewCell {
     }
     
     //MARK: init cell
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

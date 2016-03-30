@@ -14,11 +14,11 @@ import CoreData
 
 extension WeatherItem {
 
-    @NSManaged var name: String?
+    @NSManaged var name: String
     @NSManaged var id: Int64
-    @NSManaged var country: String?
-    @NSManaged var weatherMain: String?
-    @NSManaged var weatherDescription: String?
+    @NSManaged var country: String
+    @NSManaged var weatherMain: String
+    @NSManaged var weatherDescription: String
     @NSManaged var weathrIcon: String?
     @NSManaged var mainTemp: Double
     @NSManaged var mainPressure: Int64

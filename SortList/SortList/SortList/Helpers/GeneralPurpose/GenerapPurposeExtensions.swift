@@ -16,3 +16,13 @@ extension String
         return self.stringByReplacingOccurrencesOfString(target, withString: withString, options: NSStringCompareOptions.LiteralSearch, range: nil)
     }
 }
+
+//for class WeatherItem
+
+extension Int64 {
+    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
+}
+extension Double {
+    func getStringFormat (digits: Int = 2)  -> String  {return String(format: "%.\(digits)f", self)}
+}
+

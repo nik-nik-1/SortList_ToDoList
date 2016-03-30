@@ -30,8 +30,6 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         self.showColorPicker()
         
     }
-    
-    
     @IBAction func detailViewDoneButton(sender: AnyObject) {
         // call this method on whichever class implements our delegate protocol
         
@@ -44,7 +42,6 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         // go back to the previous view controller
         self.navigationController?.popViewControllerAnimated(true)
     }
-    
     @IBAction func detailViewCancelButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         detailDelegate?.ereseuserEnterInformation()
@@ -61,7 +58,6 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        //  detailViewTextInputEdit.text = receivedString
         detailViewTextInputEdit.text            = getTitleValueFromreceivedCell()
         dateTimeCreateDetail.text               = getTitleValueFromreceivedCellTimeDate()
         dateTimeLiveDetail.text                 = CalculateUsedTimeFronDate1ToDate2()
@@ -70,6 +66,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         buttonColorOfItemOutlet.backgroundColor = buttonColor
         buttonColorOfItemOutlet.layer.borderColor = buttonColor.CGColor
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -95,6 +92,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         return receivedCell != nil ? ((receivedCell?.item)! as String) : ""//String(receivedCell?.item)
     }
     
+    
     func getTitleValueFromreceivedCellTimeDate () -> String {
         guard receivedCell != nil else {
             return ""
@@ -103,6 +101,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         let dateTimeStr = NSDate.parseForDetailTableView((receivedCell?.dateTimeCreate)!)
         return dateTimeStr as String
     }
+    
     
     func CalculateUsedTimeFronDate1ToDate2 () -> String {
         guard receivedCell != nil else {
@@ -120,6 +119,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         return receivedCell!.colorItem as! UIColor
     }
     
+    
     // MARK: Popover delegate functions
     // Override iPhone behavior that presents a popover as fullscreen.
     // i.e. now it shows same popover box within on iPhone & iPad
@@ -127,6 +127,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         // show popover box for iPhone and iPad both
         return UIModalPresentationStyle.None
     }
+    
     
     // MARK: Color picker delegate functions
     // called by color picker after color selected.
@@ -140,8 +141,6 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         //self.colorPreview.backgroundColor = selectedUIColor
         
         
-        //TEST COLOR
-        
         let сolorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.4) //not works!
         
         self.view.backgroundColor = сolorBarTrans
@@ -150,14 +149,8 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         
         buttonColorOfItemOutlet.backgroundColor     = сolorBarTrans
         buttonColorOfItemOutlet.layer.borderColor   = selectedUIColor.CGColor
-        
-        //self.navigationController?.navigationBar.alpha = 0.2
-        //        self.navigationController?.navigationBar.translucent = true
-        
-        //        navigationController.navigationBar.titleTextAttributes = [UITextAttributeTextColor: UIColor.orangeColor()]
-        //        tabBarController.tabBar.barTintColor = UIColor.brownColor()
-        //        tabBarController.tabBar.tintColor = UIColor.yellowColor()
     }
+    
     
     // show color picker from UIButton
     private func showColorPicker(){
@@ -194,20 +187,5 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         //show color popover
         presentViewController(colorPickerVc, animated: true, completion: nil)
     }
-    
-    
-    
-    
-    
-    
-    //    func getTitleValueFromreceivedCell (info: String?=nil) -> String {
-    //
-    //        guard info != nil else {
-    //            return ""
-    //        }
-    //
-    //
-    //        return receivedCell != nil ? ((receivedCell?.[info])! as String) : ""//String(receivedCell?.item)
-    //    }
     
 }

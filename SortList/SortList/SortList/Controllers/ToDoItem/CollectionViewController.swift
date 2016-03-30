@@ -20,15 +20,12 @@ protocol ColorPickerDelegate {
 
 class ColorPickerViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    // outlet - colors collection view
+    @IBOutlet weak var colorCollectionView: UICollectionView!
+
     
     // create color picker delegate
     var colorPickerDelegate : ColorPickerDelegate?
-    
-    
-    // outlet - colors collection view
-    @IBOutlet weak var colorCollectionView: UICollectionView!
-    
-    
     
     // store colors in array (colors will be loaded from Colors.plist)
     // didSet - whenever value set it will refresh collection view.
@@ -37,16 +34,6 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
             self.colorCollectionView.reloadData()
         }
     }
-    
-//    convenience init(){
-//        self.init()
-//        
-//    }
-//    override init?(coder aDecoder: NSCoder) {
-//        super.init(coder: nil)
-//    }
-    
-        
     
     // MARK: - View functions
     
@@ -72,10 +59,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         // add custom code here for memory warning
     }
     
-    
-    
-    
-    
+     
     // MARK: - Collection view Datasource & Delegate functions
     
     // return number of section in collection view
@@ -120,10 +104,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         self.closeColorPicker()
     }
     
-    
-    
-    
-    
+  
     // MARK: - Utility functions
     
     // load colors from Colors.plist and save to colorList array.

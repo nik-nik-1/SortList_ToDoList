@@ -12,12 +12,7 @@ extension CoreDataUtil {
     
     static func saveJsonInCoreData (jsonData:NSData){
         
-        //        guard jsonData != nil else {
-        //            return
-        //        }
-        
-        //if let jsonData as NSData{
-        if let structItem = JsonWork.getWeatherStructureFromJsonData (jsonData) {
+        if let structItem = JsonUtil.getWeatherStructureFromJsonData (jsonData) {
             let entityNameOfObject = WeatherItem.getEntityNameOfObject()
             //Erese all data in CoreData
             CoreDataUtil.deleteAllData(entityNameOfObject)

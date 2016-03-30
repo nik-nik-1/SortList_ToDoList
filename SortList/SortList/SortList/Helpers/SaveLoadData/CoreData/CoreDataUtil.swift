@@ -10,17 +10,6 @@ import CoreData
 
 class CoreDataUtil {
     
-    static let arrayOfUsetDatabaseName: [String] = ["SortList","WeatherDataModel"]
-    
-    static let dictionaryOfEntityName:[String: String] = [
-        //DataBaseNameFromDatabaseName
-        "SortList":"SortList",
-        "WeatherDataModel":"WeatherDataModel",
-        //DataBaseNameFromInstanceName
-        ToDoItem.getEntityNameOfObject():"SortList",
-        WeatherItem.getEntityNameOfObject():"WeatherDataModel",
-        "LocationsOfWeather":"WeatherDataModel"
-    ]
     
     private static func fetchRequestForEntity(entity: String, predicate: NSPredicate?, sortDescriptors: [NSSortDescriptor]?, otherOptions: Dictionary<String, Float>?) -> NSFetchRequest {
         
@@ -115,7 +104,7 @@ class CoreDataUtil {
 //    }
 //    
     static func saveContext() {
-        for nameOfBD in arrayOfUsetDatabaseName {
+        for nameOfBD in GeneralPurposeParametres.arrayOfUsetDatabaseName {
             saveContext(nameOfBD)
         }
     }
@@ -150,22 +139,6 @@ class CoreDataUtil {
             self.saveContext(parentContext)
         }
     }
-
-////    static func deleteObject(object: NSManagedObject, error: NSError?) {
-//    static func deleteObject(object: NSManagedObject) {
-//        let moc = getManagedObjectContext() //NSManagedObject.entity.name
-//        moc.deleteObject(object)
-//        
-//        do {
-//            try moc.save()
-//        } catch {
-//            // Replace this implementation with code to handle the error appropriately.
-//            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//            let nserror = error as NSError
-//            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-//            abort()
-//        }
-//    }
     
     static func deleteObject(entityName: String, object: NSManagedObject) {
         let moc = getManagedObjectContext(entityName)
@@ -208,21 +181,16 @@ class CoreDataUtil {
     
     static func getTypeOfDataUsingEntityName(entityName: String) -> String{
         
-        return dictionaryOfEntityName[entityName]! as String
+        return GeneralPurposeParametres.dictionaryOfEntityName[entityName]! as String
     }
     
-    static func getManagedObjectContext(entityName:String) -> NSManagedObjectContext{ //entityName:String? = nil
-        //return CoreDataManager.sharedInstance.managedObjectContext
+    static func getManagedObjectContext(entityName:String) -> NSManagedObjectContext{
         var typeOfdata:String!
         
-//        if EntityName != nil {
-//            typeOfdata = getTypeOfDataUsingEntityName(entityName!)
-////        }else{
-////            typeOfdata = 
-//        }
         typeOfdata = getTypeOfDataUsingEntityName(entityName)
         
         let moc = CoreDataManager.getSharedInstance(typeOfdata).managedObjectContext
+        
         return moc
     }
     

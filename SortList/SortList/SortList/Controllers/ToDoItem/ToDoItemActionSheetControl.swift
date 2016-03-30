@@ -23,6 +23,7 @@ class ToDoItemActionSheetControl : UIAlertController {
         }
     }
     
+    
     internal func initButtons() {
         let itemChecked = toDoItemElem.checked 
         

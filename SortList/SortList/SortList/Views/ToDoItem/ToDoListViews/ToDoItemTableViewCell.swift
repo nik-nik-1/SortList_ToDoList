@@ -10,25 +10,28 @@ import UIKit
 
 protocol ToDoItemTableViewCellDelegate {
     func didTouchMoreButton(cell: UITableViewCell?)
-    //func chaingeTextNarrovIfCheckedOrNot (needCheck: Bool, itemLabel:UILabel)
 }
 
-//protocol ToDoItemforListControllerDelegate {
-//    func chaingeTextNarrovIfCheckedOrNot (needCheck: Bool, itemLabel:UILabel) -> Bool
-//}
 
-
-class ToDoItemTableViewCell: UITableViewCell
-    //, buttonActiveActionSheetCellItems
-{
+class ToDoItemTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateViewTableCell: UILabel!
     @IBOutlet weak var selectItemSwitchView: UISwitch!
     @IBOutlet weak var itemLabelView: UILabel!
     
-    var delegate: ToDoItemTableViewCellDelegate?
-    //    var delegateListController: ToDoItemforListControllerDelegate?
+    @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
+        delegate?.didTouchMoreButton(self)
+    }
+    @IBAction func toDoItemUpdateValueChanged() {
+        
+        toDoItemElem.setValue(selectItemSwitchView.on, forKey: "checked")
+        CoreDataUtil.saveContext(ToDoItem.getEntityNameOfObject())
+        
+        changeTextNarrovIfCheckedOrNot()
+    }
     
+    
+    var delegate: ToDoItemTableViewCellDelegate?
     var toDoItemElem: ToDoItem! {
         didSet {
             selectItemSwitchView?.setOn(toDoItemElem.checked, animated: false)
@@ -38,14 +41,8 @@ class ToDoItemTableViewCell: UITableViewCell
         }
     }
     
-    //@IBOutlet weak var ButtonActionSheetCell: UIButton!
-    @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
-        delegate?.didTouchMoreButton(self)
-    }
-    
     
     //MARK: init cell
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
@@ -59,25 +56,6 @@ class ToDoItemTableViewCell: UITableViewCell
     
     func setupViews() {
         contentView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.1) // light green
-        //        if itemLabelView != nil {
-        //            ActionSheetCellControl().chaingeTextNarrovIfCheckedOrNotRedirect (true, itemLabel: itemLabelView)
-        //        }
-    }
-    
-    @IBAction func toDoItemUpdateValueChanged() {
-//        toDoItem.checked = selectItemSwitchView.on
-        
-        toDoItemElem.setValue(selectItemSwitchView.on, forKey: "checked")
-        CoreDataUtil.saveContext(ToDoItem.getEntityNameOfObject())
-
-        
-        //need save in Coredata!!?
-        //......
-        
-        
-        
-        changeTextNarrovIfCheckedOrNot()
-        
     }
     
     func changeTextNarrovIfCheckedOrNot() {
@@ -95,6 +73,4 @@ class ToDoItemTableViewCell: UITableViewCell
         attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: itemString.rangeOfString(toDoItemElem.item!))
         itemLabelView.attributedText = attributedString
     }
-
-    
 }

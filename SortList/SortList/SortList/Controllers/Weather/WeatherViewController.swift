@@ -9,7 +9,8 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
-    
+    private let tempItemsInKlass = GeneralPurposeParametres.tempItemsInKlass
+
     var weatherItems: [WeatherItem] = [] {
         didSet {
             weatherTableView.weatherItems = weatherItems
@@ -37,23 +38,13 @@ class WeatherViewController: UIViewController {
             dispatch_async(dispatch_get_main_queue()) {
                 self.weatherTableView.reloadData()
             }
-            
-            
         }
-        
 //        self.weatherTableView.performSelectorOnMainThread(Selector("reloadData"), withObject: nil, waitUntilDone: true)
      }
-    private let tempItemsInKlass = WeatherStructInfo()
-    private struct WeatherStructInfo {
-        let nameTemporaryForSave: String = "nameOfWeatherCity"
-        let nameOfPList: String = "mainPList"
-    }
     
     private func updateWeatherTableView(){
-        //Take Action on Notification
         
         weatherTableView.reloadData()
-        
 //        NSNotificationCenter.defaultCenter().removeObserver(self, name: "updateWeatherTableFromAnotherModule", object: nil)
     }
     
@@ -61,9 +52,7 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         loadDataByDefault()
-        
-        //weatherTableView.weatherListDelegate = self;
-    }
+     }
     
     override func viewWillAppear(animated: Bool) {
         pushAllDataInTableFromCoreData()
@@ -91,37 +80,11 @@ class WeatherViewController: UIViewController {
     */
     
     //MARK: Save & Load Data in Plist.-file
-    func loadDataByDefault () {
-        userCityName.text = getSaveNamedOfCity()
+    private func loadDataByDefault () {
+        userCityName.text = PlistUtil.getSavedStringValue(nameOfItem: tempItemsInKlass.nameTemporaryForSave,  pListName: tempItemsInKlass.nameOfPList)//getSaveNamedOfCity()
     }
-    
-    
-    func getSaveNamedOfCity () -> String {
-        var NametoReturn: String = ""
-        
-        do {
-            if let CityNameFromPlist: NSString = try plistGet(tempItemsInKlass.nameTemporaryForSave, forPlistNamed: tempItemsInKlass.nameOfPList, needToSaveBetweenSessions: true) as? NSString{
-                
-                NametoReturn = CityNameFromPlist as String
-            }
-        }
-            
-        catch{
-            NametoReturn = ""
-        }
-        
-        return NametoReturn
+    private func saveNameOfCity() {
+        PlistUtil.saveStringValue(userCityName.text!, itemName: tempItemsInKlass.nameTemporaryForSave, plistName: tempItemsInKlass.nameOfPList)
     }
-    
-    func saveNameOfCity() {
-        
-        do {
-            if userCityName != nil {
-                try plistSet(userCityName.text!, forKey: tempItemsInKlass.nameTemporaryForSave, inPlistNamed: tempItemsInKlass.nameOfPList, needToSaveBetweenSessions: true)
-            }
-            
-        }catch{ }
-        
-    }
-    
+
 }

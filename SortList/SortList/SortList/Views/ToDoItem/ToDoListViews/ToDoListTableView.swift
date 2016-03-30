@@ -13,19 +13,8 @@ protocol ToDoListTableViewDelegate {
     func setCurentItemTextLabel (item: ToDoItem)
 }
 
-//protocol SelectedRowWhitIndexDelegate {
-//    //func SetCurentItemTextLabel (item itemText: String)
-//    func SetCurentItemTextLabel (item: ToDoItem)
-//}
 
-
-//protocol ReloadDataInTableViewInn {
-//    func ReloadDataInTableViewDidInn()
-//}
-
-class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate,ToDoItemTableViewCellDelegate
-//, ReloadDataInTableView
-{
+class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate,ToDoItemTableViewCellDelegate {
     
     var toDoItems: [ToDoItem] = [] {
         didSet {
@@ -34,11 +23,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     
-    
     var toDoListDelegate: ToDoListTableViewDelegate?
-//    var SelectedRowDelegate: SelectedRowWhitIndexDelegate?
-    //var delegateToReloadDataInTableViewDidInn: ReloadDataInTableViewInn?
-//    var delegateToReloadDataInTableViewDid: ReloadDataInTableView?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -47,8 +32,6 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         
         self.dataSource = self
         self.delegate = self
-        
-        //self.delegateToReloadDataInTableViewDid =
     }
     
     
@@ -80,8 +63,6 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            
-            
             CoreDataUtil.deleteObject(ToDoItem.getEntityNameOfObject(), object: toDoItems[indexPath.row])
             toDoItems.removeAtIndex(indexPath.row)// relod data was writed in "didset" of this item var
             
@@ -91,23 +72,21 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
+    
     
     //MARK: moveRow
     // Override to support rearranging the table view.
     func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
- //       let itemToMove = toDoItems[fromIndexPath.row]
-//        toDoItems.removeAtIndex(fromIndexPath.row)
-//        toDoItems.insert(itemToMove, atIndex: toIndexPath.row)
+        //       let itemToMove = toDoItems[fromIndexPath.row]
+        //        toDoItems.removeAtIndex(fromIndexPath.row)
+        //        toDoItems.insert(itemToMove, atIndex: toIndexPath.row)
         
-//        let orderedSet: NSMutableOrderedSet = (routineToReorder?.mutableOrderedSetValueForKey("yourKeyValue"))!
-//        
-//        orderedSet.exchangeObjectAtIndex(fromIndexPath.row, withObjectAtIndex: toIndexPath.row)
-//        CoreDataUtil.saveContext("ToDoItem")
+        //        let orderedSet: NSMutableOrderedSet = (routineToReorder?.mutableOrderedSetValueForKey("yourKeyValue"))!
+        //
+        //        orderedSet.exchangeObjectAtIndex(fromIndexPath.row, withObjectAtIndex: toIndexPath.row)
+        //        CoreDataUtil.saveContext("ToDoItem")
         
-       //!!!!  NEED to rewrite! see there: http://lattejed.com/a-simple-todo-app-in-swift
-        
-        
+        //!!!!  NEED to rewrite! see there: http://lattejed.com/a-simple-todo-app-in-swift
     }
     
     
@@ -138,10 +117,8 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         let toDoItemCell = cell as! ToDoItemTableViewCell
         let toDoItem = toDoItems[indexPath.row]
         
-//        toDoItemCell.itemLabelView.text = toDoItem.item
+        //        toDoItemCell.itemLabelView.text = toDoItem.item
         toDoItemCell.toDoItemElem = toDoItem
-
-
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -149,8 +126,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         print("selected row: \(indexPath.row), value: \(valueitemText)")
         
         //SelectedRowDelegate?.SetCurentItemTextLabel(item: valueitemText)
-       toDoListDelegate?.setCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem)
-       
+        toDoListDelegate?.setCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem)
     }
     
     // MARK: UITableViewCell delegate
@@ -163,14 +139,5 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
             toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
         }
     }
-
-    //MARK: ReloadDataInTableView from ActionSheetCellControls
-//    func ReloadDataInTableViewDid () {
-//        delegateToReloadDataInTableViewDidInn?.ReloadDataInTableViewDidInn()
-//    }
-
 }
-
-//extension ToDoListTableView: UITableViewController {
-//}
 

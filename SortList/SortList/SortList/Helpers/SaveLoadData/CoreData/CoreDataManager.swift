@@ -22,8 +22,7 @@ class CoreDataManager {
     }
     
     private init(defUrlRes:String?){
-//        //by first let's init variable with default parametres
-//        defaultInitClass()
+        //by the first-  let's init variable with default parametres
         
         if let tempDefUrl = defUrlRes as String! {
            defaultURLForResource = tempDefUrl
@@ -37,7 +36,7 @@ class CoreDataManager {
     }
     
     static func getDefaultNameOfUsingDataType() -> String {
-        return "SortList"
+        return GeneralPurposeParametres.defaultNameOfUsingDataType
     }
     
     //MARK: Core Data work
@@ -92,7 +91,7 @@ class CoreDataManager {
     
 //   static let sharedInstance = CoreDataManager()
     
-    private static var dictionaryOfInstance = [String: CoreDataManager?]()// = ["SortList","WeatherDataModel"]
+    private static var dictionaryOfInstance = [String: CoreDataManager?]()
     
     static func getSharedInstance (typeOut: String? = nil) -> CoreDataManager {
         let instanseToReturn: CoreDataManager

@@ -28,37 +28,22 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /*let defaults = NSUserDefaults.standardUserDefaults()
-        if let toDoItemData = defaults.stringForKey("toDoItemData")
-        {
-        println(name)
-        }*/
-        
-        if let loadedtoDoItemData = NSUserDefaults.standardUserDefaults().objectForKey("toDoItemData") as? NSData {
-            if let toDoItemArray = NSKeyedUnarchiver.unarchiveObjectWithData(loadedtoDoItemData) as? [ToDoItem] {
-                for itemS in toDoItemArray {
-                    toDoItems.append(itemS)
-                }
-            }else{
-                setDefaultData ()
-            }
-        }else{
-            setDefaultData ()
-        }
-        
-        
-        
-        toDoListTableView.toDoListDelegate = self;
-        
-        //        toDoListTableView.SelectedRowDelegate = self
-        
-        //        toDoListTableView.delegateListController
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
+//        if let loadedtoDoItemData = NSUserDefaults.standardUserDefaults().objectForKey("toDoItemData") as? NSData {
+//            if let toDoItemArray = NSKeyedUnarchiver.unarchiveObjectWithData(loadedtoDoItemData) as? [ToDoItem] {
+//                for itemS in toDoItemArray {
+//                    toDoItems.append(itemS)
+//                }
+//            }else{
+//                setDefaultData ()
+//            }
+//        }else{
+//            setDefaultData ()
+//        }
+          toDoListTableView.toDoListDelegate = self;
     }
     
     func setDefaultData () {
-
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,14 +54,13 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
         if let items = ToDoItem.allToDoItems() {
             toDoItems = items
         }
-
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "showDetailViewController" {
-            let detailViewController = segue.destinationViewController as! DetailViewController            
+            let detailViewController = segue.destinationViewController as! DetailViewController
             // set a variable in the second view controller with the String to pass
             //detailViewController.receivedString = recivedFromMainListValue
             detailViewController.receivedCell = recivedFromMainListValueCell//! as ToDoItem
@@ -92,8 +76,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
         return ((recivedFromMainListValueCell?.item)! as String)
     }
     
+    
     func ereseuserEnterInformation (){
-        //recivedFromMainListValue = ""
         recivedFromMainListValueCell = nil
     }
     
@@ -112,18 +96,15 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
         }
     }
     
+    
     func didChangeAction() {
         toDoListTableView.reloadData()
     }
     
+    
     @IBAction func editButtonTouched(sender: AnyObject) {
         toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
-        //toDoListTableView.Mov
-        
-        
     }
-    
-
     
 }
 
