@@ -115,7 +115,7 @@ class ActionSheetCellControl : UIAlertController {
         //        if needCheck {
         //            let firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
         //            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
-        //        }else{
+        //        } else {
         //            let firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
         //            attributedString.addAttributes(firstAttributes, range: string.rangeOfString(itemName!))
         //        }
@@ -123,7 +123,7 @@ class ActionSheetCellControl : UIAlertController {
         var firstAttributes: NSDictionary
         if needCheck {
             firstAttributes = [NSForegroundColorAttributeName: UIColor.lightGrayColor(), NSStrikethroughStyleAttributeName: 1]
-        }else{
+        } else {
             firstAttributes = [NSForegroundColorAttributeName: itemLabel.tintColor, NSStrikethroughStyleAttributeName: 0]
         }
         attributedString.addAttributes(firstAttributes as! [String : AnyObject], range: string.rangeOfString(itemName!))

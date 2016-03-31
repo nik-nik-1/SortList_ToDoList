@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoItemActionSheetControlDelegate {
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
     
     var toDoItems: [ToDoItem] = [] {
         didSet {
@@ -33,10 +33,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
 //                for itemS in toDoItemArray {
 //                    toDoItems.append(itemS)
 //                }
-//            }else{
+//            } else {
 //                setDefaultData ()
 //            }
-//        }else{
+//        } else {
 //            setDefaultData ()
 //        }
           toDoListTableView.toDoListDelegate = self;
@@ -64,6 +64,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
             // set a variable in the second view controller with the String to pass
             //detailViewController.receivedString = recivedFromMainListValue
             detailViewController.receivedCell = recivedFromMainListValueCell//! as ToDoItem
+            detailViewController.detailDelegate = self
+
         }
     }
     
@@ -73,7 +75,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate,ToDoIt
             return ""
         }
         
-        return ((recivedFromMainListValueCell?.item)! as String)
+        return (recivedFromMainListValueCell?.item)! as String
     }
     
     

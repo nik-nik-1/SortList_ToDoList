@@ -26,7 +26,7 @@ class CoreDataManager {
         
         if let tempDefUrl = defUrlRes as String! {
            defaultURLForResource = tempDefUrl
-        }else{
+        } else {
             defaultURLForResource = CoreDataManager.getDefaultNameOfUsingDataType()
         }
     }
@@ -101,7 +101,7 @@ class CoreDataManager {
         if let val = dictionaryOfInstance[key] {
             //if key exist - get it from the stack
             instanseToReturn = val!
-        }else{
+        } else {
             instanseToReturn = CoreDataManager(defUrlRes: typeOut)
             //add instanse to dictionary
             dictionaryOfInstance[key] = instanseToReturn

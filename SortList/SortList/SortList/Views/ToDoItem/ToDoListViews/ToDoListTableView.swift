@@ -102,15 +102,15 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         // TODO: check on version if not iOS7 then return
-        if cell.respondsToSelector("setSeparatorInset:") {
+        if cell.respondsToSelector(Selector("setSeparatorInset:")) {
             cell.separatorInset = UIEdgeInsetsZero
         }
         
-        if cell.respondsToSelector("setLayoutMargins:") {
+        if cell.respondsToSelector(Selector("setLayoutMargins:")) {
             cell.layoutMargins = UIEdgeInsetsZero
         }
         
-        if cell.respondsToSelector("setPreservesSuperviewLayoutMargins:") {
+        if cell.respondsToSelector(Selector("setPreservesSuperviewLayoutMargins:")) {
             cell.preservesSuperviewLayoutMargins = false
         }
         

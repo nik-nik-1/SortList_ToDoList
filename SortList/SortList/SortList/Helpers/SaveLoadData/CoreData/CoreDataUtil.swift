@@ -77,7 +77,7 @@ class CoreDataUtil {
         
         let request = self.fetchRequestForEntity(entityName, predicate: predicate, sortDescriptors: nil, otherOptions: nil)
         
-        let error = NSErrorPointer()
+        let error: NSErrorPointer = nil//let error = NSErrorPointer()
         let count = moc.countForFetchRequest(request, error: error)
         
         if let e = error as NSErrorPointer? {

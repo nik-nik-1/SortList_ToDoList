@@ -10,11 +10,11 @@ import UIKit
 
 protocol DataEnteredDelegate: class {
     //need to reWrite -> need some Like Structure, which content Cell and Identifier , ...
-    func userDidEnterInformation(info: String)
+//    func userDidEnterInformation(info: String)
     func ereseuserEnterInformation()
 }
 
-class DetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate {
+class DetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate, UITextFieldDelegate {
     
     //var receivedString: String = ""
     var receivedCell: ToDoItem?
@@ -34,13 +34,22 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         // call this method on whichever class implements our delegate protocol
         
         let moc = CoreDataUtil.getManagedObjectContext(ToDoItem.getEntityNameOfObject())
-        ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: true, createdDate: NSDate.getCurrentDate(), context: moc)
+        
+        if receivedCell == nil {
+            //new value
+            ToDoItem.insertToDoItemWithItem(detailViewTextInputEdit.text, checked: false, createdDate: NSDate.getCurrentDate(), colorItem: selectedColor, context: moc)
+            
+        } else {
+            ToDoItem.rewriteToDoItemWithParameters(&receivedCell, item: detailViewTextInputEdit.text, checked: nil, colorItem: selectedColor)
+        }
+        
         CoreDataUtil.saveContext(moc)
         
-        detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
+//        detailDelegate?.userDidEnterInformation(detailViewTextInputEdit.text!)
         
         // go back to the previous view controller
         self.navigationController?.popViewControllerAnimated(true)
+        detailDelegate?.ereseuserEnterInformation()
     }
     @IBAction func detailViewCancelButton(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -57,14 +66,20 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.detailViewTextInputEdit.delegate = self
+        
         // Do any additional setup after loading the view.
         detailViewTextInputEdit.text            = getTitleValueFromreceivedCell()
         dateTimeCreateDetail.text               = getTitleValueFromreceivedCellTimeDate()
         dateTimeLiveDetail.text                 = CalculateUsedTimeFronDate1ToDate2()
         
         let buttonColor: UIColor = getColorOfItemsFromreceivedCell()
-        buttonColorOfItemOutlet.backgroundColor = buttonColor
-        buttonColorOfItemOutlet.layer.borderColor = buttonColor.CGColor
+//        buttonColorOfItemOutlet.backgroundColor = buttonColor
+//        buttonColorOfItemOutlet.layer.borderColor = buttonColor.CGColor
+        
+        let hexColor = ColorPickerViewController.getHexString(buttonColor, includeAlpha: false)
+        colorPickerDidColorSelected(selectedUIColor: buttonColor, selectedHexColor: hexColor)
+        
     }
     
     
@@ -112,9 +127,11 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     }
     
     func getColorOfItemsFromreceivedCell() -> UIColor {
-        guard receivedCell != nil else {
+        guard receivedCell != nil && receivedCell!.colorItem != nil else {
             return ToDoItem.getDefaultColorFortem()//UIColor.whiteColor()//ColorMode.init().getDefaultColorForItem()
         }
+        
+        
         
         return receivedCell!.colorItem as! UIColor
     }
@@ -143,7 +160,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         
         let сolorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.4) //not works!
         
-        self.view.backgroundColor = сolorBarTrans
+//        self.view.backgroundColor = сolorBarTrans
         
         self.navigationController?.navigationBar.barTintColor = сolorBarTrans
         
@@ -186,6 +203,12 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         
         //show color popover
         presentViewController(colorPickerVc, animated: true, completion: nil)
+    }
+    
+    //MARK: UITextFieldDelegate
+    func textFieldShouldReturn(userText: UITextField) -> Bool {
+        detailViewTextInputEdit.resignFirstResponder()
+        return true;
     }
     
 }

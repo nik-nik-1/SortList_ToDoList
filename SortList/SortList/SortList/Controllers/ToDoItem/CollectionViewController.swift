@@ -22,7 +22,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
     
     // outlet - colors collection view
     @IBOutlet weak var colorCollectionView: UICollectionView!
-
+    
     
     // create color picker delegate
     var colorPickerDelegate : ColorPickerDelegate?
@@ -59,7 +59,7 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         // add custom code here for memory warning
     }
     
-     
+    
     // MARK: - Collection view Datasource & Delegate functions
     
     // return number of section in collection view
@@ -104,22 +104,30 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
         self.closeColorPicker()
     }
     
-  
+    
     // MARK: - Utility functions
     
     // load colors from Colors.plist and save to colorList array.
     private func loadColorList(){
         
-        // create path for Colors.plist resource file.
-        let colorFilePath = NSBundle.mainBundle().pathForResource("ColorsChoise", ofType: "plist")
-        
-        // save piist file array content to NSArray object
-        let colorNSArray = NSArray(contentsOfFile: colorFilePath!)
+        //        // create path for Colors.plist resource file.
+        //        let colorFilePath = NSBundle.mainBundle().pathForResource("ColorsChoise", ofType: "plist")
+        //
+        //        // save piist file array content to NSArray object
+        //        let colorNSArray = NSArray(contentsOfFile: colorFilePath!)
+        let colorNSArray = ColorPickerViewController.getListOfUsingColor()
         
         // Cast NSArray to string array.
         self.colorList = colorNSArray as! [String]
     }
     
+   static func getListOfUsingColor() -> NSArray {
+        // create path for Colors.plist resource file.
+        let colorFilePath = NSBundle.mainBundle().pathForResource("ColorsChoise", ofType: "plist")
+        
+        // save piist file array content to NSArray object
+        return NSArray(contentsOfFile: colorFilePath!)!
+    }
     
     // convert Hex string '#FF00FF' or 'FF00FF' to UIColor object
     private func convertHexToUIColor(hexColor hexColor : String) -> UIColor {
@@ -164,8 +172,29 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
 }
 
 extension ColorPickerViewController {
-    internal func externalConvertHexToUIColor(hexColor hexColor : String) -> UIColor {
-        return self.convertHexToUIColor(hexColor: hexColor)
+    static func convertHexToUIColor(hexColor hexColor : String) -> UIColor {
+        return ColorPickerViewController().convertHexToUIColor(hexColor: hexColor)
+    }
+}
+
+extension ColorPickerViewController {
+    /**
+     Hex string of a UIColor instance.
+     
+     - parameter rgba: Whether the alpha should be included.
+     */
+    static func getHexString(colorToTransform:UIColor, includeAlpha: Bool) -> String {
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var a: CGFloat = 0
+        colorToTransform.getRed(&r, green: &g, blue: &b, alpha: &a)
+        
+        if (includeAlpha) {
+            return String(format: "#%02X%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255), Int(a * 255))
+        } else {
+            return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
+        }
     }
 }
 

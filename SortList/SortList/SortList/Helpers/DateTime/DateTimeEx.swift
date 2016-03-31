@@ -77,9 +77,9 @@ extension NSDate{
         var timeIntervalString:String = ""
         if year > 0 {
             timeIntervalString = String(year) + " years"
-        }else if month > 0 {
+        } else if month > 0 {
             timeIntervalString = String(month) + " months"
-        }else if day > 0 {
+        } else if day > 0 {
             timeIntervalString = String(day) + " days"
             //detail someone..
 //            if day == 1 {
@@ -87,13 +87,13 @@ extension NSDate{
 //                //            else if day == 2 {
 //                //              timeIntervalString = "day before yesterday"
 //            }
-        }else if hour > 0 {
+        } else if hour > 0 {
             timeIntervalString = String(hour) + " hours"
-        }else if minute > 0 {
+        } else if minute > 0 {
             timeIntervalString = String(minute) + " minutes"
-        }else if second > 0 {
+        } else if second > 0 {
             timeIntervalString = String(second) + " seconds"
-        }else{
+        } else {
             timeIntervalString = ""
         }
         

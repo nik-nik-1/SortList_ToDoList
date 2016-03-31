@@ -47,7 +47,7 @@ func plistSet(newValue:AnyObject, forKey:String, inPlistNamed:String, needToSave
             print("File '\(inPlistNamed)' not found setting value \(newValue) for key \(forKey)")
         }
         
-    }else{
+    } else {
         print("NRswiftPlist - The file in the path doesn't exists")
     }
 }
@@ -76,14 +76,14 @@ private func getPathToSaveData (inPlistNamed:String, needToSaveBetweenSessions:B
             catch{
                 NSLog("NRSimplePlist - Error Copying plist file '\(path)',")
             }
-        }else{
+        } else {
            //All OK!
             //This can be used to delete file from documents directory
             //fileManager.removeItemAtPath(path, error: nil)
         }
 
         
-    }else{
+    } else {
         path = getPathOfPListFileInDirectory(inPlistNamed)
     }
     return path
@@ -98,7 +98,7 @@ private func getPlistKeyValue(key:String, path: String) throws -> AnyObject? {
     
     if let plistData = NSData(contentsOfFile: path) {
         
-        let formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer()
+        let formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer(nil)
         //var plist = NSPropertyListSerialization.propertyListWithData(plistData, options: 0, format: formats, error: &error) as NSDictionary
         do {
             let plist = try NSPropertyListSerialization.propertyListWithData(plistData, options: .Immutable, format: formats) as! NSDictionary
@@ -135,7 +135,7 @@ private func setPlistValue (newValue:AnyObject, forKey:String, path: String) thr
     
     if let plistData = NSData(contentsOfFile: path as String) {
         var array:NSMutableDictionary = NSMutableDictionary()
-        let formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer()
+        let formats: UnsafeMutablePointer<NSPropertyListFormat> = UnsafeMutablePointer(nil)
         //var plist = NSPropertyListSerialization.propertyListWithData(plistData, options: .MutableContainers, format: formats, error: &error) as NSMutableDictionary
         
         do {

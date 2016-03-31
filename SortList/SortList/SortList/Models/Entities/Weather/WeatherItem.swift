@@ -25,7 +25,6 @@ class WeatherItem : NSManagedObject {
         return NSEntityDescription.insertNewObjectForEntityForName(entityName as String, inManagedObjectContext: context)
     }
     
-    
     static func insertWeatheItemWithItem(structOfItems: WeatherItemStructure,  context: NSManagedObjectContext) -> NSManagedObject? {
         let weatherItem: WeatherItem = insertNewObjectIntoContext(context) as! WeatherItem
         
@@ -53,7 +52,6 @@ class WeatherItem : NSManagedObject {
         
         return array
     }
-    
     
     static func getElementDictOfClass () -> [String: String]{
         var Dict = [String: String]()
@@ -101,7 +99,7 @@ class WeatherItem : NSManagedObject {
                     //default variable
                     valueToReturn = ""
                 }
-            }else{
+            } else {
                 //default variable
                 valueToReturn = ""
             }
