@@ -14,7 +14,7 @@ protocol DataEnteredDelegate: class {
     func ereseuserEnterInformation()
 }
 
-class DetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate, UITextFieldDelegate {
+class DetailViewController: UIViewController, UIPopoverPresentationControllerDelegate, ColorPickerDelegate, UITextViewDelegate {
     
     //var receivedString: String = ""
     var receivedCell: ToDoItem?
@@ -23,8 +23,9 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
     
     @IBOutlet weak var dateTimeCreateDetail: UILabel!
     @IBOutlet weak var dateTimeLiveDetail: UILabel!
-    @IBOutlet weak var detailViewTextInputEdit: UITextField!
+//    @IBOutlet weak var detailViewTextInputEdit: UITextField!
     @IBOutlet weak var buttonColorOfItemOutlet: UIButton!
+    @IBOutlet weak var detailViewTextInputEdit: UITextView!
     
     @IBAction func buttonColorOfItem(sender: AnyObject) {
         self.showColorPicker()
@@ -157,8 +158,9 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         // set preview background to selected color
         //self.colorPreview.backgroundColor = selectedUIColor
         
+        let temStructOfColor = ColorPickerViewController.getRigthParametersOfColorForDrawing(selectedUIColor)
         
-        let сolorBarTrans = UIColor.colorWithAlphaComponent(selectedUIColor)(0.4) //not works!
+        let сolorBarTrans = temStructOfColor.сolor04a
         
 //        self.view.backgroundColor = сolorBarTrans
         
@@ -166,6 +168,8 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         
         buttonColorOfItemOutlet.backgroundColor     = сolorBarTrans
         buttonColorOfItemOutlet.layer.borderColor   = selectedUIColor.CGColor
+        
+        detailViewTextInputEdit.backgroundColor     = temStructOfColor.сolor02a
     }
     
     

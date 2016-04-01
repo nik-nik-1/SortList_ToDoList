@@ -14,7 +14,7 @@ class WeatherItemsTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherValueLabelTableItem: UILabel!
     
     
-    var strctD:elementDictStructure = elementDictStructure()
+    var strctD:ElementDictStructure = ElementDictStructure()
     var weatherItem: WeatherItem! {
         didSet {
             weatherNameLabelTableItem?.text  = strctD.description

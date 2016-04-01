@@ -14,11 +14,18 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         didSet {
             toDoListTableView.toDoItems = toDoItems
             toDoListTableView.reloadData()
+            //
+//            toggleTableEditingMode()
+            enableDisableEditButton()
         }
     }
     var recivedFromMainListValueCell: ToDoItem? = nil
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
+    @IBAction func editButtonTouched(sender: AnyObject) {
+        toggleTableEditingMode()
+    }
+
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
     @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
@@ -42,9 +49,9 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
           toDoListTableView.toDoListDelegate = self;
     }
     
-    func setDefaultData () {
-        
-    }
+//    func setDefaultData () {
+//        
+//    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -104,9 +111,28 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
     }
     
     
-    @IBAction func editButtonTouched(sender: AnyObject) {
-        toDoListTableView.setEditing(toDoListTableView.editing ? false : true, animated: true)
+    
+    // toggle table editing mode
+    private func toggleTableEditingMode() {
+        let tBool: Bool = toDoListTableView.editing
+        if tBool {
+            editButtonPanell.title = "Edit"
+
+        }else{
+            editButtonPanell.title = "Done"
+        }
+        toDoListTableView.setEditing(tBool ? false : true, animated: true)
     }
+    
+    // disable edit button if no record
+    private func enableDisableEditButton() {
+        if toDoItems.count == 0 {
+            editButtonPanell.enabled = false
+        }else{
+            editButtonPanell.enabled = true
+        }
+    }
+
     
 }
 

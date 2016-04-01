@@ -103,7 +103,7 @@
                                     <segue destination="ANt-aI-fQv" kind="show" identifier="showDetailViewController" id="qXt-J2-mnL"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="MdM-h6-BNh">
+                            <barButtonItem title="Edit" id="MdM-h6-BNh">
                                 <connections>
                                     <action selector="editButtonTouched:" destination="nEi-1x-ciK" id="zKl-LE-yNQ"/>
                                 </connections>
@@ -238,18 +238,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input text here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X3m-Xc-bvD">
-                                <rect key="frame" x="14" y="133" width="571" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTimeLive" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFC-JR-Mb2">
                                 <rect key="frame" x="14" y="72" width="320" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTimeCreate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-cI-eY9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTimeCreate" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLa-cI-eY9">
                                 <rect key="frame" x="405" y="72" width="180" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="6T2-w7-VlE"/>
@@ -259,9 +254,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtp-eI-KZ7">
-                                <rect key="frame" x="546" y="96" width="39" height="22"/>
+                                <rect key="frame" x="533" y="96" width="52" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="QF6-LU-mUe"/>
+                                    <constraint firstAttribute="width" constant="52" id="QF6-LU-mUe"/>
                                     <constraint firstAttribute="height" constant="22" id="u12-0y-nOF"/>
                                 </constraints>
                                 <state key="normal" title="Color"/>
@@ -289,17 +284,24 @@
                                     <action selector="buttonColorOfItem:" destination="ANt-aI-fQv" eventType="touchUpInside" id="X8b-tt-sZc"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="957-Tn-KfH">
+                                <rect key="frame" x="14" y="126" width="571" height="466"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="top" secondItem="Qtp-eI-KZ7" secondAttribute="bottom" constant="15" id="2E7-T4-LRI"/>
-                            <constraint firstItem="Qtp-eI-KZ7" firstAttribute="trailing" secondItem="X3m-Xc-bvD" secondAttribute="trailing" id="2ML-ip-ke9"/>
                             <constraint firstItem="oLa-cI-eY9" firstAttribute="trailing" secondItem="Qtp-eI-KZ7" secondAttribute="trailing" id="74S-aS-mQ2"/>
-                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="leading" secondItem="mvA-wJ-3O8" secondAttribute="leadingMargin" constant="-6" id="Iyq-dR-8S6"/>
+                            <constraint firstItem="957-Tn-KfH" firstAttribute="leading" secondItem="wFC-JR-Mb2" secondAttribute="leading" id="8QS-82-RKa"/>
+                            <constraint firstItem="957-Tn-KfH" firstAttribute="top" secondItem="Qtp-eI-KZ7" secondAttribute="bottom" constant="8" symbolic="YES" id="FXj-cq-lEx"/>
                             <constraint firstItem="wFC-JR-Mb2" firstAttribute="baseline" secondItem="oLa-cI-eY9" secondAttribute="baseline" id="Jzw-DZ-WTq"/>
-                            <constraint firstItem="wFC-JR-Mb2" firstAttribute="leading" secondItem="X3m-Xc-bvD" secondAttribute="leading" id="O76-Jn-sYI"/>
-                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="top" secondItem="Ysg-Cr-PgJ" secondAttribute="bottom" constant="69" id="b4v-9G-UTp"/>
-                            <constraint firstItem="X3m-Xc-bvD" firstAttribute="centerX" secondItem="mvA-wJ-3O8" secondAttribute="centerX" id="hP4-H6-gqt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qtp-eI-KZ7" secondAttribute="trailing" constant="-5" id="OE9-rY-wbr"/>
+                            <constraint firstItem="Qtp-eI-KZ7" firstAttribute="top" secondItem="Ysg-Cr-PgJ" secondAttribute="bottom" constant="32" id="OMG-jM-d2P"/>
+                            <constraint firstItem="wFC-JR-Mb2" firstAttribute="leading" secondItem="mvA-wJ-3O8" secondAttribute="leadingMargin" constant="-6" id="TPa-XI-N98"/>
+                            <constraint firstItem="Dig-3m-Vbi" firstAttribute="top" secondItem="957-Tn-KfH" secondAttribute="bottom" constant="8" symbolic="YES" id="aHN-WQ-DeB"/>
+                            <constraint firstItem="957-Tn-KfH" firstAttribute="trailing" secondItem="Qtp-eI-KZ7" secondAttribute="trailing" id="oDy-nK-Lg3"/>
                             <constraint firstItem="oLa-cI-eY9" firstAttribute="leading" secondItem="wFC-JR-Mb2" secondAttribute="trailing" constant="71" id="rbg-JH-SWa"/>
                             <constraint firstItem="oLa-cI-eY9" firstAttribute="top" secondItem="Ysg-Cr-PgJ" secondAttribute="bottom" constant="8" symbolic="YES" id="xhr-37-5UF"/>
                         </constraints>
@@ -320,7 +322,7 @@
                         <outlet property="buttonColorOfItemOutlet" destination="Qtp-eI-KZ7" id="HHx-UH-gce"/>
                         <outlet property="dateTimeCreateDetail" destination="oLa-cI-eY9" id="jaL-w9-TSA"/>
                         <outlet property="dateTimeLiveDetail" destination="wFC-JR-Mb2" id="asz-5W-7hu"/>
-                        <outlet property="detailViewTextInputEdit" destination="X3m-Xc-bvD" id="1p5-gK-Vi5"/>
+                        <outlet property="detailViewTextInputEdit" destination="957-Tn-KfH" id="56g-FW-DTq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc5-KO-OhF" userLabel="First Responder" sceneMemberID="firstResponder"/>

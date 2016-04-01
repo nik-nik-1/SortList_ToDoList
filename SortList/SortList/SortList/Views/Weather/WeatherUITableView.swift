@@ -59,7 +59,7 @@ class WeatherUITableView: UITableView, UITableViewDataSource, UITableViewDelegat
             if let valueOfElWeather = DefaultNameOfDictClassWeather[nameOfElWeather] {
                 
                 if weatherItems.count > 0 {
-                    weatherItemCell.strctD = elementDictStructure(name: nameOfElWeather, description: valueOfElWeather)
+                    weatherItemCell.strctD = ElementDictStructure(name: nameOfElWeather, description: valueOfElWeather)
                     let weatherItem = weatherItems[0]// getting always first element in CoreData! There always only one elemement present
                     weatherItemCell.weatherItem = weatherItem
                 }

@@ -29,6 +29,7 @@ class ToDoItemTableViewCell: UITableViewCell {
         
         changeTextNarrovIfCheckedOrNot()
     }
+    @IBOutlet weak var colorPreview: UIView!
     
     
     var delegate: ToDoItemTableViewCellDelegate?
@@ -38,6 +39,8 @@ class ToDoItemTableViewCell: UITableViewCell {
             itemLabelView?.text     = toDoItemElem.item
             dateViewTableCell?.text = NSDate.parseForMainTableView(toDoItemElem.dateTimeCreate!)
             changeTextNarrovIfCheckedOrNot()
+            
+            setupCellViews()
         }
     }
     
@@ -45,17 +48,31 @@ class ToDoItemTableViewCell: UITableViewCell {
     //MARK: init cell
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupViews()
+//        setupViews()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupViews()
+//        setupViews()
     }
     
-    func setupViews() {
-        contentView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.1) // light green
+    func setupCellViews() {
+        //contentView.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.1) // light green
+        
+        if toDoItemElem != nil {
+            if let selectedUIColor = toDoItemElem.colorItem as? UIColor {
+                let temStructOfColor = ColorPickerViewController.getRigthParametersOfColorForDrawing(selectedUIColor)
+                colorPreview.backgroundColor = selectedUIColor
+                contentView.backgroundColor = temStructOfColor.сolor02a
+                
+                selectItemSwitchView.onTintColor    = temStructOfColor.сolor04a
+                selectItemSwitchView.tintColor      = temStructOfColor.сolor02a
+//                selectItemSwitchView.thumbTintColor = selectedUIColor
+                
+            }
+        }
+        
     }
     
     func changeTextNarrovIfCheckedOrNot() {

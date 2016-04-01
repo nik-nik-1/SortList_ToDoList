@@ -6,6 +6,7 @@
 //  Copyright © 2016 Local. All rights reserved.
 //
 
+import UIKit
 
 //MARK: Weather adding
 struct WeatherStructInfo {
@@ -32,7 +33,13 @@ struct WeatherItemStructure {
     
 }
 
-struct elementDictStructure {
+struct ElementDictStructure {
     var name            = ""
     var description     = ""
+}
+
+struct RigthParametersOfColorForDrawing {
+    
+    var сolor04a:UIColor
+    var сolor02a:UIColor
 }

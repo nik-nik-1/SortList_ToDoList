@@ -172,12 +172,11 @@ class ColorPickerViewController: UIViewController, UICollectionViewDataSource, U
 }
 
 extension ColorPickerViewController {
+    
     static func convertHexToUIColor(hexColor hexColor : String) -> UIColor {
         return ColorPickerViewController().convertHexToUIColor(hexColor: hexColor)
     }
-}
 
-extension ColorPickerViewController {
     /**
      Hex string of a UIColor instance.
      
@@ -195,6 +194,15 @@ extension ColorPickerViewController {
         } else {
             return String(format: "#%02X%02X%02X", Int(r * 255), Int(g * 255), Int(b * 255))
         }
+    }
+    
+    static func getRigthParametersOfColorForDrawing (selectedUIColor: UIColor) -> RigthParametersOfColorForDrawing {
+        let сolor04a = UIColor.colorWithAlphaComponent(selectedUIColor)(0.4)
+        let сolor02a = UIColor.colorWithAlphaComponent(selectedUIColor)(0.2)
+        
+        let newStruct = RigthParametersOfColorForDrawing(сolor04a: сolor04a, сolor02a: сolor02a)
+
+        return newStruct
     }
 }
 
