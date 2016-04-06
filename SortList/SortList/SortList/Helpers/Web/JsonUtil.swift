@@ -39,7 +39,7 @@ class JsonUtil {
             
             //Generate temp.Struct for CoreData
             structItem = WeatherItemStructure()
-            structItem?.id = parseJSON["sys"]["id"].int64Value! as Int64
+           // structItem?.id = parseJSON["sys"]["id"].int64Value! as Int64
             structItem?.name = parseJSON["name"].stringValue! as String
             structItem?.country = parseJSON["sys"]["country"].stringValue! as String
             //            if let weatherArray = parseJSON["weather"].arrayValue {

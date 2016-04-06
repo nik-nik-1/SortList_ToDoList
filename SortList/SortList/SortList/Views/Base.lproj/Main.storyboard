@@ -92,11 +92,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="8Fx-jB-r1o">
-                        <barButtonItem key="leftBarButtonItem" title="〈Back" id="Vn9-FQ-G59">
-                            <connections>
-                                <action selector="buttonGoBackToMenuList:" destination="nEi-1x-ciK" id="i5J-9q-Bw2"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Iql-DF-HtE">
                                 <connections>
@@ -210,13 +205,7 @@
                             <constraint firstItem="Ujo-Pl-72J" firstAttribute="top" secondItem="AC5-kM-wgy" secondAttribute="bottom" constant="8" symbolic="YES" id="nMN-EC-o5m"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Weather" id="woE-gc-ad5">
-                        <barButtonItem key="leftBarButtonItem" title="〈Back" id="QzT-K7-KsV">
-                            <connections>
-                                <action selector="buttonGoBackToMenuList:" destination="Xb5-7x-CrZ" id="nUo-lj-gvz"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Weather" id="woE-gc-ad5"/>
                     <connections>
                         <outlet property="userCityName" destination="yBX-Ip-Cxs" id="LeP-3Y-30m"/>
                         <outlet property="weatherTableView" destination="Ujo-Pl-72J" id="GjH-BQ-tX5"/>

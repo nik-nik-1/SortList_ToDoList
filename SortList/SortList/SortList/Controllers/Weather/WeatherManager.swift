@@ -9,7 +9,7 @@ import UIKit
 
 class WeatherManager {
     
-    static func loadDataOfWeatheFromUrlToCoreData (cityName: String?, callBack: ((data: NSData!) -> Void)?){
+    static func loadDataOfWeatheFromUrl (cityName: String?, callBack: ((data: NSData!) -> Void)?){
         
         HttpRequestWork.connectToWS(cityName) { data, response, error in
             
@@ -18,8 +18,7 @@ class WeatherManager {
                     print("timed out") // note, `response` is likely `nil` if it timed out
                 }
             } else {
-                //all OK, i.e. error = nil
-                CoreDataUtil.saveJsonInCoreData (data)
+                
                 
                 callBack?(data: data)
                 //               NSNotificationCenter.defaultCenter().postNotificationName("updateWeatherTableFromAnotherModule", object: nil)

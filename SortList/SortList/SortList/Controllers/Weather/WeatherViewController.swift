@@ -32,7 +32,8 @@ class WeatherViewController: UIViewController {
         
 //        NSNotificationCenter.defaultCenter().addObserver(self, selector: @selector("updateWeatherTableView"), name:"updateWeatherTableFromAnotherModule", object: nil)
         
-        WeatherManager.loadDataOfWeatheFromUrlToCoreData(userCityName.text!) { (data) -> Void in
+        WeatherManager.loadDataOfWeatheFromUrl(userCityName.text!) { (data) -> Void in
+            CoreDataUtil.saveJsonInCoreData(data)
             self.pushAllDataInTableFromCoreData()
             
             dispatch_async(dispatch_get_main_queue()) {
