@@ -78,17 +78,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rca-xG-Y79">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" red="0.65345785020000002" green="1" blue="0.9399477329" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rpg-HL-RCh">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-Kc-nRc" customClass="ToDoListTableView" customModule="SortList" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="20" y="72" width="560" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="xsE-Kc-nRc" firstAttribute="leading" secondItem="2a1-20-XJg" secondAttribute="leading" id="1h7-pb-DsH"/>
-                            <constraint firstItem="g6B-Q3-HaW" firstAttribute="top" secondItem="xsE-Kc-nRc" secondAttribute="bottom" id="C6o-fu-HLE"/>
-                            <constraint firstItem="xsE-Kc-nRc" firstAttribute="top" secondItem="H7e-nB-BlH" secondAttribute="bottom" id="GLH-V1-m0Z"/>
-                            <constraint firstAttribute="trailing" secondItem="xsE-Kc-nRc" secondAttribute="trailing" id="GTt-gx-W7A"/>
+                            <constraint firstItem="g6B-Q3-HaW" firstAttribute="top" secondItem="Rca-xG-Y79" secondAttribute="bottom" constant="8" symbolic="YES" id="Dih-yM-6Hi"/>
+                            <constraint firstItem="Rca-xG-Y79" firstAttribute="trailing" secondItem="xsE-Kc-nRc" secondAttribute="trailing" id="E9Z-V6-Mmo"/>
+                            <constraint firstItem="xsE-Kc-nRc" firstAttribute="top" secondItem="H7e-nB-BlH" secondAttribute="bottom" constant="8" symbolic="YES" id="FoC-bB-HDe"/>
+                            <constraint firstItem="xsE-Kc-nRc" firstAttribute="bottom" secondItem="g6B-Q3-HaW" secondAttribute="top" constant="8" symbolic="YES" id="H9d-pl-mr8"/>
+                            <constraint firstItem="Rca-xG-Y79" firstAttribute="trailing" secondItem="2a1-20-XJg" secondAttribute="trailingMargin" id="LdJ-px-CKY"/>
+                            <constraint firstItem="Rca-xG-Y79" firstAttribute="top" secondItem="H7e-nB-BlH" secondAttribute="bottom" constant="8" symbolic="YES" id="aQS-h1-Twb"/>
+                            <constraint firstItem="Rca-xG-Y79" firstAttribute="leading" secondItem="2a1-20-XJg" secondAttribute="leading" constant="20" symbolic="YES" id="nfi-YT-ipl"/>
+                            <constraint firstItem="xsE-Kc-nRc" firstAttribute="leading" secondItem="Rca-xG-Y79" secondAttribute="leading" id="v26-jg-Oir"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="List" id="8Fx-jB-r1o">
@@ -103,16 +118,22 @@
                                     <action selector="editButtonTouched:" destination="nEi-1x-ciK" id="zKl-LE-yNQ"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="⇌ view" id="1F2-en-zsG">
+                                <connections>
+                                    <action selector="ChangeViewInToDoList:" destination="nEi-1x-ciK" id="BzA-Ag-Aju"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="editButtonPanell" destination="MdM-h6-BNh" id="jFF-B5-wGh"/>
+                        <outlet property="toDoCollectionView" destination="Rca-xG-Y79" id="TlX-uZ-Oeu"/>
                         <outlet property="toDoListTableView" destination="xsE-Kc-nRc" id="yfA-CF-3wg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEw-uH-zKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-311.25" y="395.25"/>
+            <point key="canvasLocation" x="-312" y="395"/>
         </scene>
         <!--Weather-->
         <scene sceneID="OK3-Pg-iUN">

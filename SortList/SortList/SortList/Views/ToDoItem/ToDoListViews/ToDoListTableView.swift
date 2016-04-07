@@ -22,6 +22,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         }
     }
     
+    var updateListWithAnimation:Bool = false
     
     var toDoListDelegate: ToDoListTableViewDelegate?
     
@@ -98,6 +99,7 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
     }
     
     
+    
     // MARK: UITableView delegate
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -119,7 +121,18 @@ class ToDoListTableView: UITableView, UITableViewDataSource, UITableViewDelegate
         
         //        toDoItemCell.itemLabelView.text = toDoItem.item
         toDoItemCell.toDoItemElem = toDoItem
+        
+        if updateListWithAnimation {
+            //CellAnimator.animateCell(cell, withTransform: CellAnimator.TransformWave, andDuration: 1)
+            CellAnimator.animateCell(cell)
+            
+            //Disable animation
+            if indexPath.row == toDoItems.count-1 {
+               updateListWithAnimation = false
+            }
+        }
     }
+    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let valueitemText = String(toDoItems[indexPath.row].item)

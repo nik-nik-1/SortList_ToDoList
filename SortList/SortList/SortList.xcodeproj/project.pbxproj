@@ -57,6 +57,10 @@
 		E7D0D33D1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */; };
 		E7D0D33F1C6DF5CA00B73DF2 /* UIAlertController_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */; };
 		E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D0D3441C6DF69300B73DF2 /* ToDoListTableViewController.swift */; };
+		E7FC6DD31CB5597E0034F99A /* CellAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DD21CB5597E0034F99A /* CellAnimator.swift */; };
+		E7FC6DD61CB675600034F99A /* ToDoItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DD51CB675600034F99A /* ToDoItemCollectionViewCell.xib */; };
+		E7FC6DD81CB677B50034F99A /* ToDoItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DD71CB677B50034F99A /* ToDoItemCollectionViewCell.swift */; };
+		E7FC6DDA1CB68BBE0034F99A /* ToDoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DD91CB68BBE0034F99A /* ToDoCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +116,10 @@
 		E7D0D33C1C6CC74700B73DF2 /* TableViewControllerMetodTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewControllerMetodTest.swift; sourceTree = "<group>"; };
 		E7D0D33E1C6DF5CA00B73DF2 /* UIAlertController_test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController_test.swift; sourceTree = "<group>"; };
 		E7D0D3441C6DF69300B73DF2 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		E7FC6DD21CB5597E0034F99A /* CellAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellAnimator.swift; sourceTree = "<group>"; };
+		E7FC6DD51CB675600034F99A /* ToDoItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		E7FC6DD71CB677B50034F99A /* ToDoItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		E7FC6DD91CB68BBE0034F99A /* ToDoCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +267,7 @@
 		E74A97021CA2DEB200CFF0B2 /* ToDoItem */ = {
 			isa = PBXGroup;
 			children = (
+				E7FC6DD41CB674D20034F99A /* ToDoCollectionViews */,
 				E74A97031CA2DEB200CFF0B2 /* ToDoListViews */,
 			);
 			path = ToDoItem;
@@ -277,6 +286,7 @@
 		E74A970A1CA2DF3B00CFF0B2 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				E7FC6DD21CB5597E0034F99A /* CellAnimator.swift */,
 				E74A970B1CA2DF3B00CFF0B2 /* UIView_Borders.swift */,
 			);
 			path = UIView;
@@ -384,6 +394,16 @@
 			path = SortList/Trash;
 			sourceTree = "<group>";
 		};
+		E7FC6DD41CB674D20034F99A /* ToDoCollectionViews */ = {
+			isa = PBXGroup;
+			children = (
+				E7FC6DD51CB675600034F99A /* ToDoItemCollectionViewCell.xib */,
+				E7FC6DD71CB677B50034F99A /* ToDoItemCollectionViewCell.swift */,
+				E7FC6DD91CB68BBE0034F99A /* ToDoCollectionView.swift */,
+			);
+			path = ToDoCollectionViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +470,7 @@
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
 				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,
+				E7FC6DD61CB675600034F99A /* ToDoItemCollectionViewCell.xib in Resources */,
 				E74A97081CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib in Resources */,
 				E7C28D1A1C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf in Resources */,
 			);
@@ -463,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D0D33B1C6BBF9100B73DF2 /* DetailViewControllerOLD.swift in Sources */,
+				E7FC6DD31CB5597E0034F99A /* CellAnimator.swift in Sources */,
 				E7C28CFE1C99B33400FE3EF5 /* OLD_ToDoItem+CoreDataProperties.swift in Sources */,
 				E74A96F11CA2DD7700CFF0B2 /* ToDoItem.swift in Sources */,
 				E7D0D3451C6DF69300B73DF2 /* ToDoListTableViewController.swift in Sources */,
@@ -475,6 +497,7 @@
 				E74A97011CA2DE6700CFF0B2 /* ToDoListViewController.swift in Sources */,
 				E79C6B851C74E4B2005D104F /* ColorCollectionViewController.swift in Sources */,
 				E74A96FF1CA2DE6700CFF0B2 /* DetailViewController.swift in Sources */,
+				E7FC6DD81CB677B50034F99A /* ToDoItemCollectionViewCell.swift in Sources */,
 				E74A97001CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift in Sources */,
 				E7C28D0A1C9C109F00FE3EF5 /* WeatherViewController.swift in Sources */,
 				E7AAB8671CAA85E9007AA99B /* CoreDataUtil+Json.swift in Sources */,
@@ -498,6 +521,7 @@
 				E7AAB8781CABF42A007AA99B /* GeneralPurposeModels.swift in Sources */,
 				E7BE33DE1CA41B5E006323C0 /* WeatherItemsTableViewCell.swift in Sources */,
 				E74A96E21CA2DC5100CFF0B2 /* CurrentWeatherForLocation+CoreDataProperties.swift in Sources */,
+				E7FC6DDA1CB68BBE0034F99A /* ToDoCollectionView.swift in Sources */,
 				E7AAB8711CAA991D007AA99B /* GeneralPurposeParametres.swift in Sources */,
 				E7C28D181C9DA2E300FE3EF5 /* NRSwiftPlist.swift in Sources */,
 				E74A96F81CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */,
