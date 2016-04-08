@@ -8,12 +8,16 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoListCollectionViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
     
     var toDoItems: [ToDoItem] = [] {
         didSet {
+            //REMOVE!!
             toDoListTableView.toDoItems = toDoItems
             toDoListTableView.reloadData()
+
+            toDoCollectionView.toDoItems = toDoItems
+            toDoCollectionView.reloadData()
             //
             //            toggleTableEditingMode()
             enableDisableEditButton()
@@ -26,49 +30,98 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         toggleTableEditingMode()
     }
     
-    @IBOutlet var toDoListTableView: ToDoListTableView!
-    @IBOutlet var toDoCollectionView: ToDoCollectionView!
+    @IBOutlet weak var toDoListTableView: ToDoListTableView!
+    @IBOutlet weak var toDoCollectionView: ToDoCollectionView!
+    
+    var isGridFlowLayoutUsed:Bool = false
+    let listFlowLayout = ProductsListFlowLayout()
+    let gridFlowLayout = ProductsGridFlowLayout()
+    
+//    required init?(coder aDecoder: NSCoder) {
+//        self.isGridFlowLayoutUsed = false
+//        super.init(coder: aDecoder)
+//    }
+    
+    @IBOutlet weak var gridButton: UIButton!
+    @IBOutlet weak var listButton: UIButton!
+    @IBAction func listButtonPressed(sender: AnyObject) {
+        // change to list layout
+        isGridFlowLayoutUsed = false
+        
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
+            self.toDoCollectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
+        }
+    }
+    @IBAction func gridButtonPressed(sender: AnyObject) {
+        // change to grid layout
+        isGridFlowLayoutUsed = true
+        
+        UIView.animateWithDuration(0.2) { () -> Void in
+            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
+            self.toDoCollectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
+        }
+    }
+    
+    
+    func setupDatasource() {
+//        itemsToDisplay = [ImageToDisplay(imageName: "1"), ImageToDisplay(imageName: "2"), ImageToDisplay(imageName: "3"), ImageToDisplay(imageName: "4"),
+//                          ImageToDisplay(imageName: "5"), ImageToDisplay(imageName: "6"), ImageToDisplay(imageName: "7"), ImageToDisplay(imageName: "8"),
+//                          ImageToDisplay(imageName: "9"), ImageToDisplay(imageName: "10")]
+        
+        toDoCollectionView.reloadData()
+    }
+    
+    func setupInitialLayout() {
+        isGridFlowLayoutUsed = true
+        toDoCollectionView.collectionViewLayout = gridFlowLayout
+    }
+    
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        toDoCollectionView.collectionViewLayout.invalidateLayout()
+    }
     
     //    @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
     //        self.navigationController?.popViewControllerAnimated(true)
     //    }
-    var switchView = true
-    @IBAction func ChangeViewInToDoList(sender: AnyObject) {
-        var fromView: UIView
-        var toView: UIView
-        
-        if switchView//(self.toDoListTableView.superview == self.view)
-        {
-            fromView = self.toDoListTableView;
-            toView = self.toDoCollectionView;
-        }
-        else
-        {
-            fromView = self.toDoCollectionView;
-            toView = self.toDoListTableView;
-        }
-        
-        toView.frame = self.view.bounds;
-        
-        UIView.transitionFromView(fromView, toView: toView, duration: 0.25, options: [.TransitionCrossDissolve, .ShowHideTransitionViews], completion: nil)
-        //        fromView.removeFromSuperview()
-        //        self.view.addSubview(toView)
-        
-        if toView == self.toDoListTableView {
-            
-            let itemView = (toView as! ToDoListTableView)
-            itemView.updateListWithAnimation = true
-            itemView.reloadData()
-            
-        } else if toView == self.toDoCollectionView{
-            (toView as! UICollectionView).reloadData()
-        } else {
-            //??
-        }
-        
-        
-        switchView = !switchView
-    }
+
+//    var switchView = true
+//    @IBAction func ChangeViewInToDoList(sender: AnyObject) {
+//        var fromView: UIView
+//        var toView: UIView
+//        
+//        if switchView//(self.toDoListTableView.superview == self.view)
+//        {
+//            fromView = self.toDoListTableView;
+//            toView = self.toDoCollectionView;
+//        }
+//        else
+//        {
+//            fromView = self.toDoCollectionView;
+//            toView = self.toDoListTableView;
+//        }
+//        
+//        toView.frame = self.view.bounds;
+//        
+//        UIView.transitionFromView(fromView, toView: toView, duration: 0.25, options: [.TransitionCrossDissolve, .ShowHideTransitionViews], completion: nil)
+//        //        fromView.removeFromSuperview()
+//        //        self.view.addSubview(toView)
+//        
+//        if toView == self.toDoListTableView {
+//            
+//            let itemView = (toView as! ToDoListTableView)
+//            itemView.updateListWithAnimation = true
+//            itemView.reloadData()
+//            
+//        } else if toView == self.toDoCollectionView{
+//            (toView as! UICollectionView).reloadData()
+//        } else {
+//            //??
+//        }
+//        
+//        
+//        switchView = !switchView
+//    }
     
     //MARK: Native functions
     override func viewDidLoad() {
@@ -87,8 +140,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         //        }
         toDoListTableView.toDoListDelegate = self;
         
-        self.toDoListTableView.frame = self.view.bounds
-        self.view.addSubview(self.toDoListTableView)
+//        self.toDoListTableView.frame = self.view.bounds
+//        self.view.addSubview(self.toDoListTableView)
+        
+        setupInitialLayout()
     }
     
     //    func setDefaultData () {

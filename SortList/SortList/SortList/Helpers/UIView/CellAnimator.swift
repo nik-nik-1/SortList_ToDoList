@@ -111,5 +111,25 @@ extension CellAnimator{
     }
     
     
+    public class func animateCell(cell: UICollectionViewCell) {
+        let view = cell.contentView
+        view.layer.shadowColor = UIColor.blackColor().CGColor;
+        view.layer.shadowOffset = CGSizeMake(10, 10);
+        cell.alpha = 0;
+        
+        view.layer.transform = TransformWave2(cell.layer)
+        view.layer.anchorPoint = CGPointMake(0, 0.5);
+        
+        UIView.animateWithDuration(0.8) {
+            view.layer.transform = CATransform3DIdentity
+            cell.alpha = 1;
+            view.layer.shadowOffset = CGSizeMake(0, 0);
+            
+        }
+
+    }
+    
+    
+    
 }
 
