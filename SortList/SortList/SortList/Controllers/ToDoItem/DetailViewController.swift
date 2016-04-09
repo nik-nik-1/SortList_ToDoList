@@ -131,10 +131,7 @@ class DetailViewController: UIViewController, UIPopoverPresentationControllerDel
         guard receivedCell != nil && receivedCell!.colorItem != nil else {
             return ToDoItem.getDefaultColorFortem()//UIColor.whiteColor()//ColorMode.init().getDefaultColorForItem()
         }
-        
-        
-        
-        return receivedCell!.colorItem as! UIColor
+         return receivedCell!.colorItem as! UIColor
     }
     
     

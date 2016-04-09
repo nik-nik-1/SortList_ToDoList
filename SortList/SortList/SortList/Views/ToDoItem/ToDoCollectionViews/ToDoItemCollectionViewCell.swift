@@ -19,7 +19,7 @@ class ToDoItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemLabelView: UILabel!
     
     @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
-    delegate?.didTouchMoreButton(self)
+        delegate?.didTouchMoreButton(self)
     }
     
     @IBAction func toDoItemUpdateValueChanged(sender: AnyObject) {
@@ -62,5 +62,5 @@ class ToDoItemCollectionViewCell: UICollectionViewCell {
     func changeTextNarrovIfCheckedOrNot() {
         TextView.changeTextNarrovIfCheckedOrNot(toDoItemElem, itemLabelView: itemLabelView)
     }
-
+    
 }

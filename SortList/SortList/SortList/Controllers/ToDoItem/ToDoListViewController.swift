@@ -37,10 +37,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
     let listFlowLayout = ProductsListFlowLayout()
     let gridFlowLayout = ProductsGridFlowLayout()
     
-//    required init?(coder aDecoder: NSCoder) {
-//        self.isGridFlowLayoutUsed = false
-//        super.init(coder: aDecoder)
-//    }
     
     @IBOutlet weak var gridButton: UIButton!
     @IBOutlet weak var listButton: UIButton!
@@ -51,6 +47,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         UIView.animateWithDuration(0.2) { () -> Void in
             self.toDoCollectionView.collectionViewLayout.invalidateLayout()
             self.toDoCollectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
+//            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
         }
     }
     @IBAction func gridButtonPressed(sender: AnyObject) {
@@ -60,17 +57,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         UIView.animateWithDuration(0.2) { () -> Void in
             self.toDoCollectionView.collectionViewLayout.invalidateLayout()
             self.toDoCollectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
+            //self.toDoCollectionView.reloadData()
         }
     }
     
-    
-    func setupDatasource() {
-//        itemsToDisplay = [ImageToDisplay(imageName: "1"), ImageToDisplay(imageName: "2"), ImageToDisplay(imageName: "3"), ImageToDisplay(imageName: "4"),
-//                          ImageToDisplay(imageName: "5"), ImageToDisplay(imageName: "6"), ImageToDisplay(imageName: "7"), ImageToDisplay(imageName: "8"),
-//                          ImageToDisplay(imageName: "9"), ImageToDisplay(imageName: "10")]
-        
-        toDoCollectionView.reloadData()
-    }
     
     func setupInitialLayout() {
         isGridFlowLayoutUsed = true
@@ -139,6 +129,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         //            setDefaultData ()
         //        }
         toDoListTableView.toDoListDelegate = self;
+        toDoCollectionView.toDoListDelegate = self;
         
 //        self.toDoListTableView.frame = self.view.bounds
 //        self.view.addSubview(self.toDoListTableView)
@@ -206,6 +197,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
     
     func didChangeAction() {
         toDoListTableView.reloadData()
+        toDoCollectionView.reloadData()
     }
     
     

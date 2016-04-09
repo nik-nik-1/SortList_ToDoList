@@ -23,21 +23,21 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     var toDoListDelegate: ToDoListCollectionViewDelegate?
     var updateListWithAnimation:Bool = true
     
-    //var toDoListDelegate: ToDoListTableViewDelegate?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-//        self.registerClass(ToDoItemCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
-        
-        let nib = UINib(nibName: "ToDoItemCollectionViewCell", bundle: nil)
-        
-        self.registerNib(nib, forCellWithReuseIdentifier: "CollectionCell")
+        //first Nib: Cell like Collection
+        let nib1 = UINib(nibName: "ToDoItemCollectionViewCell", bundle: nil)
+        self.registerNib(nib1, forCellWithReuseIdentifier: ProductsGridFlowLayout.iDOfInstanse)
 //        self.backgroundColor = UIColor.brownColor() //TEST !!!!
 
+        //second Nib: Cell like Cell
+        let nib2 = UINib(nibName: "ToDoItemCollectionViewCellLikeCell", bundle: nil)
+        self.registerNib(nib2, forCellWithReuseIdentifier: ProductsListFlowLayout.iDOfInstanse)
         
         self.dataSource = self
-        self.delegate = self
+        self.delegate   = self
     }
 
     
@@ -47,21 +47,25 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     }
    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let  cellIstanceName = getCellIstanceNameFromCollectionViewLayout(collectionView)
         
-//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as UICollectionViewCell
-        
-        
-        let cell = self.dequeueReusableCellWithReuseIdentifier("CollectionCell", forIndexPath: indexPath) as? ToDoItemCollectionViewCell
-        
-//        if (cell == nil) {
-//            // Load the nib and assign an owner
-//            let topLevelObjects = NSBundle.mainBundle().loadNibNamed("cell", owner: self, options: nil);
-//            cell = topLevelObjects.first as? ToDoItemCollectionViewCell
-//        }
+        let cell = self.dequeueReusableCellWithReuseIdentifier(cellIstanceName, forIndexPath: indexPath) as? ToDoItemCollectionViewCell
         
         cell?.delegate = self
         
         return cell!
+    }
+    
+    func getCellIstanceNameFromCollectionViewLayout(collectionView:UICollectionView)  -> String {
+        var cellIstanceName:String = ""
+        
+        if let tempCellIstanceName:String = collectionView.collectionViewLayout.iDOfInstanse {
+            cellIstanceName = tempCellIstanceName
+        } else {
+            cellIstanceName = ""
+        }
+        
+        return cellIstanceName
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {

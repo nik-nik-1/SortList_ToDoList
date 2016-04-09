@@ -10,8 +10,9 @@ import UIKit
 
 class ProductsGridFlowLayout: UICollectionViewFlowLayout {
 
+    static let iDOfInstanse = "GridFlowLayout"
     // here you can define the height of each cell
-    let itemHeight: CGFloat = 120
+    let itemHeight: CGFloat = 100
     
     override init() {
         super.init()
@@ -30,6 +31,7 @@ class ProductsGridFlowLayout: UICollectionViewFlowLayout {
         minimumInteritemSpacing = 1
         minimumLineSpacing = 1
         scrollDirection = .Vertical
+        iDOfInstanse = ProductsGridFlowLayout.iDOfInstanse
     }
     
     /// here we define the width of each cell, creating a 2 column layout. In case you would create 3 columns, change the number 2 to 3

@@ -64,6 +64,7 @@
 		E7FC6DDE1CB7C1040034F99A /* ProductsListFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DDD1CB7C1040034F99A /* ProductsListFlowLayout.swift */; };
 		E7FC6DE21CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DE11CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib */; };
 		E7FC6DE41CB801670034F99A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DE31CB801670034F99A /* TextView.swift */; };
+		E7FC6DE61CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DE51CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +127,7 @@
 		E7FC6DDD1CB7C1040034F99A /* ProductsListFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsListFlowLayout.swift; sourceTree = "<group>"; };
 		E7FC6DE11CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7FC6DE31CB801670034F99A /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		E7FC6DE51CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemCollectionViewCellLikeCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -405,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				E7FC6DE11CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib */,
+				E7FC6DE51CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib */,
 				E7FC6DD71CB677B50034F99A /* ToDoItemCollectionViewCell.swift */,
 				E7FC6DD91CB68BBE0034F99A /* ToDoCollectionView.swift */,
 				E7FC6DDB1CB7C0A10034F99A /* ProductsGridFlowLayout.swift */,
@@ -479,6 +482,7 @@
 				E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */,
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
 				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
+				E7FC6DE61CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,
 				E74A97081CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib in Resources */,
 				E7C28D1A1C9DA3D000FE3EF5 /* NRSwiftPlist_ReedMe.rtf in Resources */,

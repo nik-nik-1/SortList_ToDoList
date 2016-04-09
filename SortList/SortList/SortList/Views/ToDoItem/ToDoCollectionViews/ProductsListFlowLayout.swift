@@ -9,8 +9,9 @@
 import UIKit
 
 class ProductsListFlowLayout: UICollectionViewFlowLayout {
-
-    let itemHeight: CGFloat = 120
+    static let iDOfInstanse = "ListFlowLayout"
+    
+    let itemHeight: CGFloat = 50
     
     override init() {
         super.init()
@@ -36,6 +37,7 @@ class ProductsListFlowLayout: UICollectionViewFlowLayout {
         minimumInteritemSpacing = 0
         minimumLineSpacing = 1
         scrollDirection = .Vertical
+        iDOfInstanse = ProductsListFlowLayout.iDOfInstanse
     }
     
     func itemWidth() -> CGFloat {
