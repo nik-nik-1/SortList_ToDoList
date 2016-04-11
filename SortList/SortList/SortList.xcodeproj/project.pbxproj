@@ -65,6 +65,10 @@
 		E7FC6DE21CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DE11CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib */; };
 		E7FC6DE41CB801670034F99A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DE31CB801670034F99A /* TextView.swift */; };
 		E7FC6DE61CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DE51CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib */; };
+		E7FC6DED1CBBB9E00034F99A /* close-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DEA1CBBB9E00034F99A /* close-icon.png */; };
+		E7FC6DEE1CBBB9E00034F99A /* grid-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DEB1CBBB9E00034F99A /* grid-icon.png */; };
+		E7FC6DEF1CBBB9E00034F99A /* list-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FC6DEC1CBBB9E00034F99A /* list-icon.png */; };
+		E7FC6DF11CBBBC5E0034F99A /* ToDoListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7FC6DF01CBBBC5E0034F99A /* ToDoListCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +132,10 @@
 		E7FC6DE11CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		E7FC6DE31CB801670034F99A /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		E7FC6DE51CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoItemCollectionViewCellLikeCell.xib; sourceTree = "<group>"; };
+		E7FC6DEA1CBBB9E00034F99A /* close-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-icon.png"; sourceTree = "<group>"; };
+		E7FC6DEB1CBBB9E00034F99A /* grid-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grid-icon.png"; sourceTree = "<group>"; };
+		E7FC6DEC1CBBB9E00034F99A /* list-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-icon.png"; sourceTree = "<group>"; };
+		E7FC6DF01CBBBC5E0034F99A /* ToDoListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +220,7 @@
 		D8E8D0921C5EC817007E4F48 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7FC6DE71CBBAABA0034F99A /* Images */,
 				E74A970D1CA2DFBC00CFF0B2 /* PlistForSaveData */,
 				E75310D01C772350002A5E3B /* Color */,
 				D8E8D0931C5EC817007E4F48 /* Assets.xcassets */,
@@ -268,6 +277,7 @@
 				E74A96FB1CA2DE6700CFF0B2 /* DetailViewController.swift */,
 				E74A96FC1CA2DE6700CFF0B2 /* ToDoItemActionSheetControl.swift */,
 				E74A96FD1CA2DE6700CFF0B2 /* ToDoListViewController.swift */,
+				E7FC6DF01CBBBC5E0034F99A /* ToDoListCollectionViewController.swift */,
 			);
 			path = ToDoItem;
 			sourceTree = "<group>";
@@ -416,6 +426,16 @@
 			path = ToDoCollectionViews;
 			sourceTree = "<group>";
 		};
+		E7FC6DE71CBBAABA0034F99A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				E7FC6DEA1CBBB9E00034F99A /* close-icon.png */,
+				E7FC6DEB1CBBB9E00034F99A /* grid-icon.png */,
+				E7FC6DEC1CBBB9E00034F99A /* list-icon.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,10 +498,13 @@
 				E74A96D21CA017D400CFF0B2 /* JSON_ReedMe.rtf in Resources */,
 				E75310D21C772350002A5E3B /* ColorsChoise.plist in Resources */,
 				E7FC6DE21CB7F4A80034F99A /* ToDoItemCollectionViewCell.xib in Resources */,
+				E7FC6DEF1CBBB9E00034F99A /* list-icon.png in Resources */,
+				E7FC6DEE1CBBB9E00034F99A /* grid-icon.png in Resources */,
 				D8E8D09D1C5EC817007E4F48 /* LaunchScreen.storyboard in Resources */,
 				E75310D61C7725D4002A5E3B /* ColorBackGround.plist in Resources */,
 				D8E8D09B1C5EC817007E4F48 /* Assets.xcassets in Resources */,
 				E79C6B831C74E3A4005D104F /* ColorPickerViewController.swift1 in Resources */,
+				E7FC6DED1CBBB9E00034F99A /* close-icon.png in Resources */,
 				E7FC6DE61CB8F1180034F99A /* ToDoItemCollectionViewCellLikeCell.xib in Resources */,
 				D8E8D09E1C5EC817007E4F48 /* Main.storyboard in Resources */,
 				E74A97081CA2DEB200CFF0B2 /* ToDoItemTableViewCell.xib in Resources */,
@@ -539,6 +562,7 @@
 				E7AAB8711CAA991D007AA99B /* GeneralPurposeParametres.swift in Sources */,
 				E7C28D181C9DA2E300FE3EF5 /* NRSwiftPlist.swift in Sources */,
 				E74A96F81CA2DE1400CFF0B2 /* WeatherDataModel.xcdatamodeld in Sources */,
+				E7FC6DF11CBBBC5E0034F99A /* ToDoListCollectionViewController.swift in Sources */,
 				E7FC6DE41CB801670034F99A /* TextView.swift in Sources */,
 				E74A96F51CA2DE0700CFF0B2 /* SortList.xcdatamodeld in Sources */,
 				E7FC6DDC1CB7C0A10034F99A /* ProductsGridFlowLayout.swift in Sources */,

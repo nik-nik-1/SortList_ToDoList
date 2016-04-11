@@ -21,7 +21,8 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         }
     }
     var toDoListDelegate: ToDoListCollectionViewDelegate?
-    var updateListWithAnimation:Bool = true
+    var updateListWithAnimation:Bool = false
+    var cellIstanceName:String = ""
     
     
     required init?(coder aDecoder: NSCoder) {
@@ -47,7 +48,7 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
     }
    
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let  cellIstanceName = getCellIstanceNameFromCollectionViewLayout(collectionView)
+
         
         let cell = self.dequeueReusableCellWithReuseIdentifier(cellIstanceName, forIndexPath: indexPath) as? ToDoItemCollectionViewCell
         
@@ -56,17 +57,6 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         return cell!
     }
     
-    func getCellIstanceNameFromCollectionViewLayout(collectionView:UICollectionView)  -> String {
-        var cellIstanceName:String = ""
-        
-        if let tempCellIstanceName:String = collectionView.collectionViewLayout.iDOfInstanse {
-            cellIstanceName = tempCellIstanceName
-        } else {
-            cellIstanceName = ""
-        }
-        
-        return cellIstanceName
-    }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

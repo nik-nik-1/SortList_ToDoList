@@ -1,25 +1,21 @@
 //
-//  ViewController.swift
+//  ToDoListCollectionViewController.swift
 //  SortList
 //
-//  Created by Vitaly on 2/1/16.
+//  Created by mc373 on 11.04.16.
 //  Copyright © 2016 Local. All rights reserved.
 //
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoListCollectionViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
+class ToDoListCollectionViewController: UIViewController, ToDoListCollectionViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
     
     var toDoItems: [ToDoItem] = [] {
         didSet {
-            //REMOVE!!
-            toDoListTableView.toDoItems = toDoItems
-            toDoListTableView.reloadData()
-
+            
             toDoCollectionView.toDoItems = toDoItems
             toDoCollectionView.reloadData()
-            //
-            //            toggleTableEditingMode()
+            
             enableDisableEditButton()
         }
     }
@@ -30,36 +26,19 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         toggleTableEditingMode()
     }
     
-    @IBOutlet weak var toDoListTableView: ToDoListTableView!
     @IBOutlet weak var toDoCollectionView: ToDoCollectionView!
     
     let listFlowLayout = ProductsListFlowLayout()
     let gridFlowLayout = ProductsGridFlowLayout()
     
-    @IBOutlet weak var gridButton: UIButton!
-    @IBOutlet weak var listButton: UIButton!
+    @IBOutlet weak var gridButton: UIBarButtonItem!
+    @IBOutlet weak var listButton: UIBarButtonItem!
     @IBAction func listButtonPressed(sender: AnyObject) {
-//        
-//        //        let  cellIstanceName = getCellIstanceNameFromCollectionViewLayout(collectionView)
-//        toDoCollectionView.cellIstanceName = listFlowLayout.iDOfInstanse!
-//        toDoCollectionView.reloadData()
-//        
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-//            self.toDoCollectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
-//        }
         changeLayoutInCollection (self.listFlowLayout)
     }
     @IBAction func gridButtonPressed(sender: AnyObject) {
         
-        
-//        toDoCollectionView.reloadData()
-//        
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-//            self.toDoCollectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
-//        }
-       changeLayoutInCollection (self.gridFlowLayout)
+        changeLayoutInCollection (self.gridFlowLayout)
     }
     
     func changeLayoutInCollection (collectionLayuotToChanga: UICollectionViewLayout) {
@@ -74,7 +53,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         }
     }
     
-    
     func setupInitialLayout() {
         toDoCollectionView.cellIstanceName = gridFlowLayout.iDOfInstanse!
         toDoCollectionView.collectionViewLayout = gridFlowLayout
@@ -84,78 +62,16 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         toDoCollectionView.collectionViewLayout.invalidateLayout()
     }
     
-    //    @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
-    //        self.navigationController?.popViewControllerAnimated(true)
-    //    }
-
-//    var switchView = true
-//    @IBAction func ChangeViewInToDoList(sender: AnyObject) {
-//        var fromView: UIView
-//        var toView: UIView
-//        
-//        if switchView//(self.toDoListTableView.superview == self.view)
-//        {
-//            fromView = self.toDoListTableView;
-//            toView = self.toDoCollectionView;
-//        }
-//        else
-//        {
-//            fromView = self.toDoCollectionView;
-//            toView = self.toDoListTableView;
-//        }
-//        
-//        toView.frame = self.view.bounds;
-//        
-//        UIView.transitionFromView(fromView, toView: toView, duration: 0.25, options: [.TransitionCrossDissolve, .ShowHideTransitionViews], completion: nil)
-//        //        fromView.removeFromSuperview()
-//        //        self.view.addSubview(toView)
-//        
-//        if toView == self.toDoListTableView {
-//            
-//            let itemView = (toView as! ToDoListTableView)
-//            itemView.updateListWithAnimation = true
-//            itemView.reloadData()
-//            
-//        } else if toView == self.toDoCollectionView{
-//            (toView as! UICollectionView).reloadData()
-//        } else {
-//            //??
-//        }
-//        
-//        
-//        switchView = !switchView
-//    }
-    
     //MARK: Native functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        if let loadedtoDoItemData = NSUserDefaults.standardUserDefaults().objectForKey("toDoItemData") as? NSData {
-        //            if let toDoItemArray = NSKeyedUnarchiver.unarchiveObjectWithData(loadedtoDoItemData) as? [ToDoItem] {
-        //                for itemS in toDoItemArray {
-        //                    toDoItems.append(itemS)
-        //                }
-        //            } else {
-        //                setDefaultData ()
-        //            }
-        //        } else {
-        //            setDefaultData ()
-        //        }
-        toDoListTableView.toDoListDelegate = self;
         toDoCollectionView.toDoListDelegate = self;
-        
-//        self.toDoListTableView.frame = self.view.bounds
-//        self.view.addSubview(self.toDoListTableView)
-        
         setupInitialLayout()
     }
     
-    //    func setDefaultData () {
-    //
-    //    }
     
     override func viewWillAppear(animated: Bool) {
-        
         self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()//
         self.navigationController?.navigationBar.alpha = 1
         
@@ -163,8 +79,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
             toDoItems = items
         }
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -174,7 +88,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
             //detailViewController.receivedString = recivedFromMainListValue
             detailViewController.receivedCell = recivedFromMainListValueCell//! as ToDoItem
             detailViewController.detailDelegate = self
-            
         }
     }
     
@@ -183,7 +96,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         guard recivedFromMainListValueCell != nil else {
             return ""
         }
-        
         return (recivedFromMainListValueCell?.item)! as String
     }
     
@@ -209,22 +121,20 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
     
     
     func didChangeAction() {
-        toDoListTableView.reloadData()
         toDoCollectionView.reloadData()
     }
     
     
-    
     // toggle table editing mode
     private func toggleTableEditingMode() {
-        let tBool: Bool = toDoListTableView.editing
-        if tBool {
-            editButtonPanell.title = "Edit"
-            
-        }else{
-            editButtonPanell.title = "Done"
-        }
-        toDoListTableView.setEditing(tBool ? false : true, animated: true)
+        //        let tBool: Bool = toDoListTableView.editing
+        //        if tBool {
+        //            editButtonPanell.title = "Edit"
+        //
+        //        }else{
+        //            editButtonPanell.title = "Done"
+        //        }
+        //        toDoListTableView.setEditing(tBool ? false : true, animated: true)
     }
     
     // disable edit button if no record
@@ -235,7 +145,5 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
             editButtonPanell.enabled = true
         }
     }
-    
-    
-}
 
+}

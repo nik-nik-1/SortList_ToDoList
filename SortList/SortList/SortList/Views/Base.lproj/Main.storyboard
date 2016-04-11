@@ -43,20 +43,29 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lls-97-gbw">
-                                <rect key="frame" x="236" y="270" width="128" height="30"/>
-                                <state key="normal" title="Work with List"/>
+                                <rect key="frame" x="236" y="222" width="138" height="30"/>
+                                <state key="normal" title="Work with Table List"/>
                                 <connections>
                                     <segue destination="nEi-1x-ciK" kind="show" id="lyl-vv-fyc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oj3-Wm-3db">
+                                <rect key="frame" x="220" y="260" width="170" height="30"/>
+                                <state key="normal" title="Work with Collection List"/>
+                                <connections>
+                                    <segue destination="qdM-Vw-nGi" kind="show" id="Wm8-hf-8xn"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lls-97-gbw" firstAttribute="centerX" secondItem="Su9-H1-TiA" secondAttribute="centerX" id="PER-mw-WXc"/>
-                            <constraint firstItem="WEY-sR-INP" firstAttribute="top" secondItem="Lls-97-gbw" secondAttribute="bottom" constant="23" id="Pku-aj-cV6"/>
-                            <constraint firstItem="WEY-sR-INP" firstAttribute="trailing" secondItem="Lls-97-gbw" secondAttribute="trailing" id="gel-by-Xvn"/>
+                            <constraint firstItem="Oj3-Wm-3db" firstAttribute="top" secondItem="Lls-97-gbw" secondAttribute="bottom" constant="8" symbolic="YES" id="1TL-6d-Xqj"/>
+                            <constraint firstItem="Lls-97-gbw" firstAttribute="centerX" secondItem="Su9-H1-TiA" secondAttribute="centerX" constant="5" id="PER-mw-WXc"/>
+                            <constraint firstItem="WEY-sR-INP" firstAttribute="top" secondItem="Lls-97-gbw" secondAttribute="bottom" constant="71" id="Pku-aj-cV6"/>
+                            <constraint firstItem="Oj3-Wm-3db" firstAttribute="centerX" secondItem="Lls-97-gbw" secondAttribute="centerX" id="ZaS-Bq-axD"/>
+                            <constraint firstItem="WEY-sR-INP" firstAttribute="trailing" secondItem="Lls-97-gbw" secondAttribute="trailing" constant="-10" id="gel-by-Xvn"/>
                             <constraint firstItem="WEY-sR-INP" firstAttribute="leading" secondItem="Lls-97-gbw" secondAttribute="leading" id="krs-3o-lJh"/>
-                            <constraint firstItem="Lls-97-gbw" firstAttribute="centerY" secondItem="Su9-H1-TiA" secondAttribute="centerY" constant="-15" id="tLt-f6-ccu"/>
+                            <constraint firstItem="Lls-97-gbw" firstAttribute="centerY" secondItem="Su9-H1-TiA" secondAttribute="centerY" constant="-63" id="tLt-f6-ccu"/>
                             <constraint firstItem="WEY-sR-INP" firstAttribute="centerX" secondItem="Su9-H1-TiA" secondAttribute="centerX" id="udp-Ro-YZY"/>
                         </constraints>
                     </view>
@@ -66,7 +75,7 @@
             </objects>
             <point key="canvasLocation" x="-979.99999999999989" y="734.99999999999989"/>
         </scene>
-        <!--List-->
+        <!--Table List-->
         <scene sceneID="ibH-Vi-ruL">
             <objects>
                 <viewController id="nEi-1x-ciK" customClass="ToDoListViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,7 +91,6 @@
                                 <rect key="frame" x="20" y="320" width="560" height="272"/>
                                 <color key="backgroundColor" red="0.65345785020000002" green="1" blue="0.9399477329" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="272" id="ttH-Ho-nAf"/>
                                     <constraint firstAttribute="height" constant="272" id="ytZ-b4-CS0"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rpg-HL-RCh">
@@ -92,11 +100,6 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ttH-Ho-nAf"/>
-                                    </mask>
-                                </variation>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xsE-Kc-nRc" customClass="ToDoListTableView" customModule="SortList" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="560" height="194"/>
@@ -135,28 +138,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="g6B-Q3-HaW" firstAttribute="top" secondItem="Rca-xG-Y79" secondAttribute="bottom" constant="8" symbolic="YES" id="Dih-yM-6Hi"/>
                             <constraint firstItem="Rca-xG-Y79" firstAttribute="trailing" secondItem="xsE-Kc-nRc" secondAttribute="trailing" id="E9Z-V6-Mmo"/>
                             <constraint firstItem="xsE-Kc-nRc" firstAttribute="top" secondItem="H7e-nB-BlH" secondAttribute="bottom" constant="8" symbolic="YES" id="FoC-bB-HDe"/>
                             <constraint firstItem="xsE-Kc-nRc" firstAttribute="bottom" secondItem="g6B-Q3-HaW" secondAttribute="top" constant="-334" id="H9d-pl-mr8"/>
                             <constraint firstItem="Rca-xG-Y79" firstAttribute="trailing" secondItem="2a1-20-XJg" secondAttribute="trailingMargin" id="LdJ-px-CKY"/>
                             <constraint firstItem="dS6-D6-OpZ" firstAttribute="leading" secondItem="xsE-Kc-nRc" secondAttribute="leading" id="Ljr-lD-t3R"/>
                             <constraint firstItem="dS6-D6-OpZ" firstAttribute="trailing" secondItem="xsE-Kc-nRc" secondAttribute="trailing" id="NgG-GP-NHi"/>
-                            <constraint firstItem="Rca-xG-Y79" firstAttribute="top" secondItem="H7e-nB-BlH" secondAttribute="bottom" constant="210" id="aQS-h1-Twb"/>
                             <constraint firstItem="Rca-xG-Y79" firstAttribute="top" secondItem="dS6-D6-OpZ" secondAttribute="bottom" constant="8" symbolic="YES" id="czA-8a-y8O"/>
                             <constraint firstItem="g6B-Q3-HaW" firstAttribute="top" secondItem="Rca-xG-Y79" secondAttribute="bottom" constant="8" symbolic="YES" id="hP7-pW-pjV"/>
                             <constraint firstItem="Rca-xG-Y79" firstAttribute="leading" secondItem="2a1-20-XJg" secondAttribute="leading" constant="20" symbolic="YES" id="nfi-YT-ipl"/>
                             <constraint firstItem="dS6-D6-OpZ" firstAttribute="top" secondItem="xsE-Kc-nRc" secondAttribute="bottom" constant="1" id="tmb-t9-kWh"/>
                             <constraint firstItem="xsE-Kc-nRc" firstAttribute="leading" secondItem="Rca-xG-Y79" secondAttribute="leading" id="v26-jg-Oir"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="aQS-h1-Twb"/>
-                                <exclude reference="Dih-yM-6Hi"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="List" id="8Fx-jB-r1o">
+                    <navigationItem key="navigationItem" title="Table List" id="8Fx-jB-r1o">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Iql-DF-HtE">
                                 <connections>
@@ -185,7 +180,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kEw-uH-zKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="370"/>
+            <point key="canvasLocation" x="-310" y="-255"/>
+        </scene>
+        <!--Collection List-->
+        <scene sceneID="xEX-Th-Uyu">
+            <objects>
+                <viewController id="qdM-Vw-nGi" customClass="ToDoListCollectionViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aeq-Ev-oKJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EwA-Uw-PoV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uxx-9Y-kB7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-6G-wP4" customClass="ToDoCollectionView" customModule="SortList" customModuleProvider="target">
+                                <rect key="frame" x="20" y="72" width="560" height="508"/>
+                                <color key="backgroundColor" red="1" green="0.84031956747569581" blue="0.9739964752935687" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uGl-SD-jmP">
+                                    <size key="itemSize" width="115" height="77"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TK1-6G-wP4" firstAttribute="trailing" secondItem="uxx-9Y-kB7" secondAttribute="trailingMargin" id="NHf-kh-YWA"/>
+                            <constraint firstItem="EwA-Uw-PoV" firstAttribute="top" secondItem="TK1-6G-wP4" secondAttribute="bottom" constant="20" id="cO3-N8-zyQ"/>
+                            <constraint firstItem="TK1-6G-wP4" firstAttribute="top" secondItem="aeq-Ev-oKJ" secondAttribute="bottom" constant="8" symbolic="YES" id="clO-EE-Aqd"/>
+                            <constraint firstItem="TK1-6G-wP4" firstAttribute="leading" secondItem="uxx-9Y-kB7" secondAttribute="leadingMargin" id="thN-q7-I5l"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Collection List" id="EhH-FX-NNL">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="9S5-v8-zex">
+                                <connections>
+                                    <segue destination="ANt-aI-fQv" kind="show" identifier="showDetailViewController" id="igm-1T-pc2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="List" id="dAc-q8-hlJ">
+                                <connections>
+                                    <action selector="listButtonPressed:" destination="qdM-Vw-nGi" id="prh-cv-Rsr"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Grid /" id="vaJ-eP-F3m">
+                                <inset key="imageInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <connections>
+                                    <action selector="gridButtonPressed:" destination="qdM-Vw-nGi" id="J4s-mt-kYX"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Edit" id="fHp-zF-u2L">
+                                <connections>
+                                    <action selector="editButtonTouched:" destination="qdM-Vw-nGi" id="kxc-lY-8jW"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButtonPanell" destination="fHp-zF-u2L" id="jcY-co-bgi"/>
+                        <outlet property="gridButton" destination="vaJ-eP-F3m" id="gO7-rq-kl8"/>
+                        <outlet property="listButton" destination="dAc-q8-hlJ" id="eyd-gh-8vv"/>
+                        <outlet property="toDoCollectionView" destination="TK1-6G-wP4" id="pjc-Yc-RTz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ajt-MV-TNV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="408"/>
         </scene>
         <!--Weather-->
         <scene sceneID="OK3-Pg-iUN">
@@ -389,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bc5-KO-OhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="395"/>
+            <point key="canvasLocation" x="399" y="41"/>
         </scene>
         <!--Color Picker View Controller-->
         <scene sceneID="bHE-r1-Thr">
@@ -448,4 +511,7 @@
             <point key="canvasLocation" x="867" y="191.99999999999997"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="igm-1T-pc2"/>
+    </inferredMetricsTieBreakers>
 </document>
