@@ -39,9 +39,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="ActionSheetCellButton" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0f-Nc-f3F">
-                        <rect key="frame" x="321" y="10" width="16" height="30"/>
+                        <rect key="frame" x="321" y="25" width="16" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="1Zv-rR-4ei"/>
+                            <constraint firstAttribute="height" constant="15" id="1Zv-rR-4ei"/>
                             <constraint firstAttribute="width" constant="16" id="BBF-jB-MFs"/>
                         </constraints>
                         <state key="normal" title="..."/>
@@ -56,11 +56,21 @@
                             <constraint firstAttribute="width" constant="6" id="E7m-D3-XNi"/>
                         </constraints>
                     </view>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-WQ-gOX">
+                        <rect key="frame" x="320" y="0.0" width="17" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="2Oi-MD-vf1"/>
+                            <constraint firstAttribute="width" constant="17" id="BBk-CS-VH0"/>
+                        </constraints>
+                        <state key="normal" image="close-icon.png">
+                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="M0f-Nc-f3F" firstAttribute="top" secondItem="QyK-33-nWX" secondAttribute="top" constant="10" id="1Ii-JH-avv"/>
+                <constraint firstItem="M0f-Nc-f3F" firstAttribute="top" secondItem="QyK-33-nWX" secondAttribute="top" constant="25" id="1Ii-JH-avv"/>
                 <constraint firstItem="yNi-aB-nw9" firstAttribute="leading" secondItem="QyK-33-nWX" secondAttribute="leading" id="5Rp-Wi-9pZ"/>
                 <constraint firstAttribute="trailing" secondItem="M0f-Nc-f3F" secondAttribute="trailing" id="8eN-Y3-5eI"/>
                 <constraint firstItem="yNi-aB-nw9" firstAttribute="top" secondItem="QyK-33-nWX" secondAttribute="top" constant="-7" id="8iY-B6-Fz6"/>
@@ -70,12 +80,15 @@
                 <constraint firstAttribute="bottom" secondItem="yNi-aB-nw9" secondAttribute="bottom" id="P8I-rz-fho"/>
                 <constraint firstItem="dio-uv-siL" firstAttribute="centerY" secondItem="QyK-33-nWX" secondAttribute="centerY" id="ZNt-fE-fba"/>
                 <constraint firstItem="e6f-sQ-DVi" firstAttribute="leading" secondItem="yNi-aB-nw9" secondAttribute="trailing" constant="9" id="Zi0-iL-a2X"/>
+                <constraint firstItem="zEL-WQ-gOX" firstAttribute="top" secondItem="QyK-33-nWX" secondAttribute="top" id="box-2u-sBg"/>
                 <constraint firstItem="dio-uv-siL" firstAttribute="leading" secondItem="e6f-sQ-DVi" secondAttribute="trailing" constant="18" id="fpB-c0-JnD"/>
                 <constraint firstItem="15O-7i-Vey" firstAttribute="leading" secondItem="dio-uv-siL" secondAttribute="trailing" constant="4" id="gVj-Ts-vtP"/>
                 <constraint firstItem="15O-7i-Vey" firstAttribute="centerY" secondItem="QyK-33-nWX" secondAttribute="centerY" id="vVA-5O-R0z"/>
+                <constraint firstAttribute="trailing" secondItem="zEL-WQ-gOX" secondAttribute="trailing" id="wky-Ox-A9w"/>
             </constraints>
             <size key="customSize" width="337" height="50"/>
             <connections>
+                <outlet property="closeImage" destination="zEL-WQ-gOX" id="pQH-yW-Yhw"/>
                 <outlet property="colorPreview" destination="yNi-aB-nw9" id="ZML-Gu-433"/>
                 <outlet property="dateViewCollectionCell" destination="15O-7i-Vey" id="8es-T3-scj"/>
                 <outlet property="itemLabelView" destination="dio-uv-siL" id="nrg-5V-T5M"/>
@@ -84,4 +97,7 @@
             <point key="canvasLocation" x="343.5" y="257"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="close-icon.png" width="512" height="512"/>
+    </resources>
 </document>

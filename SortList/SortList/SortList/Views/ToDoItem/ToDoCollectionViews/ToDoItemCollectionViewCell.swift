@@ -17,6 +17,7 @@ class ToDoItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var dateViewCollectionCell: UILabel!
     @IBOutlet weak var selectItemSwitchView: UISwitch!
     @IBOutlet weak var itemLabelView: UILabel!
+    @IBOutlet weak var closeImage: UIButton!
     
     @IBAction func ButtonActionSheetCellTappet(sender: AnyObject) {
         delegate?.didTouchMoreButton(self)

@@ -10,9 +10,12 @@ import UIKit
 
 class ToDoListCollectionViewController: UIViewController, ToDoListCollectionViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
     
+    let listFlowLayout = ProductsListFlowLayout()
+    let gridFlowLayout = ProductsGridFlowLayout()
+    
+    private var longPressGesture: UILongPressGestureRecognizer!
     var toDoItems: [ToDoItem] = [] {
         didSet {
-            
             toDoCollectionView.toDoItems = toDoItems
             toDoCollectionView.reloadData()
             
@@ -22,23 +25,19 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
     var recivedFromMainListValueCell: ToDoItem? = nil
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
-    @IBAction func editButtonTouched(sender: AnyObject) {
-        toggleTableEditingMode()
-    }
-    
     @IBOutlet weak var toDoCollectionView: ToDoCollectionView!
-    
-    let listFlowLayout = ProductsListFlowLayout()
-    let gridFlowLayout = ProductsGridFlowLayout()
-    
     @IBOutlet weak var gridButton: UIBarButtonItem!
     @IBOutlet weak var listButton: UIBarButtonItem!
+    
     @IBAction func listButtonPressed(sender: AnyObject) {
         changeLayoutInCollection (self.listFlowLayout)
     }
     @IBAction func gridButtonPressed(sender: AnyObject) {
-        
         changeLayoutInCollection (self.gridFlowLayout)
+    }
+    
+    @IBAction func editButtonTouched(sender: AnyObject) {
+        setPossibilityOfEditingMode()
     }
     
     func changeLayoutInCollection (collectionLayuotToChanga: UICollectionViewLayout) {
@@ -68,6 +67,10 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
         
         toDoCollectionView.toDoListDelegate = self;
         setupInitialLayout()
+        
+        longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ToDoListCollectionViewController.handleLongGesture(_:)))
+        self.toDoCollectionView.addGestureRecognizer(longPressGesture)
+        
     }
     
     
@@ -91,14 +94,12 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
         }
     }
     
-    
     func getTitleValueFromMainListValueCell () -> String {
         guard recivedFromMainListValueCell != nil else {
             return ""
         }
         return (recivedFromMainListValueCell?.item)! as String
     }
-    
     
     func ereseuserEnterInformation (){
         recivedFromMainListValueCell = nil
@@ -123,18 +124,45 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
     func didChangeAction() {
         toDoCollectionView.reloadData()
     }
+}
+
+
+//MARK: Helpers
+extension ToDoListCollectionViewController{
     
+    //Edit button pressed
+    func setPossibilityOfEditingMode () {
+        
+        if(editButtonPanell.title == "Edit"){
+            
+            editButtonPanell.title = "Done"
+            
+            for item in self.toDoCollectionView.visibleCells() as! [ToDoItemCollectionViewCell]  {
+                
+                let indexpath : NSIndexPath = self.toDoCollectionView.indexPathForCell(item as ToDoItemCollectionViewCell)!
+                let cell = self.toDoCollectionView.cellForItemAtIndexPath(indexpath) as! ToDoItemCollectionViewCell
+                
+                //Close Button
+                let closeButton: UIButton = cell.viewWithTag(102) as! UIButton
+                closeButton.hidden = false
+            }
+        } else {
+            editButtonPanell.title = "Edit"
+            self.toDoCollectionView.reloadData()
+        }
+        
+    }
     
-    // toggle table editing mode
-    private func toggleTableEditingMode() {
-        //        let tBool: Bool = toDoListTableView.editing
-        //        if tBool {
-        //            editButtonPanell.title = "Edit"
-        //
-        //        }else{
-        //            editButtonPanell.title = "Done"
-        //        }
-        //        toDoListTableView.setEditing(tBool ? false : true, animated: true)
+    //ToDoListCollectionViewDelegate
+    func getInfoNeedHideCloseButton () -> Bool{
+        var valueToReturn:Bool = true
+        
+        if  editButtonPanell.title == "Edit" {
+            valueToReturn = true
+        } else {
+            valueToReturn = false
+        }
+        return valueToReturn
     }
     
     // disable edit button if no record
@@ -145,5 +173,38 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
             editButtonPanell.enabled = true
         }
     }
-
+    
+    func handleLongGesture(gesture: UILongPressGestureRecognizer) {
+        
+        switch(gesture.state) {
+            
+        case UIGestureRecognizerState.Began:
+            guard let selectedIndexPath = self.toDoCollectionView.indexPathForItemAtPoint(gesture.locationInView(self.toDoCollectionView)) else {
+                break
+            }
+            if #available(iOS 9.0, *) {
+                toDoCollectionView.beginInteractiveMovementForItemAtIndexPath(selectedIndexPath)
+            } else {
+                // Fallback on earlier versions
+            }
+        case UIGestureRecognizerState.Changed:
+            if #available(iOS 9.0, *) {
+                toDoCollectionView.updateInteractiveMovementTargetPosition(gesture.locationInView(gesture.view!))
+            } else {
+                // Fallback on earlier versions
+            }
+        case UIGestureRecognizerState.Ended:
+            if #available(iOS 9.0, *) {
+                toDoCollectionView.endInteractiveMovement()
+            } else {
+                // Fallback on earlier versions
+            }
+        default:
+            if #available(iOS 9.0, *) {
+                toDoCollectionView.cancelInteractiveMovement()
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+    }
 }

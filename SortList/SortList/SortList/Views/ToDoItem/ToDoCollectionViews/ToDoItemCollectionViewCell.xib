@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BiA-EQ-rvd">
-                        <rect key="frame" x="72" y="13" width="157" height="21"/>
+                        <rect key="frame" x="72" y="13" width="141" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -63,6 +63,16 @@
                             <constraint firstItem="nqU-xP-KFf" firstAttribute="leading" secondItem="WHf-gz-7DT" secondAttribute="leading" constant="8" id="Jfg-8o-9v5"/>
                         </constraints>
                     </view>
+                    <button hidden="YES" opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCE-e5-g4p">
+                        <rect key="frame" x="220" y="8" width="17" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="17" id="7DD-8g-dqA"/>
+                            <constraint firstAttribute="height" constant="17" id="aUd-FO-Gcy"/>
+                        </constraints>
+                        <state key="normal" image="close-icon.png">
+                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -78,7 +88,9 @@
                 <constraint firstItem="tof-jH-oLC" firstAttribute="baseline" secondItem="D9t-rS-5AE" secondAttribute="baseline" constant="5" id="RzW-H4-5R9"/>
                 <constraint firstItem="zjM-3b-WIu" firstAttribute="top" secondItem="j49-JA-5jj" secondAttribute="top" constant="-6" id="Tvm-wD-NA8"/>
                 <constraint firstItem="WHf-gz-7DT" firstAttribute="leading" secondItem="j49-JA-5jj" secondAttribute="leading" id="Vft-La-bym"/>
-                <constraint firstAttribute="trailing" secondItem="BiA-EQ-rvd" secondAttribute="trailing" constant="8" id="XN3-YF-2sy"/>
+                <constraint firstAttribute="trailing" secondItem="BiA-EQ-rvd" secondAttribute="trailing" constant="24" id="XN3-YF-2sy"/>
+                <constraint firstItem="ZCE-e5-g4p" firstAttribute="top" secondItem="zjM-3b-WIu" secondAttribute="bottom" constant="3" id="ZCo-Tv-6ar"/>
+                <constraint firstAttribute="trailing" secondItem="ZCE-e5-g4p" secondAttribute="trailing" id="c6j-6T-jdu"/>
                 <constraint firstAttribute="bottom" secondItem="D9t-rS-5AE" secondAttribute="bottom" constant="8" id="fNd-oI-2jz"/>
                 <constraint firstItem="tof-jH-oLC" firstAttribute="top" secondItem="BiA-EQ-rvd" secondAttribute="bottom" constant="16" id="ksp-hn-vOv"/>
                 <constraint firstItem="BiA-EQ-rvd" firstAttribute="top" secondItem="zjM-3b-WIu" secondAttribute="bottom" constant="8" id="nnr-ui-zJO"/>
@@ -86,6 +98,7 @@
             </constraints>
             <size key="customSize" width="237" height="79"/>
             <connections>
+                <outlet property="closeImage" destination="ZCE-e5-g4p" id="Dm9-gz-ljN"/>
                 <outlet property="colorPreview" destination="zjM-3b-WIu" id="N0D-bp-L4j"/>
                 <outlet property="dateViewCollectionCell" destination="tof-jH-oLC" id="bV8-3c-4Av"/>
                 <outlet property="itemLabelView" destination="BiA-EQ-rvd" id="K6L-uy-lOG"/>
@@ -94,4 +107,7 @@
             <point key="canvasLocation" x="176.5" y="359.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="close-icon.png" width="512" height="512"/>
+    </resources>
 </document>

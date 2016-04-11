@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoListCollectionViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
+class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoItemActionSheetControlDelegate, DataEnteredDelegate{
     
     var toDoItems: [ToDoItem] = [] {
         didSet {
@@ -16,11 +16,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
             toDoListTableView.toDoItems = toDoItems
             toDoListTableView.reloadData()
 
-            toDoCollectionView.toDoItems = toDoItems
-            toDoCollectionView.reloadData()
-            //
-            //            toggleTableEditingMode()
-            enableDisableEditButton()
+             enableDisableEditButton()
         }
     }
     var recivedFromMainListValueCell: ToDoItem? = nil
@@ -31,58 +27,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
     }
     
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
-    @IBOutlet weak var toDoCollectionView: ToDoCollectionView!
-    
-    let listFlowLayout = ProductsListFlowLayout()
-    let gridFlowLayout = ProductsGridFlowLayout()
-    
-    @IBOutlet weak var gridButton: UIButton!
-    @IBOutlet weak var listButton: UIButton!
-    @IBAction func listButtonPressed(sender: AnyObject) {
-//        
-//        //        let  cellIstanceName = getCellIstanceNameFromCollectionViewLayout(collectionView)
-//        toDoCollectionView.cellIstanceName = listFlowLayout.iDOfInstanse!
-//        toDoCollectionView.reloadData()
-//        
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-//            self.toDoCollectionView.setCollectionViewLayout(self.listFlowLayout, animated: true)
-//        }
-        changeLayoutInCollection (self.listFlowLayout)
-    }
-    @IBAction func gridButtonPressed(sender: AnyObject) {
-        
-        
-//        toDoCollectionView.reloadData()
-//        
-//        UIView.animateWithDuration(0.2) { () -> Void in
-//            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-//            self.toDoCollectionView.setCollectionViewLayout(self.gridFlowLayout, animated: true)
-//        }
-       changeLayoutInCollection (self.gridFlowLayout)
-    }
-    
-    func changeLayoutInCollection (collectionLayuotToChanga: UICollectionViewLayout) {
-        toDoCollectionView.cellIstanceName = collectionLayuotToChanga.iDOfInstanse!
-        toDoCollectionView.updateListWithAnimation = true
-        toDoCollectionView.reloadData()
-        
-        UIView.animateWithDuration(0.2) { () -> Void in
-            self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-            self.toDoCollectionView.setCollectionViewLayout(collectionLayuotToChanga, animated: true)
-            self.toDoCollectionView.updateListWithAnimation = false
-        }
-    }
-    
-    
-    func setupInitialLayout() {
-        toDoCollectionView.cellIstanceName = gridFlowLayout.iDOfInstanse!
-        toDoCollectionView.collectionViewLayout = gridFlowLayout
-    }
-    
-    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        toDoCollectionView.collectionViewLayout.invalidateLayout()
-    }
+
     
     //    @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
     //        self.navigationController?.popViewControllerAnimated(true)
@@ -142,17 +87,13 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
         //            setDefaultData ()
         //        }
         toDoListTableView.toDoListDelegate = self;
-        toDoCollectionView.toDoListDelegate = self;
         
 //        self.toDoListTableView.frame = self.view.bounds
 //        self.view.addSubview(self.toDoListTableView)
         
-        setupInitialLayout()
     }
     
-    //    func setDefaultData () {
-    //
-    //    }
+
     
     override func viewWillAppear(animated: Bool) {
         
@@ -210,9 +151,7 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoL
     
     func didChangeAction() {
         toDoListTableView.reloadData()
-        toDoCollectionView.reloadData()
     }
-    
     
     
     // toggle table editing mode
