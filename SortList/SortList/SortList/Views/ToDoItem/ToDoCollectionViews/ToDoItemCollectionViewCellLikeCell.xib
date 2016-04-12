@@ -56,7 +56,7 @@
                             <constraint firstAttribute="width" constant="6" id="E7m-D3-XNi"/>
                         </constraints>
                     </view>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-WQ-gOX">
+                    <button hidden="YES" opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEL-WQ-gOX">
                         <rect key="frame" x="320" y="0.0" width="17" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="2Oi-MD-vf1"/>

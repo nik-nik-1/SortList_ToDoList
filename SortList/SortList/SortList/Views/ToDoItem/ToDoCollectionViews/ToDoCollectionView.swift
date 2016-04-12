@@ -10,7 +10,7 @@ import UIKit
 
 protocol ToDoListCollectionViewDelegate {
     func didTouchMoreButtonForController(item toDoItem: ToDoItem?, itemLabel: UILabel)
-    func setCurentItemTextLabel (item: ToDoItem)
+    func setCurentItemTextLabel (item: ToDoItem, callBack: ((Bool) -> Void)?)
     func getInfoNeedHideCloseButton() -> Bool
 }
 
@@ -59,13 +59,15 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         cell?.closeImage.layer.setValue(indexPath.row, forKey: "index")
         cell?.closeImage.addTarget(self, action: #selector(ToDoCollectionView.deleteCell(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
+        (toDoItems[indexPath.row] as ToDoItem).indexpathOfCell = indexPath
+        
         return cell!
     }
     
     func deleteCell(sender:UIButton) {
         let i : Int = (sender.layer.valueForKey("index")) as! Int
         toDoItems.removeAtIndex(i)
-        // CoreDataUtil.deleteObject(ToDoItem.getEntityNameOfObject(), object: toDoItems[i])
+        //NOT WORK!!!        CoreDataUtil.deleteObject(ToDoItem.getEntityNameOfObject(), object: toDoItems[i-1])
         reloadData()
     }
     
@@ -91,6 +93,8 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         
         toDoItemCell.toDoItemElem = toDoItem
         
+        
+        
         if updateListWithAnimation {
             //CellAnimator.animateCell(cell, withTransform: CellAnimator.TransformWave, andDuration: 1)
             CellAnimator.animateCell(cell)
@@ -110,6 +114,16 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
             let itemLabelView  = (cell as! ToDoItemCollectionViewCell).itemLabelView as UILabel
             
             toDoListDelegate?.didTouchMoreButtonForController(item: toDoItem, itemLabel: itemLabelView)
+        }
+    }
+    
+    //MARK: UICollectionViewDelegate functions
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        toDoListDelegate?.setCurentItemTextLabel(toDoItems[indexPath.row] as ToDoItem) {(thereExists) -> Void in
+            
+            if thereExists {
+                //It's test of my first Closure!
+            }
         }
     }
 }

@@ -14,6 +14,7 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
     let gridFlowLayout = ProductsGridFlowLayout()
     
     private var longPressGesture: UILongPressGestureRecognizer!
+    private var tapPressGesture: UITapGestureRecognizer!
     var toDoItems: [ToDoItem] = [] {
         didSet {
             toDoCollectionView.toDoItems = toDoItems
@@ -22,7 +23,18 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
             enableDisableEditButton()
         }
     }
-    var recivedFromMainListValueCell: ToDoItem? = nil
+    
+    var recivedFromMainListValueCell: ToDoItem? = nil {
+        //First set default color for lastUsed Cell
+        willSet {
+            //print("Old value is \(recivedFromMainListValueCell?.item), new value is \(newValue?.item)")
+            pickOutWorkedCell(recivedFromMainListValueCell)
+        }
+        //Done set new color for curent Cell
+        didSet{
+            pickOutWorkedCell(recivedFromMainListValueCell, borderWidth: 2.0, borderColor: UIColor.grayColor())
+        }
+    }
     
     @IBOutlet weak var editButtonPanell: UIBarButtonItem!
     @IBOutlet weak var toDoCollectionView: ToDoCollectionView!
@@ -41,13 +53,14 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
     }
     
     func changeLayoutInCollection (collectionLayuotToChanga: UICollectionViewLayout) {
+        pickOffAllCell()
         toDoCollectionView.cellIstanceName = collectionLayuotToChanga.iDOfInstanse!
         toDoCollectionView.updateListWithAnimation = true
         toDoCollectionView.reloadData()
         
-        UIView.animateWithDuration(0.2) { () -> Void in
+        UIView.animateWithDuration(0.5) { () -> Void in
             self.toDoCollectionView.collectionViewLayout.invalidateLayout()
-            self.toDoCollectionView.setCollectionViewLayout(collectionLayuotToChanga, animated: true)
+            self.toDoCollectionView.setCollectionViewLayout(collectionLayuotToChanga, animated: false)
             self.toDoCollectionView.updateListWithAnimation = false
         }
     }
@@ -71,8 +84,10 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
         longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(ToDoListCollectionViewController.handleLongGesture(_:)))
         self.toDoCollectionView.addGestureRecognizer(longPressGesture)
         
+        tapPressGesture = UITapGestureRecognizer(target: self, action: #selector(ToDoListCollectionViewController.handleTapGesture(_:)))
+        tapPressGesture.cancelsTouchesInView = false;
+        self.toDoCollectionView.addGestureRecognizer(tapPressGesture)
     }
-    
     
     override func viewWillAppear(animated: Bool) {
         self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()//
@@ -107,8 +122,10 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
     
     
     //MARK: SelectedRowWhitIndexDelegate function
-    func setCurentItemTextLabel (item: ToDoItem) {
+    func setCurentItemTextLabel (item: ToDoItem, callBack: ((Bool) -> Void)?){
         recivedFromMainListValueCell = item
+        
+        callBack!(recivedFromMainListValueCell != nil)
     }
     
     func didTouchMoreButtonForController(item toDoItemElem: ToDoItem?, itemLabel: UILabel) {
@@ -129,6 +146,30 @@ class ToDoListCollectionViewController: UIViewController, ToDoListCollectionView
 
 //MARK: Helpers
 extension ToDoListCollectionViewController{
+    
+    //Painted working cell
+    func pickOutWorkedCell (recivedFromMainListValueCell:ToDoItem?, borderWidth:CGFloat = 0.0, borderColor:UIColor = UIColor.blackColor()) {
+        if let recivedCell:ToDoItem = recivedFromMainListValueCell { // not nil
+            let cell = self.toDoCollectionView.cellForItemAtIndexPath(recivedCell.indexpathOfCell!) as! ToDoItemCollectionViewCell
+            
+            setParametretoCell(cell,borderWidth:borderWidth,borderColor:borderColor)
+        }
+    }
+    
+    func pickOffAllCell () {
+        for item in self.toDoCollectionView.visibleCells() as! [ToDoItemCollectionViewCell]  {
+            
+            let indexpath : NSIndexPath = self.toDoCollectionView.indexPathForCell(item as ToDoItemCollectionViewCell)!
+            let cell = self.toDoCollectionView.cellForItemAtIndexPath(indexpath) as! ToDoItemCollectionViewCell
+            
+            setParametretoCell(cell,borderWidth:0.0, borderColor:UIColor.blackColor())
+        }
+    }
+    
+    func setParametretoCell(cell:ToDoItemCollectionViewCell,borderWidth:CGFloat,borderColor:UIColor) {
+        cell.layer.borderWidth = borderWidth
+        cell.layer.borderColor = borderColor.CGColor
+    }
     
     //Edit button pressed
     func setPossibilityOfEditingMode () {
@@ -174,6 +215,7 @@ extension ToDoListCollectionViewController{
         }
     }
     
+    //Gesture
     func handleLongGesture(gesture: UILongPressGestureRecognizer) {
         
         switch(gesture.state) {
@@ -207,4 +249,19 @@ extension ToDoListCollectionViewController{
             }
         }
     }
+    
+    //Gesture
+    func handleTapGesture(gesture: UITapGestureRecognizer) {
+        
+        switch(gesture.state) {
+        case UIGestureRecognizerState.Ended:
+            guard let selectedIndexPath = self.toDoCollectionView.indexPathForItemAtPoint(gesture.locationInView(self.toDoCollectionView)) else {
+                break
+            }
+        case UIGestureRecognizerState.Began: break
+        default: break
+            
+        }
+    }
+    
 }

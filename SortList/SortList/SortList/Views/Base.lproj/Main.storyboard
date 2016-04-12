@@ -78,7 +78,7 @@
         <!--Table List-->
         <scene sceneID="ibH-Vi-ruL">
             <objects>
-                <viewController id="nEi-1x-ciK" customClass="ToDoListViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nEi-1x-ciK" customClass="ToDoListViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H7e-nB-BlH"/>
                         <viewControllerLayoutGuide type="bottom" id="g6B-Q3-HaW"/>
@@ -126,7 +126,7 @@
         <!--Collection List-->
         <scene sceneID="xEX-Th-Uyu">
             <objects>
-                <viewController id="qdM-Vw-nGi" customClass="ToDoListCollectionViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qdM-Vw-nGi" customClass="ToDoListCollectionViewController" customModule="SortList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aeq-Ev-oKJ"/>
                         <viewControllerLayoutGuide type="bottom" id="EwA-Uw-PoV"/>
@@ -137,7 +137,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="TK1-6G-wP4" customClass="ToDoCollectionView" customModule="SortList" customModuleProvider="target">
                                 <rect key="frame" x="20" y="72" width="560" height="508"/>
-                                <color key="backgroundColor" red="1" green="0.84031956747569581" blue="0.9739964752935687" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uGl-SD-jmP">
                                     <size key="itemSize" width="115" height="77"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -148,6 +149,7 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="TK1-6G-wP4" firstAttribute="trailing" secondItem="uxx-9Y-kB7" secondAttribute="trailingMargin" id="NHf-kh-YWA"/>
                             <constraint firstItem="EwA-Uw-PoV" firstAttribute="top" secondItem="TK1-6G-wP4" secondAttribute="bottom" constant="20" id="cO3-N8-zyQ"/>

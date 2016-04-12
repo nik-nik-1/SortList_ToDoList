@@ -15,8 +15,8 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
             //REMOVE!!
             toDoListTableView.toDoItems = toDoItems
             toDoListTableView.reloadData()
-
-             enableDisableEditButton()
+            
+            enableDisableEditButton()
         }
     }
     var recivedFromMainListValueCell: ToDoItem? = nil
@@ -27,49 +27,49 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
     }
     
     @IBOutlet weak var toDoListTableView: ToDoListTableView!
-
+    
     
     //    @IBAction func buttonGoBackToMenuList(sender: AnyObject) {
     //        self.navigationController?.popViewControllerAnimated(true)
     //    }
-
-//    var switchView = true
-//    @IBAction func ChangeViewInToDoList(sender: AnyObject) {
-//        var fromView: UIView
-//        var toView: UIView
-//        
-//        if switchView//(self.toDoListTableView.superview == self.view)
-//        {
-//            fromView = self.toDoListTableView;
-//            toView = self.toDoCollectionView;
-//        }
-//        else
-//        {
-//            fromView = self.toDoCollectionView;
-//            toView = self.toDoListTableView;
-//        }
-//        
-//        toView.frame = self.view.bounds;
-//        
-//        UIView.transitionFromView(fromView, toView: toView, duration: 0.25, options: [.TransitionCrossDissolve, .ShowHideTransitionViews], completion: nil)
-//        //        fromView.removeFromSuperview()
-//        //        self.view.addSubview(toView)
-//        
-//        if toView == self.toDoListTableView {
-//            
-//            let itemView = (toView as! ToDoListTableView)
-//            itemView.updateListWithAnimation = true
-//            itemView.reloadData()
-//            
-//        } else if toView == self.toDoCollectionView{
-//            (toView as! UICollectionView).reloadData()
-//        } else {
-//            //??
-//        }
-//        
-//        
-//        switchView = !switchView
-//    }
+    
+    //    var switchView = true
+    //    @IBAction func ChangeViewInToDoList(sender: AnyObject) {
+    //        var fromView: UIView
+    //        var toView: UIView
+    //
+    //        if switchView//(self.toDoListTableView.superview == self.view)
+    //        {
+    //            fromView = self.toDoListTableView;
+    //            toView = self.toDoCollectionView;
+    //        }
+    //        else
+    //        {
+    //            fromView = self.toDoCollectionView;
+    //            toView = self.toDoListTableView;
+    //        }
+    //
+    //        toView.frame = self.view.bounds;
+    //
+    //        UIView.transitionFromView(fromView, toView: toView, duration: 0.25, options: [.TransitionCrossDissolve, .ShowHideTransitionViews], completion: nil)
+    //        //        fromView.removeFromSuperview()
+    //        //        self.view.addSubview(toView)
+    //
+    //        if toView == self.toDoListTableView {
+    //
+    //            let itemView = (toView as! ToDoListTableView)
+    //            itemView.updateListWithAnimation = true
+    //            itemView.reloadData()
+    //
+    //        } else if toView == self.toDoCollectionView{
+    //            (toView as! UICollectionView).reloadData()
+    //        } else {
+    //            //??
+    //        }
+    //
+    //
+    //        switchView = !switchView
+    //    }
     
     //MARK: Native functions
     override func viewDidLoad() {
@@ -88,12 +88,10 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         //        }
         toDoListTableView.toDoListDelegate = self;
         
-//        self.toDoListTableView.frame = self.view.bounds
-//        self.view.addSubview(self.toDoListTableView)
+        //        self.toDoListTableView.frame = self.view.bounds
+        //        self.view.addSubview(self.toDoListTableView)
         
     }
-    
-
     
     override func viewWillAppear(animated: Bool) {
         
@@ -104,8 +102,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
             toDoItems = items
         }
     }
-    
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
@@ -119,7 +115,6 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         }
     }
     
-    
     func getTitleValueFromMainListValueCell () -> String {
         guard recivedFromMainListValueCell != nil else {
             return ""
@@ -128,11 +123,9 @@ class ToDoListViewController: UIViewController, ToDoListTableViewDelegate, ToDoI
         return (recivedFromMainListValueCell?.item)! as String
     }
     
-    
     func ereseuserEnterInformation (){
         recivedFromMainListValueCell = nil
     }
-    
     
     //MARK: SelectedRowWhitIndexDelegate function
     func setCurentItemTextLabel (item: ToDoItem) {

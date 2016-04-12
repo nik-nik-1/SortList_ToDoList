@@ -12,6 +12,9 @@ import UIKit
 
 
 class ToDoItem: NSManagedObject {
+    
+    var indexpathOfCell: NSIndexPath?
+    
     private static let entityName: NSString = "ToDoItem"
     private let entityName: NSString = ToDoItem.entityName
     
