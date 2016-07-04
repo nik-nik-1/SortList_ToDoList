@@ -42,7 +42,6 @@ class ToDoCollectionView: UICollectionView, UICollectionViewDataSource, UICollec
         self.delegate   = self
     }
     
-    
     //MARK: UICollectionViewDataSource func
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return toDoItems.count
