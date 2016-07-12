@@ -13,23 +13,23 @@ import ObjectiveC
 
 
 extension NSManagedObjectContext {
-    //let usedURLForResource:String = ""
-    private struct AssociatedKeys {
-        static var usedURLForResource = ""
-    }
-    
-    var usedURLForResource: String? {
-        get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.usedURLForResource) as? String
-        }
-        set {
-            if let newValue = newValue {
-                objc_setAssociatedObject(
-                    self,
-                    &AssociatedKeys.usedURLForResource,
-                    newValue as NSString?,
-                    objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC                )
-            }
-        }
-    }
- }
+	//let usedURLForResource:String = ""
+	private struct AssociatedKeys {
+		static var usedURLForResource = ""
+	}
+
+	var usedURLForResource: String? {
+		get {
+			return objc_getAssociatedObject(self, &AssociatedKeys.usedURLForResource) as? String
+		}
+		set {
+			if let newValue = newValue {
+				objc_setAssociatedObject(
+					self,
+					&AssociatedKeys.usedURLForResource,
+					newValue as NSString?,
+					objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC                )
+			}
+		}
+	}
+}

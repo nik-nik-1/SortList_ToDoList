@@ -15,7 +15,8 @@ import CoreData
 extension WeatherItem {
 
     @NSManaged var name: String
-    @NSManaged var id: Int64
+		// swiftlint:disable:next variable_name
+		@NSManaged var id: Int64
     @NSManaged var country: String
     @NSManaged var weatherMain: String
     @NSManaged var weatherDescription: String
@@ -23,8 +24,8 @@ extension WeatherItem {
     @NSManaged var mainTemp: Double
     @NSManaged var mainPressure: Int64
     @NSManaged var mainHumidity: Int64
-    @NSManaged var mainTemp_min: Double
-    @NSManaged var mainTemp_max: Double
+    @NSManaged var mainTempMin: Double
+    @NSManaged var mainTempMax: Double
     @NSManaged var windSpeed: Int64
     @NSManaged var windDeg: Int64
 

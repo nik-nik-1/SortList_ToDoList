@@ -9,30 +9,30 @@
 import UIKit
 
 class WeatherItemsTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var weatherNameLabelTableItem: UILabel!
-    @IBOutlet weak var weatherValueLabelTableItem: UILabel!
-    
-    
-    var strctD:ElementDictStructure = ElementDictStructure()
-    var weatherItem: WeatherItem! {
-        didSet {
-            weatherNameLabelTableItem?.text  = strctD.description
-            weatherValueLabelTableItem?.text = weatherItem [strctD.name]
-        }
-    }
-    
-    //MARK: init cell
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-    }
-    
-    
-    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        
-    }
-}
 
+	@IBOutlet weak var weatherNameLabelTableItem: UILabel!
+	@IBOutlet weak var weatherValueLabelTableItem: UILabel!
+
+
+	var strctD: ElementDictStructure = ElementDictStructure()
+	var weatherItem: WeatherItem! {
+		didSet {
+			weatherNameLabelTableItem?.text  = strctD.description
+			weatherValueLabelTableItem?.text = weatherItem [strctD.name]
+		}
+	}
+
+	//MARK: init cell
+	required init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+
+	}
+
+
+	override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+		super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+
+	}
+
+}
