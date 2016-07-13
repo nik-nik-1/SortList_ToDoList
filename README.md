@@ -2,7 +2,7 @@
 
 <ul style="list-style-type: circle;">
 <li>my first Projects :)</li>
-<li>generic interface to display TableView, CollectionView screen and some Weather (JSON parsing) in the city (this Projects here superfluous in the sense of - but left "for training")</li>
+<li>has generic interface to display TableView, CollectionView screen and some Weather (JSON parsing) in the city (this projects is superfluous here in the sense of - but was left "for training")</li>
 </ul>
 
 
