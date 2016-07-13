@@ -22,6 +22,7 @@ What's interesting here?:
 <li>Using <i>UIAlertController<i> </li>
 <li>Added custom button to remove the cell in <i>CollectionView</i> </li>
 <li>An opportunity to display the current cell in the <i>CollectionView</i> </li>
+<li>Extension of <i>UIView</i> to manage the UIBorders of elements via Storyboard (see in the file <i>"UIView_Borders.swift"</i>); by using "@IBInspectable" of some UI-parameters </li>
 <li>Has been tested using <a href="https://github.com/realm/SwiftLint">SwiftLint</a></li>
 </ol>
 
