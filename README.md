@@ -1,8 +1,8 @@
-# SortList_ToDoList
+# SortList (/ToDoList)
 
 <ul style="list-style-type: circle;">
 <li>my first Projects :)</li>
-<li>has generic interface to display TableView, CollectionView screen and some Weather (JSON parsing) in the city (this projects is superfluous here in the sense of - but was left "for training")</li>
+<li>has generic interface to display TableView, CollectionView screen and some Weather (JSON parsing) in the city <strike>(this projects is superfluous here in the sense of - but was left "for training")</strike></li>
 </ul>
 
 
