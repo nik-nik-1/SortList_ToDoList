@@ -15,7 +15,7 @@ What's interesting here?:
 </ol>
 
 
-<table border="0" width="100%" cellspacing="2" cellpadding="5" align="center">
+<table border="0" width="100%" cellspacing="2" cellpadding="5" align="center" bgcolor="#ffffff">
 <tbody>
 <tr>
 <td><em>1. main screen</em><a href="http://piccy.info/view3/10045857/4afb0521a031f888aec9f4b4b51d4dca/" target="_blank"><img src="http://i.piccy.info/i9/77e8a39bf53e0bf9984acc8c46672e60/1468401689/7822/1049505/SortList_ToDoList_S1_500.jpg" alt="Piccy.info - Free Image Hosting" border="0" /></a><a href="http://i.piccy.info/a3c/2016-07-13-09-21/i9-10045857/281x500-r" target="_blank"><img src="http://i.piccy.info/a3/2016-07-13-09-21/i9-10045857/281x500-r/i.gif" alt="" border="0" /></a></td>
