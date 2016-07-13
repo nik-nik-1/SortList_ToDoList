@@ -11,7 +11,7 @@ What's interesting here?:
 <ol>
 <li>MVC</li>
 <li>Switching between views (List/Grid) of CollectionView (using <i>"UICollectionViewFlowLayout"</i> subslass)</li>
-<li>2 projejc in 1</li>
+<li>2 project in 1</li>
 <li>CoreData (work with 2 different projects)</li>
 <li>Plist</li>
 <li>Load & using different variant of color from file: <i>"ColorsChoise.plist"</i></li>
