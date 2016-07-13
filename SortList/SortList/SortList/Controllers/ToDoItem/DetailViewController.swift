@@ -169,7 +169,7 @@ class DetailViewController: UIViewController,
 
 		let сolorBarTrans = temStructOfColor.сolor04a
 
-		//        self.view.backgroundColor = сolorBarTrans
+		//self.view.backgroundColor = сolorBarTrans
 
 		self.navigationController?.navigationBar.barTintColor = сolorBarTrans
 

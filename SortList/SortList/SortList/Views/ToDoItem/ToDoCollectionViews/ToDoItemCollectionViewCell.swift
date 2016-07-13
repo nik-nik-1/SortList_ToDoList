@@ -54,7 +54,12 @@ class ToDoItemCollectionViewCell: UICollectionViewCell {
 				contentView.backgroundColor = temStructOfColor.сolor02a
 
 				selectItemSwitchView.onTintColor    = temStructOfColor.сolor04a
-				selectItemSwitchView.tintColor      = temStructOfColor.сolor02a
+
+				var tColor: UIColor = temStructOfColor.сolor02a
+				if selectedUIColor == UIColor.whiteColor() {
+						tColor = UIColor.grayColor().colorWithAlphaComponent(0.2)
+				}
+				selectItemSwitchView.tintColor      = tColor
 				//selectItemSwitchView.thumbTintColor = selectedUIColor
 
 			}
