@@ -16,7 +16,7 @@ What's interesting here?:
 <li>Plist</li>
 <li>Load & using different variant of color from file: <i>"ColorsChoise.plist"</i></li>
 <li>Custom cell (<i>"*.xib"</i>- files)</li>
-<li>parsing JSON</li>
+<li>Parsing JSON</li>
 <li>Custom cell animation (using <i>"CATransform3D"</i>)</li>
 <li>Using <i>NSDate</i> ("calculate used time", & ..) </li>
 <li>Using <i>UIAlertController<i> </li>
