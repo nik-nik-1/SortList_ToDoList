@@ -9,8 +9,19 @@
 What's interesting here?:
 
 <ol>
-<li>****</li>
-<li>***</li>
+<li>MVC</li>
+<li>Switching between views (List/Grid) of CollectionView (using <i>"UICollectionViewFlowLayout"</i> subslass)</li>
+<li>2 projejc in 1</li>
+<li>CoreData (work with 2 different projects)</li>
+<li>Plist</li>
+<li>Load & using different variant of color from file: <i>"ColorsChoise.plist"</i></li>
+<li>Custom cell (<i>"*.xib"</i>- files)</li>
+<li>parsing JSON</li>
+<li>Custom cell animation (using <i>"CATransform3D"</i>)</li>
+<li>Using <i>NSDate</i> ("calculate used time", & ..) </li>
+<li>Using <i>UIAlertController<i> </li>
+<li>Added custom button to remove the cell in <i>CollectionView</i> </li>
+<li>An opportunity to display the current cell in the <i>CollectionView</i> </li>
 <li>Has been tested using <a href="https://github.com/realm/SwiftLint">SwiftLint</a></li>
 </ol>
 
