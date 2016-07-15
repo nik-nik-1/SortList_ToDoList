@@ -66,7 +66,7 @@ What's interesting here?:
 
 
 
- <a href="http://www.youtube.com/watch?feature=player_embedded&v=wrI-5zaqZRs" target="_blank"><img src="http://i.piccy.info/i9/6ec3a0f0bd90e6f7e1791afcb71be87b/1468419070/38459/1049505/SortList_ToDoList_V1_S4_Image_500.jpg" alt="" border="0"/></a><a href="http://i.piccy.info/a3c/2016-07-13-14-11/i9-10047327/281x500-r" target="_blank"><img src="http://i.piccy.info/a3/2016-07-13-14-11/i9-10047327/281x500-r/i.gif" alt="" border="0" /></a>
+ <a href="http://www.youtube.com/watch?feature=player_embedded&v=wrI-5zaqZRs" target="_blank"><img src="https://github.com/nikolay-dementiev/SortList_ToDoList/blob/master/SortList/SortList/SortList/Resources/ScreenShotForGitHub/SortList_ToDoList_S13.1.V1_GIF.gif" alt="" border="0"/></a><a href="http://i.piccy.info/a3c/2016-07-13-14-11/i9-10047327/281x500-r" target="_blank"><img src="http://i.piccy.info/a3/2016-07-13-14-11/i9-10047327/281x500-r/i.gif" alt="" border="0" /></a>
   
   
   
